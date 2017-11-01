@@ -1,7 +1,12 @@
 import React from 'react';
-import Todos from '../todos/todos.jsx';
+import { combineReducers } from 'redux';
 
-export default function App() {
+import Todos from '../todos/todos.jsx';
+import { todos } from '../todos/todos.reducers.js';
+
+export const rootReducer = combineReducers({ todos });
+
+export function App() {
     return (
         <Todos/>
     );
