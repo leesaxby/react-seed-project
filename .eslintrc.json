@@ -1,0 +1,46 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jquery": true,
+        "jasmine": true,
+        "protractor": true,
+        "amd": true
+    },
+    "extends": ["eslint:recommended"],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "quotes": [
+            2,
+            "single"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "no-mixed-spaces-and-tabs": [0, "smart-tabs"],
+        "no-console": [0],
+        "no-fallthrough": [0],
+        "no-useless-escape": "error"
+    },
+    "globals": {
+        "_": true,
+        "angular": true,
+        "UIkit": true,
+        "module": true,
+        "inject": true,
+        "process": true,
+        "exports": true,
+        "moment": true,
+        "clcTranslations": true,
+        "global": true,
+        "BigNumber": true,
+        "JSONBigNumber": true,
+        "__dirname": true
+    }
+}
