@@ -1,16 +1,15 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import App from './components/app/app.jsx';
-import { todos } from './components/todos/todos.reducers.js';
+import { App, rootReducer } from './components/app/app.jsx';
 
-const reducer = combineReducers({ todos });
 const store = createStore(
-    reducer,
+    rootReducer,
     applyMiddleware(thunk)
 );
 
