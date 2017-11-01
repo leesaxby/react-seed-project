@@ -12,15 +12,15 @@ Once Node and Yarn are setup we can then install the project dependencies by run
 yarn install
 ```
 
-### Running devlopment server
+### Running development server
 
-To run a webpack development server run:
+To start a webpack development server run:
 
 ```
 yarn dev
 ```
 
-This will fire up a development server should open a browser pointing to it (http://0.0.0.0:9999/).
+This will fire up a development server and should open a browser pointing to it (http://0.0.0.0:9999/).
 Check below for included development features.
 
 ### Production build
@@ -39,6 +39,7 @@ Check below for production build details.
 * React
 * Redux
 * Prop types
+* [Styled components](https://www.styled-components.com/) (May be replaced with bootstrap)
 
 ### Development features
 * Webpack development server
