@@ -33,3 +33,20 @@ yarn build
 
 This will generate a production build in the `/dist` directory.
 Check below for production build details.
+
+
+### Project features
+* React
+* Redux
+* Prop types
+
+### Development features
+* Webpack development server
+* ES2015 transpiling
+* Linting
+* Source maps
+* Live reload / [Hot module reload](https://webpack.js.org/concepts/hot-module-replacement/)
+
+### Production details
+* Minification
+* [Tree shaking](https://webpack.js.org/guides/tree-shaking/)
