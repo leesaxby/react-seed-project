@@ -2,8 +2,13 @@
 
 A seed project using [React](https://reactjs.org/) and [Redux](http://redux.js.org/) intended to provided a quick and consistent setup for new projects.
 
-The seed contains a demo todo project which will give an idea of how to structure react apps.
-It follows the container / presentational component structure described here: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0.
+The seed contains a demo todo project which will give an idea of how to structure react apps and follows the container / presentational component structure described here: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0.
+
+It also contains working examples of the following
+* Redux
+* PropTypes
+* internationalisation
+* Styled components
 
 To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/app.jsx`
 
@@ -45,6 +50,7 @@ Check below for production build details.
 * Redux
 * Prop types
 * [Styled components](https://www.styled-components.com/) (May be replaced with bootstrap)
+* Internationalisation
 
 ### Development features
 * Webpack development server

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { injectIntl, intlShape } from 'react-intl';
 
 const TodoInput = styled.input`
     height: 45px;
@@ -16,7 +17,7 @@ const TodoInput = styled.input`
     font-style: italic;
 `;
 
-export default class TodoForm extends React.Component {
+const TodoForm =  class TodoForm extends React.Component {
     constructor() {
         super();
 
@@ -30,7 +31,7 @@ export default class TodoForm extends React.Component {
     render() {
         return (
             <TodoInput type="text"
-                       placeholder="Add Item"
+                       placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
                        value={this.state.newItem}
                        onChange={this.updateNewItem}
                        onKeyPress={this.handleKeyPress}/>
@@ -51,5 +52,8 @@ export default class TodoForm extends React.Component {
 }
 
 TodoForm.propTypes = {
-    onAddTodoItem: PropTypes.func
+    onAddTodoItem: PropTypes.func,
+    intl: intlShape.isRequired,
 };
+
+export default injectIntl(TodoForm);
