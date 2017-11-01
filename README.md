@@ -50,6 +50,7 @@ Check below for production build details.
 * Redux
 * Prop types
 * [Styled components](https://www.styled-components.com/) (May be replaced with bootstrap)
+* Internationalisation
 
 ### Development features
 * Webpack development server
