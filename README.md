@@ -1,6 +1,8 @@
 # React / Redux seed project
 
 A seed project using [React](https://reactjs.org/) and [Redux](http://redux.js.org/) intended to provided a quick and consistent setup for new projects.
+The seed contains a demo todo project which will give an idea of how to structure react apps.
+It follows the container / presentational component structure described here: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0.
 
 ### Setup
 
