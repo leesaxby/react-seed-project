@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 const Slider = styled.div`
     display: flex;
@@ -45,13 +46,13 @@ export default class TodoFilter extends React.Component {
             <Slider filter={this.state.filter}
                     onClick={this.updateFilter}>
                 <FilterText show={this.state.filter === 'DONE'}>
-                    done
+                    <FormattedMessage id="todo.filter.done"/>
                 </FilterText>
 
                 <Switch filter={this.state.filter}></Switch>
 
                 <FilterText show={this.state.filter === 'ACTIVE'}>
-                    todo
+                    <FormattedMessage id="todo.filter.todo"/>
                 </FilterText>
             </Slider>
         );
