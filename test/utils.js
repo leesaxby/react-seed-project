@@ -1,0 +1,1 @@
+export const el = (id) => `[data-test-id="${id}"]`;
