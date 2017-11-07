@@ -1,13 +1,12 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    context: path.resolve(__dirname, './src'),
+    context: path.resolve(__dirname, '../'),
     entry: [
         'react-hot-loader/patch',
-        './index.js',
+        './src/index.js',
     ],
     output: {
         publicPath: '/'
@@ -24,11 +23,9 @@ module.exports = {
       }]
   },
   plugins: [
-      new webpack.NamedModulesPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
       new HtmlWebpackPlugin({
-          template: 'index.html',
+          template: './src/index.html',
           inject: 'body',
     })
   ]
