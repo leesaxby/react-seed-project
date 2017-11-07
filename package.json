@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev-server": "node_modules/.bin/webpack-dev-server --open --config webpack/webpack.dev.js",
+    "dev-server": "node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.js",
     "prod-server": "node_modules/.bin/webpack-dev-server --config webpack/webpack.prod-server.js",
     "prod-build": "node_modules/.bin/webpack --config webpack/webpack.prod.js",
     "e2e": "./run-e2e.sh"

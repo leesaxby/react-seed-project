@@ -28,10 +28,10 @@ yarn install
 To start a webpack development server run:
 
 ```
-yarn dev
+yarn dev-server
 ```
 
-This will fire up a development server and should open a browser pointing to it (http://0.0.0.0:9999/).
+This will fire up a development server at (http://localhost:9999/).
 Check below for included development features.
 
 ### Production build
@@ -39,7 +39,7 @@ Check below for included development features.
 To generate a production build run:
 
 ```
-yarn build
+yarn prod-build
 ```
 
 This will generate a production build in the `/dist` directory.
@@ -54,7 +54,7 @@ To run e2e tests run:
 yarn e2e
 ```
 
-This will generate a production build in the `/dist` directory and fire up a dev server 
+This will generate a production build in the `/dist` directory and fire up a dev server
 (pointing at the `./dist` directory) to run the tests against.
 
 ### Project features
