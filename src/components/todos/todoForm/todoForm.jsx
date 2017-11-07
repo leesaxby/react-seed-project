@@ -31,6 +31,7 @@ const TodoForm =  class TodoForm extends React.Component {
     render() {
         return (
             <TodoInput type="text"
+                       data-test-id="todo-add-item"
                        placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
                        value={this.state.newItem}
                        onChange={this.updateNewItem}

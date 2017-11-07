@@ -39,7 +39,8 @@ export default function TodoItem({ item, onToggleDone }) {
     };
 
     return (
-        <ListItem onClick={ toggleDone }>
+        <ListItem onClick={ toggleDone }
+                  data-test-id="todo-item">
             <StatusCirle done={ item.done }></StatusCirle>
             <ItemText done={ item.done }>
                 { item.text }
