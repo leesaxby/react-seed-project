@@ -47,15 +47,15 @@ Check below for production build details.
 
 ### Run e2e tests
 
-e2e are located in the `./test` directory.
-To run e2e tests run:
+e2e tests are located in the `./test` directory.
+To run these tests enter:
 
 ```
 yarn e2e
 ```
 
-This will generate a production build in the `/dist` directory and fire up a dev server
-(pointing at the `./dist` directory) to run the tests against.
+This will generate a production build and fire up a webpack dev server to run the UI.
+The e2e tests will then run against the server.
 
 ### Project features
 * React
