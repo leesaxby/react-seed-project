@@ -35,14 +35,6 @@ const FilterText = styled.span`
 `;
 
 export default class TodoFilter extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            filter: this.props.filter
-        };
-
-        this.updateFilter = this.updateFilter.bind(this);
-    }
     render() {
         const { filter } = this.props;
         return(
@@ -61,17 +53,8 @@ export default class TodoFilter extends React.Component {
             </Link>
         );
     }
-    updateFilter() {
-        const newFilter = this.state.filter === 'ACTIVE' ? 'DONE' : 'ACTIVE';
-
-        this.props.onUpdateFilter(newFilter);
-        this.setState({
-            filter: newFilter
-        });
-    }
 }
 
 TodoFilter.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
-    onUpdateFilter: PropTypes.func
+    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ])
 };

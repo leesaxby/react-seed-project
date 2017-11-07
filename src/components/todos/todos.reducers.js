@@ -1,6 +1,5 @@
 const initialState = {
-    listItems: [],
-    filter: 'ACTIVE'
+    listItems: []
 };
 
 export function todos(state = initialState, action) {
@@ -19,11 +18,6 @@ export function todos(state = initialState, action) {
                 listItems: action.payload,
                 filter: state.filter
 
-            };
-        case 'UPDATE_FILTER':
-            return {
-                listItems: state.listItems,
-                filter: action.payload
             };
         case 'UPDATE_DONE_STATUS':
             {

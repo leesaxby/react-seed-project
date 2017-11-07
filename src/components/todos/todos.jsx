@@ -21,7 +21,6 @@ class Todos extends React.Component {
 
         this.addTodoItem = this.addTodoItem.bind(this);
         this.toggleDone = this.toggleDone.bind(this);
-        this.updateFilter = this.updateFilter.bind(this);
         this.filterTodos = this.filterTodos.bind(this);
         this.getTodos = this.getTodos.bind(this);
     }
@@ -58,10 +57,6 @@ class Todos extends React.Component {
         this.props.updateDoneStatus(_id, done);
     }
 
-    updateFilter(filter) {
-        this.props.updateFilter(filter);
-    }
-
     filterTodos(list) {
         return list.filter(({ done }) => this.props.filter === 'DONE' ? done : !done);
     }
@@ -80,7 +75,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: () => dispatch(fetchTodos()),
-        updateFilter: (filter) => dispatch(updateFilter(filter)),
         addTodo: (todo) => dispatch(addTodo(todo)),
         updateDoneStatus: (id, doneStatus) => dispatch(updateDoneStatus(id, doneStatus))
     };
