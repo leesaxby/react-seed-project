@@ -13,7 +13,8 @@ module.exports = merge(common, {
         host: '0.0.0.0',
         disableHostCheck: true,
         port: 9999,
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
