@@ -9,6 +9,7 @@ It also contains working examples of the following
 * PropTypes
 * internationalisation
 * Styled components
+* e2e tests
 
 To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/app.jsx`
 
@@ -44,6 +45,17 @@ yarn build
 This will generate a production build in the `/dist` directory.
 Check below for production build details.
 
+### Run e2e tests
+
+e2e are located in the `./test` directory.
+To run e2e tests run:
+
+```
+yarn e2e
+```
+
+This will generate a production build in the `/dist` directory and fire up a dev server 
+(pointing at the `./dist` directory) to run the tests against.
 
 ### Project features
 * React
@@ -58,6 +70,7 @@ Check below for production build details.
 * Linting
 * Source maps
 * Live reload / [Hot module reload](https://webpack.js.org/concepts/hot-module-replacement/)
+* e2e tests
 
 ### Production details
 * Minification
