@@ -6,7 +6,7 @@
     "dev-server": "webpack-dev-server --open --config webpack.dev.js",
     "prod-server": "webpack-dev-server --config webpack.prod-server.js",
     "prod-build": "webpack --config webpack.prod.js",
-    "e2e": "node_modules/.bin/jest test/e2e/**/**.spec.js"
+    "e2e": "./run-e2e.sh"
   },
   "license": "MIT",
   "dependencies": {
