@@ -1,5 +1,5 @@
 # Start webpack prod server.
-(webpack-dev-server --config webpack.prod-server.js &)
+(yarn prod-server &)
 
 # Wait for server to be running.
 # FIX: hardcoded sleep 8 for the app to bootstrap.
