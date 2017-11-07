@@ -34,10 +34,8 @@ class Todos extends React.Component {
         return (
             <div>
                 <FlexContainer>
-                    <TodoForm onAddTodoItem={this.addTodoItem}/>
-                    <TodoFilter filter={this.props.todos.filter}
-                                onUpdateFilter={this.updateFilter}/>
-
+                    <TodoForm onAddTodoItem={this.addTodoItem} />
+                    <TodoFilter filter={this.props.filter || 'ACTIVE'} />
                 </FlexContainer>
 
                 <FlexContainer>
@@ -65,7 +63,7 @@ class Todos extends React.Component {
     }
 
     filterTodos(list) {
-        return list.filter(({ done }) => this.props.todos.filter === 'DONE' ? done : !done);
+        return list.filter(({ done }) => this.props.filter === 'DONE' ? done : !done);
     }
 
     getTodos() {
