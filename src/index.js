@@ -11,6 +11,7 @@ import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
 import translations from '../i18n/translations.js';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { App, rootReducer } from './components/app/app.jsx';
 
@@ -29,7 +30,9 @@ const render = Component => {
         <AppContainer>
             <Provider store={store}>
                 <IntlProvider locale={USER_LOCALE} messages={translations[USER_LOCALE]}>
-                    <Component />
+                    <Router>
+                        <Route path='/:filter?' component={Component} />
+                    </Router>
                 </IntlProvider>
             </Provider>
         </AppContainer>,
