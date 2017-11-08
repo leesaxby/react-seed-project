@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
+import { Link } from 'react-router-dom';
+
 const Slider = styled.div`
     display: flex;
     align-items: center;
@@ -33,41 +35,26 @@ const FilterText = styled.span`
 `;
 
 export default class TodoFilter extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            filter: this.props.filter
-        };
-
-        this.updateFilter = this.updateFilter.bind(this);
-    }
     render() {
+        const { filter } = this.props;
         return(
-            <Slider filter={this.state.filter}
-                    onClick={this.updateFilter}>
-                <FilterText show={this.state.filter === 'DONE'}>
-                    <FormattedMessage id="todo.filter.done"/>
-                </FilterText>
+            <Link to={filter === 'ACTIVE' ? '/DONE' : '/ACTIVE'} >
+                <Slider filter={filter} >
+                    <FilterText show={filter === 'DONE'}>
+                        <FormattedMessage id="todo.filter.done"/>
+                    </FilterText>
 
-                <Switch filter={this.state.filter}></Switch>
+                    <Switch filter={filter}></Switch>
 
-                <FilterText show={this.state.filter === 'ACTIVE'}>
-                    <FormattedMessage id="todo.filter.todo"/>
-                </FilterText>
-            </Slider>
+                    <FilterText show={filter === 'ACTIVE'}>
+                        <FormattedMessage id="todo.filter.todo"/>
+                    </FilterText>
+                </Slider>
+            </Link>
         );
-    }
-    updateFilter() {
-        const newFilter = this.state.filter === 'ACTIVE' ? 'DONE' : 'ACTIVE';
-
-        this.props.onUpdateFilter(newFilter);
-        this.setState({
-            filter: newFilter
-        });
     }
 }
 
 TodoFilter.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
-    onUpdateFilter: PropTypes.func
+    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ])
 };
