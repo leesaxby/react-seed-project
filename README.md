@@ -7,9 +7,10 @@ The seed contains a demo todo project which will give an idea of how to structur
 It also contains working examples of the following
 * Redux
 * PropTypes
-* internationalisation
+* Internationalisation
 * Styled components
 * e2e tests
+* Routing
 
 To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/app.jsx`
 
@@ -63,6 +64,7 @@ The e2e tests will then run against the server.
 * Prop types
 * [Styled components](https://www.styled-components.com/) (May be replaced with bootstrap)
 * Internationalisation
+* Routing
 
 ### Development features
 * Webpack development server
