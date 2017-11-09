@@ -16,6 +16,18 @@ module.exports = merge(common, {
         hot: true,
         historyApiFallback: true
     },
+    module: {
+        rules: [{
+            test: /\.jsx?$/,
+            enforce: 'pre',
+            loader: 'eslint-loader',
+            exclude: /node_modules/,
+            options: {
+                failOnWarning: false,
+                failOnError: true
+            }
+        }]
+    },
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),

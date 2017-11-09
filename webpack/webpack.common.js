@@ -12,12 +12,8 @@ module.exports = {
         publicPath: '/'
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/
-        }, {
-            test: /\.jsx$/,
+        rules: [{
+            test: /\.jsx?$/,
             loader: 'babel-loader',
             exclude: /node_modules/
       }]
