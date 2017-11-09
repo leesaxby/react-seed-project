@@ -27,15 +27,21 @@ const store = createStore(
 
 const render = Component => {
     ReactDOM.render(
-        <AppContainer>
-            <Provider store={store}>
-                <IntlProvider locale={USER_LOCALE} messages={translations[USER_LOCALE]}>
-                    <Router>
-                        <Route path='/:filter?' component={Component} />
-                    </Router>
-                </IntlProvider>
-            </Provider>
-        </AppContainer>,
+        React.createElement(
+            AppContainer, {},
+            React.createElement(
+                Provider, { store },
+                React.createElement(
+                    IntlProvider, { locale: USER_LOCALE, messages: translations[USER_LOCALE] },
+                    React.createElement(
+                        Router, {},
+                        React.createElement(
+                            Route, { path: '/:filter?', component: Component }
+                        )
+                    )
+                )
+            )
+        ),
         document.getElementById('root')
     );
 };
