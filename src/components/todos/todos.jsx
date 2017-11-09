@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo, fetchTodos, updateFilter, updateDoneStatus } from './todos.actions.js';
+import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
 
 import styled from 'styled-components';
 import TodoList from './todoList/todoList.jsx';

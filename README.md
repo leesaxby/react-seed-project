@@ -7,9 +7,11 @@ The seed contains a demo todo project which will give an idea of how to structur
 It also contains working examples of the following
 * Redux
 * PropTypes
-* internationalisation
+* Internationalisation
 * Styled components
 * e2e tests
+* Unit tests
+* Routing
 
 To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/app.jsx`
 
@@ -57,12 +59,22 @@ yarn e2e
 This will generate a production build and fire up a webpack dev server to run the UI.
 The e2e tests will then run against the server.
 
+### Run unit tests
+
+Unit tests are located in the corresponding component directories.
+To run all unit tests enter:
+
+```
+yarn unit
+```
+
 ### Project features
 * React
 * Redux
 * Prop types
 * [Styled components](https://www.styled-components.com/) (May be replaced with bootstrap)
 * Internationalisation
+* Routing
 
 ### Development features
 * Webpack development server
@@ -71,6 +83,7 @@ The e2e tests will then run against the server.
 * Source maps
 * Live reload / [Hot module reload](https://webpack.js.org/concepts/hot-module-replacement/)
 * e2e tests
+* Unit tests
 
 ### Production details
 * Minification
