@@ -50,7 +50,7 @@ const TodoForm =  class TodoForm extends React.Component {
         this.addTodoItem();
       }
     }
-}
+};
 
 TodoForm.propTypes = {
     onAddTodoItem: PropTypes.func,
