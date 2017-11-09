@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
 
 import styled from 'styled-components';
@@ -66,9 +68,24 @@ class Todos extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+Todos.propTypes = {
+    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
+    todos: PropTypes.shape({
+        listItems: PropTypes.arrayOf(
+            PropTypes.shape({
+                done: PropTypes.bool
+            })
+        )
+    }),
+    addTodo: PropTypes.func,
+    updateDoneStatus: PropTypes.func,
+    fetchData: PropTypes.func
+};
+
+const mapStateToProps = (state, { match: { params: { filter } } }) => {
     return {
-        todos: state.todos
+        todos: state.todos,
+        filter
     };
 };
 
@@ -80,4 +97,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Todos));
