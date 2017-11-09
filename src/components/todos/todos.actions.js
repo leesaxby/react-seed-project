@@ -7,7 +7,6 @@ export function addTodo(todo) {
     };
 }
 
-
 export function fetchTodos() {
     return dispatch => {
 
