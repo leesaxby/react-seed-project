@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
+import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 
 import styled from 'styled-components';
 import TodoList from './todoList/todoList.jsx';
@@ -36,17 +37,15 @@ class Todos extends React.Component {
 
     render() {
         return (
-            <div>
-                <FlexContainer>
+            <Grid>
+                <Col sm={12} md={10} lg={8} mdOffset={1} lgOffset={2}>
                     <TodoForm onAddTodoItem={this.addTodoItem} />
-                    <TodoFilter filter={this.props.filter} />
-                </FlexContainer>
+                    <TodoFilter filter={this.props.filter || 'ACTIVE'} />
 
-                <FlexContainer>
-                    <TodoList listItems={this.props.listItems}
+                    <TodoList listItems={this.filterTodos(this.props.todos.listItems)}
                               onToggleDone={this.toggleDone}/>
-                </FlexContainer>
-            </div>
+                </Col>
+            </Grid>
         );
     }
 
