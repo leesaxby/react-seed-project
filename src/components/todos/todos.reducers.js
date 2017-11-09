@@ -6,17 +6,16 @@ export function todos(state = initialState, action) {
     switch (action.type) {
         case 'ADD_TODO': {
             const ids = state.listItems.map(todo => todo._id);
-            action.payload._id = Math.max(...ids) + 1;
+
+            action.payload._id = ids.length ? Math.max(...ids) + 1 : 0;
 
             return {
-                listItems: [...state.listItems, action.payload],
-                filter: state.filter
+                listItems: [...state.listItems, action.payload]
             };
         }
         case 'FETCH_TODOS_SUCCESS':
             return {
-                listItems: action.payload,
-                filter: state.filter
+                listItems: action.payload
 
             };
         case 'UPDATE_DONE_STATUS':
@@ -25,8 +24,7 @@ export function todos(state = initialState, action) {
                 listItems.find(({ _id }) => _id === action.payload._id).done = action.payload.done;
 
                 return {
-                    listItems,
-                    filter: state.filter
+                    listItems
                 };
             }
         default:
