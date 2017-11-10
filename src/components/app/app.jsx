@@ -6,8 +6,8 @@ import { todos as todoReducer } from '../todos/todos.reducers.js';
 
 export const rootReducer = combineReducers({ todos: todoReducer });
 
-export function App({ match: { params } }) {
+export function App() {
     return (
-        <Todos filter={params.filter} />
+        <Todos />
     );
 }

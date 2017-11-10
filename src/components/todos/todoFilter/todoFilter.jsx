@@ -56,5 +56,5 @@ export default class TodoFilter extends React.Component {
 }
 
 TodoFilter.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ])
+    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired
 };

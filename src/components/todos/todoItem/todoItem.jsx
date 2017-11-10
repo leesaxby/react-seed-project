@@ -52,7 +52,7 @@ export default function TodoItem({ item, onToggleDone }) {
 TodoItem.propTypes = {
     item: PropTypes.shape({
         text: PropTypes.string,
-        done: PropTypes.bool
+        done: PropTypes.bool.isRequired
     }),
-    onToggleDone: PropTypes.func
+    onToggleDone: PropTypes.func.isRequired
 };

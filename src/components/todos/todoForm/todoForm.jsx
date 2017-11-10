@@ -17,7 +17,7 @@ const TodoInput = styled.input`
     font-style: italic;
 `;
 
-const TodoForm =  class TodoForm extends React.Component {
+class TodoForm extends React.Component {
     constructor() {
         super();
 
@@ -53,7 +53,7 @@ const TodoForm =  class TodoForm extends React.Component {
 }
 
 TodoForm.propTypes = {
-    onAddTodoItem: PropTypes.func,
+    onAddTodoItem: PropTypes.func.isRequired,
     intl: intlShape.isRequired,
 };
 

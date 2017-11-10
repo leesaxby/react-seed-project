@@ -27,9 +27,8 @@ export default function TodoList(props) {
 TodoList.propTypes = {
     listItems: PropTypes.arrayOf(
         PropTypes.shape({
-            _id: PropTypes.number,
-            text: PropTypes.string,
-            done: PropTypes.bool
+            _id: PropTypes.number.isRequired
         })
-    )
+    ).isRequired,
+    onToggleDone: PropTypes.func.isRequired
 };
