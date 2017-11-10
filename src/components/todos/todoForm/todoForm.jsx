@@ -1,21 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { FormGroup, FormControl } from 'react-bootstrap';
 import { injectIntl, intlShape } from 'react-intl';
-
-const TodoInput = styled.input`
-    height: 45px;
-    padding: 0 10px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0 2px 3px #aaa;
-    outline: 0px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    font-weight: 100;
-    font-style: italic;
-`;
 
 class TodoForm extends React.Component {
     constructor() {
@@ -30,12 +16,16 @@ class TodoForm extends React.Component {
     }
     render() {
         return (
-            <TodoInput type="text"
-                       data-test-id="todo-add-item"
-                       placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
-                       value={this.state.newItem}
-                       onChange={this.updateNewItem}
-                       onKeyPress={this.handleKeyPress}/>
+            <form>
+                <FormGroup bsSize="large">
+                    <FormControl type="text"
+                                 data-test-id="todo-add-item"
+                                 placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
+                                 value={this.state.newItem}
+                                 onChange={this.updateNewItem}
+                                 onKeyPress={this.handleKeyPress}/>
+                </FormGroup>
+            </form>
         );
     }
     addTodoItem() {
