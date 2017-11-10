@@ -17,11 +17,13 @@ export class TodoFilter extends React.Component {
                                value={filter}
                                onChange={this.updateFilter}>
 
-                <ToggleButton value="ACTIVE">
+                <ToggleButton value="ACTIVE"
+                              bsStyle="info">
                     <FormattedMessage id="todo.filter.todo"/>
                 </ToggleButton>
 
-                <ToggleButton value="DONE">
+                <ToggleButton value="DONE"
+                              bsStyle="info">
                     <FormattedMessage id="todo.filter.done"/>
                 </ToggleButton>
 
