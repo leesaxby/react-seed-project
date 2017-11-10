@@ -24,7 +24,8 @@ module.exports = merge(common, {
             exclude: /node_modules/,
             options: {
                 failOnWarning: false,
-                failOnError: true
+                failOnError: false,
+                emitWarning: true
             }
         }]
     },
