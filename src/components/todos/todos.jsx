@@ -17,13 +17,16 @@ const FlexContainer = styled.div`
     margin-top: 20px;
 `;
 
+const filterTodos = (list, filter) => {
+    return list.filter(({ done }) => filter === 'DONE' ? done : !done);
+};
+
 class Todos extends React.Component {
     constructor() {
         super();
 
         this.addTodoItem = this.addTodoItem.bind(this);
         this.toggleDone = this.toggleDone.bind(this);
-        this.filterTodos = this.filterTodos.bind(this);
         this.getTodos = this.getTodos.bind(this);
     }
 
@@ -36,11 +39,11 @@ class Todos extends React.Component {
             <div>
                 <FlexContainer>
                     <TodoForm onAddTodoItem={this.addTodoItem} />
-                    <TodoFilter filter={this.props.filter || 'ACTIVE'} />
+                    <TodoFilter filter={this.props.filter} />
                 </FlexContainer>
 
                 <FlexContainer>
-                    <TodoList listItems={this.filterTodos(this.props.todos.listItems)}
+                    <TodoList listItems={this.props.listItems}
                               onToggleDone={this.toggleDone}/>
                 </FlexContainer>
             </div>
@@ -59,32 +62,31 @@ class Todos extends React.Component {
         this.props.updateDoneStatus(_id, done);
     }
 
-    filterTodos(list) {
-        return list.filter(({ done }) => this.props.filter === 'DONE' ? done : !done);
-    }
-
     getTodos() {
         this.props.fetchData();
     }
 }
 
+Todos.defaultProps = {
+    filter: 'ACTIVE',
+    listItems: []
+};
+
 Todos.propTypes = {
     filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
-    todos: PropTypes.shape({
-        listItems: PropTypes.arrayOf(
-            PropTypes.shape({
-                done: PropTypes.bool
-            })
-        )
-    }),
-    addTodo: PropTypes.func,
-    updateDoneStatus: PropTypes.func,
-    fetchData: PropTypes.func
+    listItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            done: PropTypes.bool
+        })
+    ),
+    addTodo: PropTypes.func.isRequired,
+    updateDoneStatus: PropTypes.func.isRequired,
+    fetchData: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state, { match: { params: { filter } } }) => {
     return {
-        todos: state.todos,
+        listItems: filterTodos(state.todos.listItems, filter),
         filter
     };
 };

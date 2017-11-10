@@ -53,7 +53,7 @@ class TodoForm extends React.Component {
 }
 
 TodoForm.propTypes = {
-    onAddTodoItem: PropTypes.func,
+    onAddTodoItem: PropTypes.func.isRequired,
     intl: intlShape.isRequired,
 };
 
