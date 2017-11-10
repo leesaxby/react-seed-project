@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 export class TodoFilter extends React.Component {
     constructor() {
@@ -36,7 +36,8 @@ export class TodoFilter extends React.Component {
 }
 
 TodoFilter.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired
+    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired,
+    history: PropTypes.object.isRequired
 };
 
 export default withRouter(TodoFilter);

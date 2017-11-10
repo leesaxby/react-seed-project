@@ -5,18 +5,9 @@ import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import styled from 'styled-components';
 import TodoList from './todoList/todoList.jsx';
 import TodoForm from './todoForm/todoForm.jsx';
 import TodoFilter from './todoFilter/todoFilter.jsx';
-
-const FlexContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-`;
 
 const filterTodos = (list, filter) => {
     return list.filter(({ done }) => filter === 'DONE' ? done : !done);
@@ -48,7 +39,7 @@ class Todos extends React.Component {
                 </Row>
                 <Row>
                     <Col sm={8} lg={6} smOffset={2} lgOffset={3}>
-                        <TodoList listItems={this.filterTodos(this.props.todos.listItems)}
+                        <TodoList listItems={this.props.listItems}
                                   onToggleDone={this.toggleDone}/>
                     </Col>
                 </Row>
