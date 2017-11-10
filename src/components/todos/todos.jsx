@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
-import { Grid, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 import styled from 'styled-components';
 import TodoList from './todoList/todoList.jsx';
@@ -38,21 +38,22 @@ class Todos extends React.Component {
     render() {
         return (
             <Grid>
-                <Col sm={12} md={10} lg={6} mdOffset={1} lgOffset={3}>
-                    <TodoForm onAddTodoItem={this.addTodoItem} />
-                    <TodoFilter filter={this.props.filter || 'ACTIVE'} />
-
-                    <TodoList listItems={this.filterTodos(this.props.todos.listItems)}
-                              onToggleDone={this.toggleDone}/>
-
-
-                </Col>
+                <Row>
+                    <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
+                        <TodoForm onAddTodoItem={this.addTodoItem} />
+                    </Col>
+                    <Col sm={3} lg={2}>
+                        <TodoFilter filter={this.props.filter || 'ACTIVE'} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={8} lg={6} smOffset={2} lgOffset={3}>
+                        <TodoList listItems={this.filterTodos(this.props.todos.listItems)}
+                                  onToggleDone={this.toggleDone}/>
+                    </Col>
+                </Row>
             </Grid>
         );
-    }
-
-    componentWillUnmount() {
-        clearTimeout(this.todoPoll);
     }
 
     addTodoItem(newItem) {
