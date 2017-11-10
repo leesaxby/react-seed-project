@@ -12,18 +12,18 @@ class TodoForm extends React.Component {
         };
         this.addTodoItem = this.addTodoItem.bind(this);
         this.updateNewItem = this.updateNewItem.bind(this);
-        this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.submitTodo = this.submitTodo.bind(this);
     }
     render() {
         return (
-            <form>
+            <form onSubmit={this.submitTodo}>
                 <FormGroup bsSize="large">
                     <FormControl type="text"
                                  data-test-id="todo-add-item"
                                  placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
                                  value={this.state.newItem}
                                  onChange={this.updateNewItem}
-                                 onKeyPress={this.handleKeyPress}/>
+                                 />
                 </FormGroup>
             </form>
         );
@@ -35,12 +35,11 @@ class TodoForm extends React.Component {
     updateNewItem(e) {
         this.setState({ newItem: e.target.value });
     }
-    handleKeyPress(e) {
-      if (e.key === 'Enter') {
+    submitTodo(e) {
         this.addTodoItem();
-      }
+        e.preventDefault();
     }
-}
+};
 
 TodoForm.propTypes = {
     onAddTodoItem: PropTypes.func.isRequired,
