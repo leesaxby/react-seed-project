@@ -9,15 +9,15 @@ export default function TodoItem({ item, onToggleDone }) {
 
     const labelId = 'todoItem' + item._id + 'Label';
     const aria = {
-        role: "button",
+        role: 'button',
         tabIndex: 0,
         onKeyDown: e => {
             if(e.keyCode === 13) {
                 toggleDone();
             }
         },
-        "aria-labelledby": item.text
-    }
+        'aria-labelledby': item.text
+    };
             
     return (
         <ListGroupItem { ...aria } onClick={ toggleDone }
