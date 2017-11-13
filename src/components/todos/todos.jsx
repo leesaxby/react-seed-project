@@ -14,14 +14,24 @@ const filterTodos = (list, filter) => {
 };
 
 class Todos extends React.Component {
-    constructor() {
-        super();
 
-        this.addTodoItem = this.addTodoItem.bind(this);
-        this.toggleDone = this.toggleDone.bind(this);
-        this.getTodos = this.getTodos.bind(this);
-        this.updateFilter = this.updateFilter.bind(this);
-    }
+    static defaultProps = {
+        filter: 'ACTIVE',
+        listItems: []
+    };
+
+    static propTypes = {
+        filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
+        listItems: PropTypes.arrayOf(
+            PropTypes.shape({
+                done: PropTypes.bool
+            })
+        ),
+        addTodo: PropTypes.func.isRequired,
+        updateDoneStatus: PropTypes.func.isRequired,
+        fetchData: PropTypes.func.isRequired,
+        history: PropTypes.object.isRequired
+    };
 
     componentWillMount() {
         this.getTodos();
@@ -49,40 +59,22 @@ class Todos extends React.Component {
         );
     }
 
-    addTodoItem(newItem) {
+    addTodoItem = (newItem) => {
         this.props.addTodo({ text: newItem, done: false });
     }
 
-    toggleDone({ _id, done }) {
+    toggleDone = ({ _id, done }) => {
         this.props.updateDoneStatus(_id, done);
     }
 
-    getTodos() {
+    getTodos = () => {
         this.props.fetchData();
     }
 
-    updateFilter(filter) {
+    updateFilter = (filter) => {
         this.props.history.push(filter);
     }
 }
-
-Todos.defaultProps = {
-    filter: 'ACTIVE',
-    listItems: []
-};
-
-Todos.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
-    listItems: PropTypes.arrayOf(
-        PropTypes.shape({
-            done: PropTypes.bool
-        })
-    ),
-    addTodo: PropTypes.func.isRequired,
-    updateDoneStatus: PropTypes.func.isRequired,
-    fetchData: PropTypes.func.isRequired,
-    history: PropTypes.object.isRequired
-};
 
 const mapStateToProps = (state, { match: { params: { filter } } }) => {
     return {
