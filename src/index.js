@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import a11y from 'react-a11y';
+import axe from 'react-axe';
 
 import { AppContainer } from 'react-hot-loader';
 
@@ -45,6 +45,9 @@ render(App);
 
 /*global module*/
 if (module.hot) {
-    a11y(React, { ReactDOM });
     module.hot.accept('./components/app/app.jsx', () => { render(App); });
+}
+/* global process*/
+if(process.env.NODE_ENV !== 'production') {
+    axe(React, ReactDOM, 1000);
 }
