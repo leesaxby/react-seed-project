@@ -8,7 +8,7 @@ It also contains working examples of the following
 * Redux
 * PropTypes
 * Internationalisation
-* Styled components
+* Bootstrap
 * e2e tests
 * Unit tests
 * Routing
@@ -72,7 +72,7 @@ yarn unit
 * React
 * Redux
 * Prop types
-* [Styled components](https://www.styled-components.com/) (May be replaced with bootstrap)
+* Bootstrap
 * Internationalisation
 * Routing
 
