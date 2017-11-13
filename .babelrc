@@ -1,6 +1,7 @@
 {
     "presets": [["es2015", { "modules": false }], "react"],
     "plugins": [
+      "extract-hoc/babel",
       "react-hot-loader/babel",
       "transform-class-properties"
     ],
