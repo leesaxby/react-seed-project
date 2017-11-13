@@ -16,7 +16,7 @@ export default function TodoItem({ item, onToggleDone }) {
                 toggleDone();
             }
         },
-        'aria-labelledby': item.text
+        'aria-labelledby': labelId
     };
             
     return (
