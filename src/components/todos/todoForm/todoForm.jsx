@@ -21,9 +21,10 @@ class TodoForm extends React.Component {
                     <FormControl type="text"
                                  data-test-id="todo-add-item"
                                  placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
+                                 aria-label={this.props.intl.formatMessage({id:'todo.form.addItem'})}
                                  value={this.state.newItem}
                                  onChange={this.updateNewItem}
-                                 />
+                                 onKeyPress={this.handleKeyPress}/>
                 </FormGroup>
             </form>
         );

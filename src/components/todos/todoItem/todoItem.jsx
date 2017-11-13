@@ -7,11 +7,23 @@ export default function TodoItem({ item, onToggleDone }) {
         onToggleDone(item);
     };
 
+    const labelId = 'todoItem' + item._id + 'Label';
+    const aria = {
+        role: "button",
+        tabIndex: 0,
+        onKeyDown: e => {
+            if(e.keyCode === 13) {
+                toggleDone();
+            }
+        },
+        "aria-labelledby": item.text
+    }
+            
     return (
-        <ListGroupItem onClick={ toggleDone }
+        <ListGroupItem { ...aria } onClick={ toggleDone }
                        data-test-id="todo-item">
 
-            <FormControl.Static style={{ 'textDecoration': item.done ? 'line-through' : '' }}>
+            <FormControl.Static id={ labelId } style={{ 'textDecoration': item.done ? 'line-through' : '' }}>
 
                 <Glyphicon glyph="glyphicon glyphicon-ok"
                            style={{ 'marginRight': '15px' }}/>
@@ -25,6 +37,7 @@ export default function TodoItem({ item, onToggleDone }) {
 
 TodoItem.propTypes = {
     item: PropTypes.shape({
+        _id: PropTypes.number.isRequired,
         text: PropTypes.string,
         done: PropTypes.bool.isRequired
     }),
