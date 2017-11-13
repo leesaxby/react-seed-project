@@ -1,21 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { FormGroup, FormControl } from 'react-bootstrap';
 import { injectIntl, intlShape } from 'react-intl';
-
-const TodoInput = styled.input`
-    height: 45px;
-    padding: 0 10px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0 2px 3px #aaa;
-    outline: 0px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    font-weight: 100;
-    font-style: italic;
-`;
 
 class TodoForm extends React.Component {
     constructor() {
@@ -26,16 +12,20 @@ class TodoForm extends React.Component {
         };
         this.addTodoItem = this.addTodoItem.bind(this);
         this.updateNewItem = this.updateNewItem.bind(this);
-        this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.submitTodo = this.submitTodo.bind(this);
     }
     render() {
         return (
-            <TodoInput type="text"
-                       data-test-id="todo-add-item"
-                       placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
-                       value={this.state.newItem}
-                       onChange={this.updateNewItem}
-                       onKeyPress={this.handleKeyPress}/>
+            <form onSubmit={this.submitTodo}>
+                <FormGroup bsSize="large">
+                    <FormControl type="text"
+                                 data-test-id="todo-add-item"
+                                 placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
+                                 value={this.state.newItem}
+                                 onChange={this.updateNewItem}
+                                 />
+                </FormGroup>
+            </form>
         );
     }
     addTodoItem() {
@@ -45,10 +35,9 @@ class TodoForm extends React.Component {
     updateNewItem(e) {
         this.setState({ newItem: e.target.value });
     }
-    handleKeyPress(e) {
-      if (e.key === 'Enter') {
+    submitTodo(e) {
         this.addTodoItem();
-      }
+        e.preventDefault();
     }
 }
 

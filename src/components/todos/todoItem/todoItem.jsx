@@ -1,37 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const ListItem = styled.li`
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    background: #ffffff;
-    height: 40px;
-    width: 100%;
-    padding: 0 10px;
-    border: solid #2ecc71 0;
-    border-radius: 3px;
-    box-shadow: 0 2px 3px #aaa;
-    margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    cursor: pointer;
-`;
-
-const ItemText = styled.span`
-    color: ${props => props.done ? '#7f7f7f' : ''};
-    text-decoration: ${props => props.done ? 'line-through' : ''}
-`;
-
-const StatusCirle = styled.div`
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    border-radius: 75px;
-    margin-right: 10px;
-    background-color: ${props => props.done ? '#f39c12' : '#2ecc71'};
-`;
+import { ListGroupItem, FormControl, Glyphicon } from 'react-bootstrap';
 
 export default function TodoItem({ item, onToggleDone }) {
     const toggleDone = () => {
@@ -39,13 +8,18 @@ export default function TodoItem({ item, onToggleDone }) {
     };
 
     return (
-        <ListItem onClick={ toggleDone }
-                  data-test-id="todo-item">
-            <StatusCirle done={ item.done }></StatusCirle>
-            <ItemText done={ item.done }>
+        <ListGroupItem onClick={ toggleDone }
+                       data-test-id="todo-item">
+
+            <FormControl.Static style={{ 'textDecoration': item.done ? 'line-through' : '' }}>
+
+                <Glyphicon glyph="glyphicon glyphicon-ok"
+                           style={{ 'marginRight': '15px' }}/>
                 { item.text }
-            </ItemText>
-        </ListItem>
+
+            </FormControl.Static>
+
+        </ListGroupItem>
     );
 }
 

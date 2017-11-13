@@ -1,14 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import TodoItem from '../todoItem/todoItem.jsx';
+import { ListGroup } from 'react-bootstrap';
 
-const List = styled.ul`
-    list-style: none;
-    min-width: 200px;
-    padding: 0;
-    margin: 10px 0;
-`;
+import TodoItem from '../todoItem/todoItem.jsx';
 
 export default function TodoList(props) {
     const getListItems = () => {
@@ -20,7 +14,7 @@ export default function TodoList(props) {
     };
 
     return (
-        <List>{ getListItems() }</List>
+        <ListGroup>{ getListItems() }</ListGroup>
     );
 }
 

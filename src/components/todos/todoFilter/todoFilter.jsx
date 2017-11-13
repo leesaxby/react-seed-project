@@ -1,60 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
-import { Link } from 'react-router-dom';
-
-const Slider = styled.div`
-    display: flex;
-    align-items: center;
-    height: 40px;
-    width: 85px;
-    border-radius: 10px;
-    background-color: ${props => props.filter === 'DONE' ? '#f39c12' : '#2ecc71'};
-    padding: 0 3px 0 3px;
-    margin: 0 20px;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-`;
-
-const Switch = styled.div`
-    height: 30px;
-    width: 30px;
-    margin: ${props => props.filter === 'DONE' ? 'auto' : '0 3px'};
-    border-radius: 8px;
-    background-color: #efefef;
-    box-shadow: 0 .1429em .2143em rgba(43,43,43,.2), 0 .3572em .3572em rgba(43,43,43,.1);
-`;
-
-const FilterText = styled.span`
-    display: ${props => props.show ? 'block' : 'none'};
-    color: #ffffff;
-    margin-left: 5px;
-`;
-
-export default class TodoFilter extends React.Component {
+export class TodoFilter extends React.Component {
     render() {
-        const { filter } = this.props;
+        const { filter, onUpdateFilter } = this.props;
         return(
-            <Link to={filter === 'ACTIVE' ? '/DONE' : '/ACTIVE'} >
-                <Slider filter={filter} >
-                    <FilterText show={filter === 'DONE'}>
-                        <FormattedMessage id="todo.filter.done"/>
-                    </FilterText>
+            <ToggleButtonGroup type="radio"
+                               name="filterToggle"
+                               value={filter}
+                               onChange={onUpdateFilter}>
 
-                    <Switch filter={filter}></Switch>
+                <ToggleButton value="ACTIVE"
+                              bsStyle="info">
+                    <FormattedMessage id="todo.filter.todo"/>
+                </ToggleButton>
 
-                    <FilterText show={filter === 'ACTIVE'}>
-                        <FormattedMessage id="todo.filter.todo"/>
-                    </FilterText>
-                </Slider>
-            </Link>
+                <ToggleButton value="DONE"
+                              bsStyle="info">
+                    <FormattedMessage id="todo.filter.done"/>
+                </ToggleButton>
+
+            </ToggleButtonGroup>
         );
     }
 }
 
 TodoFilter.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired
+    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired,
+    onUpdateFilter: PropTypes.func.isRequired
 };
+
+export default TodoFilter;
