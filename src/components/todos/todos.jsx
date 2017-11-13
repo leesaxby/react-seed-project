@@ -20,6 +20,7 @@ class Todos extends React.Component {
         this.addTodoItem = this.addTodoItem.bind(this);
         this.toggleDone = this.toggleDone.bind(this);
         this.getTodos = this.getTodos.bind(this);
+        this.updateFilter = this.updateFilter.bind(this);
     }
 
     componentWillMount() {
@@ -34,7 +35,8 @@ class Todos extends React.Component {
                         <TodoForm onAddTodoItem={this.addTodoItem} />
                     </Col>
                     <Col sm={3} lg={2}>
-                        <TodoFilter filter={this.props.filter || 'ACTIVE'} />
+                        <TodoFilter filter={this.props.filter}
+                                    onUpdateFilter={this.updateFilter} />
                     </Col>
                 </Row>
                 <Row>
@@ -58,6 +60,10 @@ class Todos extends React.Component {
     getTodos() {
         this.props.fetchData();
     }
+
+    updateFilter(filter) {
+        this.props.history.push(filter);
+    }
 }
 
 Todos.defaultProps = {
@@ -74,7 +80,8 @@ Todos.propTypes = {
     ),
     addTodo: PropTypes.func.isRequired,
     updateDoneStatus: PropTypes.func.isRequired,
-    fetchData: PropTypes.func.isRequired
+    fetchData: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state, { match: { params: { filter } } }) => {
