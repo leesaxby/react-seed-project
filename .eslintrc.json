@@ -27,6 +27,12 @@
         "semi": [
             2,
             "always"
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "APP_THEME"
+            }
         ]
     }
 }

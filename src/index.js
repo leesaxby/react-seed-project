@@ -16,6 +16,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { App, rootReducer } from './components/app/app.jsx';
 
+import APP_THEME from './theme.css';
+
 const USER_LOCALE = navigator.language;
 
 // Add locales
