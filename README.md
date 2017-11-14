@@ -8,6 +8,7 @@ It also contains working examples of the following
 * Redux
 * PropTypes
 * Internationalisation
+* Accessibility
 * Bootstrap
 * e2e tests
 * Unit tests
@@ -73,7 +74,9 @@ yarn unit
 * Redux
 * Prop types
 * Bootstrap
+* App theming
 * Internationalisation
+* Accessibility
 * Routing
 
 ### Development features
