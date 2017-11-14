@@ -1,7 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+
+const messages = defineMessages({
+    'todo.filter.ariaLabel': {
+        id: 'todo.filter.ariaLabel',
+        description: 'Label for the todo filter choice',
+        defaultMessage: 'choose filter'
+    },
+    'todo.filter.todo': {
+        id: 'todo.filter.todo',
+        description: 'Label for the button that filters active todos',
+        defaultMessage: 'todo'
+    },
+    'todo.filter.done': {
+        id: 'todo.filter.done',
+        description: 'Label for the button that filters complete todos',
+        defaultMessage: 'done'
+    }
+});
 
 export class TodoFilter extends React.Component {
 
@@ -16,20 +34,20 @@ export class TodoFilter extends React.Component {
             <ToggleButtonGroup type="radio"
                                name="filterToggle"
                                role="radiogroup"
-                               aria-label={intl.formatMessage({id:'todo.filter.ariaLabel'})}
+                               aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])}
                                value={filter}
                                onChange={onUpdateFilter}>
 
                 <ToggleButton value="ACTIVE"
                               role="radio"
                               aria-checked={String(filter === 'ACTIVE')}>
-                    <FormattedMessage id="todo.filter.todo"/>
+                    <FormattedMessage {...messages['todo.filter.todo']} />
                 </ToggleButton>
 
                 <ToggleButton value="DONE"
                               role="radio"
                               aria-checked={String(filter === 'DONE')}>
-                    <FormattedMessage id="todo.filter.done"/>
+                    <FormattedMessage {...messages['todo.filter.done']} />
                 </ToggleButton>
 
             </ToggleButtonGroup>
