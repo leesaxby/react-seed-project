@@ -10,6 +10,7 @@ It also contains working examples of the following
 * Internationalisation
 * Accessibility
 * Bootstrap
+* Theming
 * e2e tests
 * Unit tests
 * Routing
