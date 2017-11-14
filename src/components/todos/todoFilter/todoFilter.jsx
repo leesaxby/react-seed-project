@@ -4,6 +4,12 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 export class TodoFilter extends React.Component {
+
+    static propTypes = {
+        filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired,
+        onUpdateFilter: PropTypes.func.isRequired
+    };
+
     render() {
         const { filter, onUpdateFilter, intl } = this.props;
         return(

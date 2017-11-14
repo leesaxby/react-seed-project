@@ -4,16 +4,16 @@ import { FormGroup, FormControl } from 'react-bootstrap';
 import { injectIntl, intlShape } from 'react-intl';
 
 class TodoForm extends React.Component {
-    constructor() {
-        super();
 
-        this.state = {
-            newItem: ''
-        };
-        this.addTodoItem = this.addTodoItem.bind(this);
-        this.updateNewItem = this.updateNewItem.bind(this);
-        this.submitTodo = this.submitTodo.bind(this);
-    }
+    static propTypes = {
+        onAddTodoItem: PropTypes.func.isRequired,
+        intl: intlShape.isRequired,
+    };
+
+    state = {
+        newItem: ''
+    };
+
     render() {
         return (
             <form onSubmit={this.submitTodo}>
@@ -29,22 +29,21 @@ class TodoForm extends React.Component {
             </form>
         );
     }
-    addTodoItem() {
+
+    addTodoItem = () => {
         this.props.onAddTodoItem(this.state.newItem);
         this.setState({ newItem: '' });
     }
-    updateNewItem(e) {
+
+    updateNewItem = (e) => {
         this.setState({ newItem: e.target.value });
     }
-    submitTodo(e) {
+
+    submitTodo = (e) => {
         this.addTodoItem();
         e.preventDefault();
     }
+    
 }
-
-TodoForm.propTypes = {
-    onAddTodoItem: PropTypes.func.isRequired,
-    intl: intlShape.isRequired,
-};
 
 export default injectIntl(TodoForm);
