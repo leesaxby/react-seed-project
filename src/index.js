@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
-import translations from '../i18n/translations.js';
+import { getMessages, DEFAULT_LOCALE } from '../i18n';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { App, rootReducer } from './components/app/app.jsx';
@@ -32,7 +32,7 @@ const render = Component => {
     ReactDOM.render(
         <AppContainer>
             <Provider store={store}>
-                <IntlProvider locale={USER_LOCALE} messages={translations[USER_LOCALE]}>
+                <IntlProvider defaultLocale={DEFAULT_LOCALE} locale={USER_LOCALE} messages={getMessages(USER_LOCALE)}>
                     <Router>
                         <Route path='/:filter?' component={Component} />
                     </Router>
