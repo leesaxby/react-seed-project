@@ -4,13 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
-    entry: [
-        'react-hot-loader/patch',
-        './src/index.js',
-    ],
-    output: {
-        publicPath: '/'
-    },
     module: {
         rules: [{
             test: /\.jsx?$/,

@@ -5,6 +5,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
+    entry: [
+        './src/index.js'
+    ],
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: '[name].[hash].js',
