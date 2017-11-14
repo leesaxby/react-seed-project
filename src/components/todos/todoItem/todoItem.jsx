@@ -7,7 +7,7 @@ export default function TodoItem({ item, onToggleDone }) {
         onToggleDone(item);
     };
 
-    const labelId = 'todoItem' + item._id + 'Label';
+    const labelId = `todoItem${item._id}Label`;
     const aria = {
         role: 'button',
         tabIndex: 0,
