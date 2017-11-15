@@ -5,12 +5,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
-    entry: [
-        './src/index.js'
-    ],
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].[hash].js',
+        filename: '[name].[chunkhash].js',
     },
     module: {
         rules: [{
@@ -25,6 +22,8 @@ module.exports = merge(common, {
         }]
     },
     plugins: [
+        // Prevents vendor file being re-hashed when new "user" module is added.
+        new webpack.HashedModuleIdsPlugin(),
         new UglifyJSPlugin(),
         new webpack.DefinePlugin({
             'process.env': {

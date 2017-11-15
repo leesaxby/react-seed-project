@@ -4,14 +4,10 @@ const common = require('./webpack.common.js');
 const path = require('path');
 
 module.exports = merge(common, {
-    entry: [
-        'react-hot-loader/patch',
-        './src/index.js',
-    ],
     devtool: 'eval',
     output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: '[name].js',
+        path: path.resolve(__dirname, '../dist'),
+        filename: '[name].[hash].js',
     },
     devServer: {
         host: '0.0.0.0',
