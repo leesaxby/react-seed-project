@@ -58,5 +58,7 @@
     "webpack-dev-server": "^2.5.0",
     "webpack-merge": "^4.1.0"
   },
-  "jest": {}
+  "jest": {
+    "setupFiles": ["./test/jest/shim.js"]
+  }
 }
