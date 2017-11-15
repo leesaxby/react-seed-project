@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormGroup, FormControl } from 'react-bootstrap';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape, defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+    'todo.form.addItem': {
+        id: 'todo.form.addItem',
+        description: 'Placeholder for the todo input',
+        defaultMessage: 'Add Item'
+    }
+});
 
 class TodoForm extends React.Component {
 
@@ -20,8 +28,8 @@ class TodoForm extends React.Component {
                 <FormGroup bsSize="large">
                     <FormControl type="text"
                                  data-test-id="todo-add-item"
-                                 placeholder={this.props.intl.formatMessage({id:'todo.form.addItem'})}
-                                 aria-label={this.props.intl.formatMessage({id:'todo.form.addItem'})}
+                                 placeholder={this.props.intl.formatMessage(messages['todo.form.addItem'])}
+                                 aria-label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
                                  value={this.state.newItem}
                                  onChange={this.updateNewItem}
                                  onKeyPress={this.handleKeyPress}/>
