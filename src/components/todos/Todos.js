@@ -5,9 +5,9 @@ import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import TodoList from './todoList/todoList.js';
-import TodoForm from './todoForm/todoForm.js';
-import TodoFilter from './todoFilter/todoFilter.js';
+import TodoList from './todoList/TodoList';
+import TodoForm from './todoForm/TodoForm';
+import TodoFilter from './todoFilter/TodoFilter';
 
 const filterTodos = (list, filter) => {
     return list.filter(({ done }) => filter === 'DONE' ? done : !done);

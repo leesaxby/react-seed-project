@@ -14,7 +14,7 @@ import de from 'react-intl/locale-data/de';
 import { getMessages, DEFAULT_LOCALE } from '../i18n';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { App, rootReducer } from './components/app/app.js';
+import { App, rootReducer } from './components/app/App.js';
 
 import APP_THEME from './theme.css';
 
@@ -47,7 +47,7 @@ render(App);
 
 /*global module*/
 if (module.hot) {
-    module.hot.accept('./components/app/app.js', () => { render(App); });
+    module.hot.accept('./components/app/App.js', () => { render(App); });
 }
 /* global process*/
 if(process.env.NODE_ENV !== 'production') {
