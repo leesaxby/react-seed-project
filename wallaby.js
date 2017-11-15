@@ -1,37 +1,23 @@
-var wallabyWebpack = require('wallaby-webpack');
-
 module.exports = function (wallaby) {
-
-  var webpackPostprocessor = wallabyWebpack({
-    // webpack options
-    resolve: {
-      extensions: ['.js', '.jsx']
-    }
-  });
-
   return {
     files: [
-      {pattern:'src/**/*.js?(x)', load: false},
-      {pattern:'src/**/*test.js', ignore: true}
+      'src/**/*.js?(x)',
+      '!src/**/*test.js'
     ],
 
     tests: [
-      {pattern:'src/**/*test.js', load: false}
+      'src/**/*test.js'
     ],
 
+    env: {
+      type: 'node',
+      runner: 'node'
+    },
+
     compilers: {
-      '**/*.js?(x)': wallaby.compilers.babel({
-        "presets": ["es2015", "react"],
-        "plugins": ["transform-class-properties", "transform-runtime"]
-      })
+      '**/*.js?(x)': wallaby.compilers.babel()
     },
 
-    postprocessor: webpackPostprocessor,
-
-    setup: function() {
-      window.__moduleBundler.loadTests();
-    },
-
-    debug: true
+    testFramework: 'jest'
   };
 };
