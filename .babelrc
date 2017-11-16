@@ -3,7 +3,13 @@
     "plugins": [
       "extract-hoc/babel",
       "react-hot-loader/babel",
-      "transform-class-properties"
+      "transform-class-properties",
+      ["transform-imports", {
+        "react-bootstrap": {
+          "transform": "react-bootstrap/lib/${member}",
+          "preventFullImport": true
+        }
+      }]
     ],
     "env": {
       "test": {
