@@ -8,12 +8,16 @@
 import React from 'react';
 import { IntlProvider, intlShape } from 'react-intl';
 import { mount, shallow } from 'enzyme';
+import { getMessages, DEFAULT_LOCALE } from '../i18n';
+
 
 // You can pass your messages to the IntlProvider. Optional: remove if unneeded.
-//const messages = require('../locales/en'); // en.json
+const messages = getMessages(DEFAULT_LOCALE);
 
 // Create the IntlProvider to retrieve context for wrapping around.
-const intlProvider = new IntlProvider({ locale: 'en-GB' });
+// const intlProvider = new IntlProvider({ locale: DEFAULT_LOCALE });
+const intlProvider = new IntlProvider({ locale: DEFAULT_LOCALE, messages }, {});
+
 const { intl } = intlProvider.getChildContext();
 
 /**
