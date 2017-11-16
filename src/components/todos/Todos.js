@@ -13,7 +13,7 @@ const filterTodos = (list, filter) => {
     return list.filter(({ done }) => filter === 'DONE' ? done : !done);
 };
 
-class Todos extends React.Component {
+export class Todos extends React.Component {
 
     static defaultProps = {
         filter: 'ACTIVE',
