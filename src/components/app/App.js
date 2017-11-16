@@ -1,7 +1,7 @@
 import React from 'react';
 import { combineReducers } from 'redux';
 
-import Todos from '../todos/todos.js';
+import Todos from '../todos/Todos.js';
 import { todos as todoReducer } from '../todos/todos.reducers.js';
 
 export const rootReducer = combineReducers({ todos: todoReducer });
