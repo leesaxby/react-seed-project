@@ -15,7 +15,7 @@ It also contains working examples of the following
 * Unit tests
 * Routing
 
-To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/app.jsx`
+To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/App.js`
 
 ### Setup
 
