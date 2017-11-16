@@ -88,6 +88,7 @@ yarn unit
 * Live reload / [Hot module reload](https://webpack.js.org/concepts/hot-module-replacement/)
 * e2e tests
 * Unit tests
+* [Wallaby](https://wallabyjs.com/)
 
 ### Production details
 * Minification
