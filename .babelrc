@@ -8,6 +8,14 @@
         "react-bootstrap": {
           "transform": "react-bootstrap/lib/${member}",
           "preventFullImport": true
+        },
+        "react-router": {
+          "transform": "react-router/${member}",
+          "preventFullImport": true
+        },
+        "react-router-dom": {
+          "transform": "react-router-dom/${member}",
+          "preventFullImport": true
         }
       }]
     ],
