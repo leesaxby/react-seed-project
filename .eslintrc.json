@@ -40,15 +40,6 @@
     "globals": {
         "_": true,
         "module": true,
-        "jest": true,
-        "__dirname": true,
-        "describe": true,
-        "context": true,
-        "before": true,
-        "beforeEach": true,
-        "after": true,
-        "afterEach": true,
-        "it": true,
-        "expect": true
+        "__dirname": true
     }
 }
