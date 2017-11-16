@@ -7,6 +7,7 @@ configure({ adapter: new Adapter() });
 
 const props = {
     item: {
+        _id: 1,
         text: 'Item one',
         done: false
     },
