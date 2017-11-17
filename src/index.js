@@ -13,7 +13,7 @@ import de from 'react-intl/locale-data/de';
 import { getMessages, DEFAULT_LOCALE } from '../i18n';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { App, rootReducer } from './components/app/App.js';
+import { App, rootReducer } from './App.js';
 
 import APP_THEME from './theme.css';
 

@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
+import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos.actions.js';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import TodoList from './todoList/TodoList';
-import TodoForm from './todoForm/TodoForm';
-import TodoFilter from './todoFilter/TodoFilter';
+import TodoList from './todos/List';
+import TodoForm from './todos/Form';
+import TodoFilter from './todos/Filter';
 
 const filterTodos = (list, filter) => {
     return list.filter(({ done }) => filter === 'DONE' ? done : !done);

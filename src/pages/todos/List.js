@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroup } from 'react-bootstrap';
 
-import TodoItem from '../todoItem/TodoItem';
+import TodoItem from './Item';
 
 export default function TodoList(props) {
     const getListItems = () => {
