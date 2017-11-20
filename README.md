@@ -70,6 +70,28 @@ To run all unit tests enter:
 yarn unit
 ```
 
+### Testing
+#### Examples of what/where to test
+
+Presentational components:
+* Receives props and renders correctly
+* Calls props (parent callbacks) when expected
+* UI functions as expected
+* Methods function as expected
+
+Container components
+* Receives props and renders correctly
+* Calls props (mapDispatchToProps) when expected
+* UI functions as expected (possibly covered by child component tests)
+* Methods function as expected
+* mapDispatchToProps call correct action creator
+
+Action creators
+* Correct action is created
+
+Reducers
+* Returns correct state
+
 ### Project features
 * React
 * Redux
