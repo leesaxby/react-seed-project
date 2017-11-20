@@ -11,7 +11,7 @@ const messages = defineMessages({
     }
 });
 
-class TodoForm extends React.Component {
+class Form extends React.Component {
 
     static propTypes = {
         onAddTodoItem: PropTypes.func.isRequired,
@@ -54,4 +54,4 @@ class TodoForm extends React.Component {
     
 }
 
-export default injectIntl(TodoForm);
+export default injectIntl(Form);
