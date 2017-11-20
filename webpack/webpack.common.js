@@ -7,9 +7,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
-    entry: {
-      main: './src/index.js'
-    },
+    entry: [
+        'react-hot-loader/patch',
+        './src/index.js'
+    ],
     module: {
         rules: [{
             test: /\.jsx?$/,

@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es6": true,
-        "jest": true
+        "jest": true,
+        "amd": true
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parser": "babel-eslint",
@@ -35,5 +36,10 @@
                 "varsIgnorePattern": "APP_THEME"
             }
         ]
+    },
+    "globals": {
+        "_": true,
+        "module": true,
+        "__dirname": true
     }
 }
