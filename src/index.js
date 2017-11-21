@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axe from 'react-axe';
 
 import { AppContainer } from 'react-hot-loader';
 
@@ -45,11 +44,12 @@ const render = Component => {
 
 render(App);
 
-/*global module*/
-if (module.hot) {
-    module.hot.accept('./components/app/App.js', () => { render(App); });
-}
 /* global process*/
 if(process.env.NODE_ENV !== 'production') {
+    const axe = require('react-axe');
     axe(React, ReactDOM, 1000);
+    /*global module*/
+    if (module.hot) {
+        module.hot.accept('./components/app/App.js', () => { render(App); });
+    }
 }
