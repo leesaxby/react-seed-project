@@ -18,12 +18,11 @@ export function todos(state = initialState, action) {
         case FETCH_TODOS_SUCCESS:
             return {
                 listItems: action.payload
-
             };
         case UPDATE_DONE_STATUS:
             {
                 const listItems = Object.assign(state.listItems);
-                listItems.find(({ _id }) => _id === action.payload._id).done = action.payload.done;
+                listItems.find(({ _id }) => _id === action.payload._id).done = action.payload.doneStatus;
 
                 return {
                     listItems

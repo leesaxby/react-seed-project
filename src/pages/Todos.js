@@ -62,7 +62,7 @@ export class Todos extends React.Component {
     }
 
     toggleDone = ({ _id, done }) => {
-        this.props.updateDoneStatus(_id, done);
+        this.props.updateDoneStatus(_id, !done);
     }
 
     updateFilter = (filter) => {
