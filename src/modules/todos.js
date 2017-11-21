@@ -36,7 +36,7 @@ const initialState = {
     listItems: []
 };
 
-export function todos(state = initialState, action) {
+export default function todos(state = initialState, action) {
     switch (action.type) {
         case ADD_TODO: {
             const ids = state.listItems.map(todo => todo._id);
