@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos.actions.js';
+import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import List from './todos/List';
