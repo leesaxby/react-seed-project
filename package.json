@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev-server": "node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.js",
+    "dev-server": "node_modules/.bin/webpack-dashboard -- node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.js",
     "prod-server": "yarn prod-build & node_modules/.bin/webpack-dev-server --config webpack/webpack.prod-server.js",
     "prod-build": "node_modules/.bin/webpack --config webpack/webpack.prod.js",
     "e2e": "./run-e2e.sh",
@@ -54,10 +54,13 @@
     "uglifyjs-webpack-plugin": "^1.0.1",
     "wallaby-webpack": "0.0.45",
     "webpack": "^3.0.0",
+    "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.5.0",
     "webpack-merge": "^4.1.0"
   },
   "jest": {
-    "setupFiles": ["./test/jest/shim.js"]
+    "setupFiles": [
+      "./test/jest/shim.js"
+    ]
   }
 }
