@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
 
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import store from './store';
 
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
@@ -13,7 +12,7 @@ import de from 'react-intl/locale-data/de';
 import { getMessages, DEFAULT_LOCALE } from '../i18n';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { App, rootReducer } from './App.js';
+import App from './App';
 
 import APP_THEME from './theme.css';
 
@@ -21,11 +20,6 @@ const USER_LOCALE = navigator.language;
 
 // Add locales
 addLocaleData([ ...en, ...de ]);
-
-const store = createStore(
-    rootReducer,
-    applyMiddleware(thunk)
-);
 
 const render = Component => {
     ReactDOM.render(
