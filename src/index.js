@@ -44,6 +44,6 @@ if(process.env.NODE_ENV !== 'production') {
     axe(React, ReactDOM, 1000);
     /*global module*/
     if (module.hot) {
-        module.hot.accept('./components/app/App.js', () => { render(App); });
+        module.hot.accept('./App.js', () => { render(App); });
     }
 }
