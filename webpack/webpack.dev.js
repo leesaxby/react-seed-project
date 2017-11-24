@@ -6,8 +6,7 @@ const path = require('path');
 module.exports = merge(common, {
     devtool: 'eval',
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: '[name].[hash].js',
+        filename: '[name].[hash].js'
     },
     devServer: {
         host: '0.0.0.0',

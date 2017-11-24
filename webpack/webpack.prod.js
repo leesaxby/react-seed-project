@@ -6,8 +6,7 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [{

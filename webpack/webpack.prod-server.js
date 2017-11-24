@@ -7,6 +7,7 @@ module.exports = merge(prod, {
         contentBase: path.resolve(__dirname, '../dist'),
         host: '0.0.0.0',
         disableHostCheck: true,
-        port: 8888
+        port: 8888,
+        historyApiFallback: true
     },
 });

@@ -12,6 +12,10 @@ module.exports = {
         'react-hot-loader/patch',
         './src/index.js'
     ],
+    output: {
+        publicPath: '/',
+        path: path.resolve(__dirname, '../dist')
+    },
     module: {
         rules: [{
             test: /\.jsx?$/,
