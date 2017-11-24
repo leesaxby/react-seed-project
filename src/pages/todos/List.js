@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroup } from 'react-bootstrap';
 
-import TodoItem from '../todoItem/TodoItem';
+import Item from './Item';
 
-export default function TodoList(props) {
+export default function List(props) {
     const getListItems = () => {
         return props.listItems
-            .map(item => <TodoItem key={item._id}
+            .map(item => <Item key={item._id}
                                    item={item}
                                    onToggleDone={props.onToggleDone} />
             );
@@ -18,7 +18,7 @@ export default function TodoList(props) {
     );
 }
 
-TodoList.propTypes = {
+List.propTypes = {
     listItems: PropTypes.arrayOf(
         PropTypes.shape({
             _id: PropTypes.number.isRequired

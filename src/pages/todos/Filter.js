@@ -21,11 +21,14 @@ const messages = defineMessages({
     }
 });
 
-export class TodoFilter extends React.Component {
+export class Filter extends React.Component {
 
     static propTypes = {
         filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired,
-        onUpdateFilter: PropTypes.func.isRequired
+        onUpdateFilter: PropTypes.func.isRequired,
+        intl: PropTypes.shape({
+          formatMessage: PropTypes.func.isRequired
+        }).isRequired
     };
 
     render() {
@@ -55,12 +58,4 @@ export class TodoFilter extends React.Component {
     }
 }
 
-TodoFilter.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired,
-    onUpdateFilter: PropTypes.func.isRequired,
-    intl: PropTypes.shape({
-      formatMessage: PropTypes.func.isRequired
-    }).isRequired
-};
-
-export default injectIntl(TodoFilter);
+export default injectIntl(Filter);

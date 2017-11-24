@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { addTodo, fetchTodos, updateDoneStatus } from './todos.actions.js';
+import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import TodoList from './todoList/TodoList';
-import TodoForm from './todoForm/TodoForm';
-import TodoFilter from './todoFilter/TodoFilter';
-
-const filterTodos = (list, filter) => {
-    return list.filter(({ done }) => filter === 'DONE' ? done : !done);
-};
+import List from './todos/List';
+import Form from './todos/Form';
+import Filter from './todos/Filter';
 
 export class Todos extends React.Component {
 
@@ -30,11 +26,13 @@ export class Todos extends React.Component {
         addTodo: PropTypes.func.isRequired,
         updateDoneStatus: PropTypes.func.isRequired,
         fetchData: PropTypes.func.isRequired,
-        history: PropTypes.object.isRequired
+        history: PropTypes.shape({
+            push: PropTypes.func.isRequired
+        }).isRequired
     };
 
     componentWillMount() {
-        this.getTodos();
+        this.props.fetchData();
     }
 
     render() {
@@ -42,16 +40,16 @@ export class Todos extends React.Component {
             <Grid>
                 <Row>
                     <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
-                        <TodoForm onAddTodoItem={this.addTodoItem} />
+                        <Form onAddTodoItem={this.addTodoItem} />
                     </Col>
                     <Col sm={3} lg={2}>
-                        <TodoFilter filter={this.props.filter}
+                        <Filter filter={this.props.filter}
                                     onUpdateFilter={this.updateFilter} />
                     </Col>
                 </Row>
                 <Row>
                     <Col sm={8} lg={6} smOffset={2} lgOffset={3}>
-                        <TodoList listItems={this.props.listItems}
+                        <List listItems={this.props.listItems}
                                   onToggleDone={this.toggleDone}/>
                     </Col>
                 </Row>
@@ -64,11 +62,7 @@ export class Todos extends React.Component {
     }
 
     toggleDone = ({ _id, done }) => {
-        this.props.updateDoneStatus(_id, done);
-    }
-
-    getTodos = () => {
-        this.props.fetchData();
+        this.props.updateDoneStatus(_id, !done);
     }
 
     updateFilter = (filter) => {
@@ -76,9 +70,13 @@ export class Todos extends React.Component {
     }
 }
 
-const mapStateToProps = (state, { match: { params: { filter } } }) => {
+const filterTodos = (list, filter) => {
+    return list.filter(({ done }) => filter === 'DONE' ? done : !done);
+};
+
+const mapStateToProps = ({ todos: { listItems } }, { match: { params: { filter } } }) => {
     return {
-        listItems: filterTodos(state.todos.listItems, filter),
+        listItems: filterTodos(listItems, filter),
         filter
     };
 };

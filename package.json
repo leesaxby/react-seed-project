@@ -7,7 +7,7 @@
     "prod-server": "yarn prod-build & node_modules/.bin/webpack-dev-server --config webpack/webpack.prod-server.js",
     "prod-build": "node_modules/.bin/webpack --config webpack/webpack.prod.js",
     "e2e": "./run-e2e.sh",
-    "unit": "node_modules/.bin/jest 'src/components/'",
+    "unit": "node_modules/.bin/jest src",
     "lint": "node_modules/.bin/eslint src",
     "analyze": "node_modules/.bin/webpack --config webpack/webpack.analyze.js"
   },

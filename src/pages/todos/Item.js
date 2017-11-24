@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroupItem, FormControl, Glyphicon } from 'react-bootstrap';
 
-export default function TodoItem({ item, onToggleDone }) {
+export default function Item({ item, onToggleDone }) {
     const toggleDone = () => {
         onToggleDone(item);
     };
@@ -35,7 +35,7 @@ export default function TodoItem({ item, onToggleDone }) {
     );
 }
 
-TodoItem.propTypes = {
+Item.propTypes = {
     item: PropTypes.shape({
         _id: PropTypes.number.isRequired,
         text: PropTypes.string,
