@@ -6,9 +6,14 @@ pipeline {
 				sh 'yarn install'
 			}
 		}
-		stage('Test') {
+		stage('Unit Test') {
 			steps {
 				sh 'yarn unit'
+			}
+		}
+		stage('End-to-End Test') {
+			steps {
+				sh 'yarn e2e'
 			}
 		}
 	}
