@@ -1,5 +1,5 @@
 pipeline {
-	agent { docker 'alpine-node:9.2' }
+	agent { docker 'mhart/alpine-node:9.2' }
 	stages {
 		stage('Test') {
 			parallel {
