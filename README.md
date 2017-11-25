@@ -118,7 +118,7 @@ Reducers
 
 ## Continuous Integration
 
-This project supports Jenkins out of the box with a Jenkins pipeline provided to invoke the Yarn `install`, `unit`, and `e2e` tasks.
+This project supports Jenkins out of the box with a Jenkins pipeline provided to invoke the Yarn `install`, `lint`, `unit`, and `e2e` tasks.
 
 The `Jenkinsfile` is written in [declarative pipeline](https://jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline) style and is easily extensible. It uses the `mhart/alpine-node` docker image to setup a NodeJS & Yarn environment with no extra requirements from Jenkins.
 
