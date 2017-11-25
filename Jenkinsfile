@@ -1,9 +1,13 @@
 pipeline {
 	agent { docker 'mhart/alpine-node:9.2' }
 	stages {
-		stage('Test') {
+		stage('Install Yarn Dependencies') {
 			steps {
 				sh 'yarn install'
+			}
+		}
+		stage('Test') {
+			steps {
 				sh 'yarn unit'
 			}
 		}
