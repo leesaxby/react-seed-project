@@ -115,3 +115,14 @@ Reducers
 ### Production details
 * Minification
 * [Tree shaking](https://webpack.js.org/guides/tree-shaking/)
+
+## Continuous Integration
+
+This project supports Jenkins out of the box with a Jenkins pipeline provided to invoke the Yarn `install`, `lint`, `unit`, and `e2e` tasks.
+
+The `Jenkinsfile` is written in [declarative pipeline](https://jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline) style and is easily extensible. It uses the `mhart/alpine-node` docker image to setup a NodeJS & Yarn environment with no extra requirements from Jenkins.
+
+To configure Jenkins to track this project:
+
+1. Create a new "Multibranch Pipeline" Jenkins job to track this repository
+2. If you are hosting on GitHub, you will need to enable a webhook from GitHub to Jenkins to notify when there are new commits. Consult the GitHub documentation for instructions.
