@@ -1,14 +1,14 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { mountWithIntl } from '../../../test/intl-enzyme-test-uitl.js';
-import { renderedInWrapper } from '../../../test/utils';
+import { mountWithIntl } from '../../test/intl-enzyme-test-uitl';
+import { renderedInWrapper } from '../../test/utils';
 
 import { Todos } from './Todos';
-import TodoFilter from './todoFilter/TodoFilter';
-import TodoList from './todoList/TodoList';
-import TodoItem from './todoItem/TodoItem';
-import TodoForm from './todoForm/TodoForm';
+import TodoFilter from './todos/Filter';
+import TodoList from './todos/List';
+import TodoItem from './todos/Item';
+import TodoForm from './todos/Form';
 
 configure({ adapter: new Adapter() });
 
@@ -61,20 +61,8 @@ describe('Todos component', () => {
             expect( props.addTodo.mock.calls.length ).toBe(1);
         });
 
-        it('Should call fetchData prop when getTodos method is called', () => {
-            expect(props.fetchData.mock.calls.length).toBe(1);
-
-            wrapper.instance().getTodos();
-
-            expect( props.fetchData.mock.calls.length ).toBe(2);
-        });
-
-        it('Should call fetchData prop when getTodos method is called', () => {
-            expect(props.fetchData.mock.calls.length).toBe(1);
-
-            wrapper.instance().getTodos();
-
-            expect( props.fetchData.mock.calls.length ).toBe(2);
+        it('Should call fetchData when component mounts', () => {
+            expect( props.fetchData.mock.calls.length ).toBe(1);
         });
 
     });
