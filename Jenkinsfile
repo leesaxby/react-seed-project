@@ -16,7 +16,6 @@ pipeline {
 				sh 'yarn unit'
 			}
 		}
-		Todo: Fix issue with chrome not being found.
 		stage('End-to-End Test') {
 			steps {
 				sh 'yarn e2e'
