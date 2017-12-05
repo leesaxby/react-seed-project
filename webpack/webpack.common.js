@@ -21,13 +21,28 @@ module.exports = {
             test: /\.jsx?$/,
             loader: 'babel-loader',
             exclude: /node_modules/
-      },{
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-            use: 'css-loader'
-        })
-      }]
-  },
+        },{
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract({
+                use: 'css-loader'
+            })
+        },{
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [
+                'file-loader',
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        bypassOnDebug: true,
+                          // More optimisations can be found here: https://github.com/tcoopman/image-webpack-loader#usage.
+                          webp: {
+                            quality: 75
+                          }
+                    },
+                },
+            ]
+        }]
+    },
   plugins: [
       new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
       new ExtractTextPlugin('theme.css'),

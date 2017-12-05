@@ -9,6 +9,8 @@ import List from './todos/List';
 import Form from './todos/Form';
 import Filter from './todos/Filter';
 
+import listImage from '../images/list.png';
+
 export class Todos extends React.Component {
 
     static defaultProps = {
@@ -37,6 +39,8 @@ export class Todos extends React.Component {
 
     render() {
         return (
+            <div>
+                <img src={listImage} alt="List Image"/>
             <Grid>
                 <Row>
                     <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
@@ -54,6 +58,7 @@ export class Todos extends React.Component {
                     </Col>
                 </Row>
             </Grid>
+            </div>
         );
     }
 
