@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 
 import List from './todos/List';
 import Form from './todos/Form';
@@ -40,8 +40,15 @@ export class Todos extends React.Component {
     render() {
         return (
             <div>
-                <img src={listImage} alt="List Image"/>
             <Grid>
+                <Row>
+                    <Col sm={1} lg={1} smOffset={4} lgOffset={5}>
+                        <Image src={listImage}
+                               alt="List Image"
+                               style={{ 'height': '200px',
+                                        'marginBottom': '20px' }}/>
+                    </Col>
+                </Row>
                 <Row>
                     <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
                         <Form onAddTodoItem={this.addTodoItem} />
