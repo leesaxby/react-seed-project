@@ -9,4 +9,5 @@ rm src/pages/Todos.js
 rm src/pages/todos.test.js
 rm src/modules/todos.js
 rm src/modules/todos.test.js
+rm -rf test/e2e/todos
 rm src/images/list.png
