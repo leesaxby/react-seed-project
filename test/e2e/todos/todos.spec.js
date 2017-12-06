@@ -7,8 +7,8 @@ let page;
 
 beforeAll(async () => {
     browser = await puppeteer.launch();
-    page = await browser.newPage()
-    await page.goto(URL)
+    page = await browser.newPage();
+    await page.goto(URL);
 });
 
 describe('Add new todo item', () => {
@@ -34,12 +34,12 @@ describe('Add new todo item', () => {
         await page.type(el('todo-add-item') , 'Another new item');
         await page.type(el('todo-add-item'), String.fromCharCode(13));
 
-        const input = await page.$eval(el('todo-add-item'), elem => elem.value)
+        const input = await page.$eval(el('todo-add-item'), elem => elem.value);
         expect(input).toBe('');
     });
 
 });
 
 afterAll(() => {
-    browser.close()
+    browser.close();
 });

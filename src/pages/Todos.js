@@ -69,17 +69,11 @@ export class Todos extends React.Component {
         );
     }
 
-    addTodoItem = (newItem) => {
-        this.props.addTodo({ text: newItem, done: false });
-    }
+    addTodoItem = (newItem) => this.props.addTodo({ text: newItem, done: false });
 
-    toggleDone = ({ _id, done }) => {
-        this.props.updateDoneStatus(_id, !done);
-    }
+    toggleDone = ({ _id, done }) => this.props.updateDoneStatus(_id, !done);
 
-    updateFilter = (filter) => {
-        this.props.history.push(filter);
-    }
+    updateFilter = (filter) => this.props.history.push(filter);
 }
 
 const filterTodos = (list, filter) => {
