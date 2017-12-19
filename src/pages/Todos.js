@@ -5,6 +5,8 @@ import { withRouter } from 'react-router';
 import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 
+import { push } from 'react-router-redux';
+
 import List from './todos/List';
 import Form from './todos/Form';
 import Filter from './todos/Filter';
@@ -28,9 +30,7 @@ export class Todos extends React.Component {
         addTodo: PropTypes.func.isRequired,
         updateDoneStatus: PropTypes.func.isRequired,
         fetchData: PropTypes.func.isRequired,
-        history: PropTypes.shape({
-            push: PropTypes.func.isRequired
-        }).isRequired
+        updateFilter: PropTypes.func.isRequired
     };
 
     componentWillMount() {
@@ -55,7 +55,7 @@ export class Todos extends React.Component {
                     </Col>
                     <Col sm={3} lg={2}>
                         <Filter filter={this.props.filter}
-                                    onUpdateFilter={this.updateFilter} />
+                                    onUpdateFilter={this.props.updateFilter} />
                     </Col>
                 </Row>
                 <Row>
@@ -72,8 +72,6 @@ export class Todos extends React.Component {
     addTodoItem = (newItem) => this.props.addTodo({ text: newItem, done: false });
 
     toggleDone = ({ _id, done }) => this.props.updateDoneStatus(_id, !done);
-
-    updateFilter = (filter) => this.props.history.push(filter);
 }
 
 const filterTodos = (list, filter) => {
@@ -91,7 +89,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: () => dispatch(fetchTodos()),
         addTodo: (todo) => dispatch(addTodo(todo)),
-        updateDoneStatus: (id, doneStatus) => dispatch(updateDoneStatus(id, doneStatus))
+        updateDoneStatus: (id, doneStatus) => dispatch(updateDoneStatus(id, doneStatus)),
+        updateFilter: (filter) => dispatch(push(filter))
     };
 };
 
