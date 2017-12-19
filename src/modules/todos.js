@@ -1,6 +1,9 @@
+import { push } from 'react-router-redux';
+
 const ADD_TODO = 'app/todos/ADD_TODO';
 const FETCH_TODOS_SUCCESS = 'app/todos/FETCH_TODOS_SUCCESS';
 const UPDATE_DONE_STATUS = 'app/todos/UPDATE_DONE_STATUS';
+const CHANGE_FILTER = 'app/todos/CHANGE_FILTER';
 
 const addTodo = (todo) => ({
     type: ADD_TODO,
@@ -23,20 +26,30 @@ const fetchTodosSuccess = () => ({
 
 const fetchTodos = () => dispatch => Promise.resolve().then(() => dispatch(fetchTodosSuccess()));
 
+const changeFilter = (filter) => dispatch => {
+    dispatch(push(filter));
+    dispatch({
+        type: CHANGE_FILTER,
+        payload: filter
+    });
+};
+
 export {
     ADD_TODO,
     FETCH_TODOS_SUCCESS,
     UPDATE_DONE_STATUS,
     addTodo,
     updateDoneStatus,
-    fetchTodos
+    fetchTodos,
+    changeFilter
 };
 
 const initialState = {
-    listItems: []
+    listItems: [],
+    filter: 'ACTIVE'
 };
 
-const todo = (state ,action) => {
+const todo = (state, action) => {
     switch (action.type) {
         case ADD_TODO: {
             const ids = state.listItems.map(todo => todo._id);
@@ -60,22 +73,26 @@ const todo = (state ,action) => {
 export default function todos(state = initialState, action) {
     switch (action.type) {
         case ADD_TODO: {
-            return {
+            return Object.assign({}, state, {
                 listItems: [
                     ...state.listItems,
                     todo(state, action)
                 ]
-            };
+            });
         }
         case FETCH_TODOS_SUCCESS:
-            return {
+            return Object.assign({}, state, {
                 listItems: action.payload
-            };
+            });
         case UPDATE_DONE_STATUS: {
-            return {
+            return Object.assign({}, state, {
                 listItems: Object.assign([], state.listItems, todo(state, action))
-            };
+            });
         }
+        case CHANGE_FILTER:
+            return Object.assign({}, state, {
+                filter: action.payload
+            });
         default:
             return state;
     }

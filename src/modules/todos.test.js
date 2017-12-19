@@ -26,7 +26,7 @@ describe('Todo actions', () => {
 
 });
 
-const initialState = { listItems: [] };
+const initialState = { filter: 'ACTIVE', listItems: [] };
 
 describe('Todos reducer', () => {
 
@@ -46,6 +46,7 @@ describe('Todos reducer', () => {
         });
 
         const expected = {
+            filter: 'ACTIVE',
             listItems: [{
                 _id: 0,
                 text: 'New item',

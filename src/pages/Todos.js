@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { addTodo, fetchTodos, updateDoneStatus } from '../modules/todos';
+import { addTodo, fetchTodos, updateDoneStatus, changeFilter } from '../modules/todos';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
-
-import { push } from 'react-router-redux';
 
 import List from './todos/List';
 import Form from './todos/Form';
@@ -78,7 +75,7 @@ const filterTodos = (list, filter) => {
     return list.filter(({ done }) => filter === 'DONE' ? done : !done);
 };
 
-const mapStateToProps = ({ todos: { listItems } }, { match: { params: { filter } } }) => {
+const mapStateToProps = ({ todos: { listItems, filter } }) => {
     return {
         listItems: filterTodos(listItems, filter),
         filter
@@ -90,8 +87,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchData: () => dispatch(fetchTodos()),
         addTodo: (todo) => dispatch(addTodo(todo)),
         updateDoneStatus: (id, doneStatus) => dispatch(updateDoneStatus(id, doneStatus)),
-        updateFilter: (filter) => dispatch(push(filter))
+        updateFilter: (filter) => dispatch(changeFilter(filter))
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Todos));
+export default connect(mapStateToProps, mapDispatchToProps)(Todos);

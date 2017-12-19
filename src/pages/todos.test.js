@@ -17,6 +17,7 @@ const props = {
         { _id: 1, text: 'Item 1', done: true }
     ],
     filter: 'ACTIVE',
+    updateFilter: jest.fn(),
     fetchData: jest.fn(),
     addTodo: jest.fn(),
     updateDoneStatus: jest.fn(),
