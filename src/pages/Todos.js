@@ -2,76 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addTodo, fetchTodos, updateDoneStatus, changeFilter } from '../modules/todos';
-import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
 
-import List from './todos/List';
-import Form from './todos/Form';
-import Filter from './todos/Filter';
-
-import listImage from '../images/list.png';
-
-const HeaderRow = () => (
-    <Row>
-        <Col sm={1} lg={1} smOffset={4} lgOffset={5}>
-            <Image src={ listImage }
-                   alt="List Image"
-                   style={{ 'height': '200px',
-                            'marginBottom': '20px' }}/>
-        </Col>
-    </Row>
-);
-
-const InputRow = ({ filter, updateFilter, addTodo }) => {
-
-    const addTodoItem = (newItem) => addTodo({ text: newItem, done: false });
-
-    return (
-        <Row>
-            <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
-                <Form onAddTodoItem={ addTodoItem } />
-            </Col>
-            <Col sm={3} lg={2}>
-                <Filter filter={ filter }
-                            onUpdateFilter={ updateFilter } />
-            </Col>
-        </Row>
-    );
-};
-
-InputRow.defaultProps = {
-    filter: 'ACTIVE'
-};
-InputRow.propTypes = {
-    filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
-    addTodo: PropTypes.func.isRequired,
-    updateFilter: PropTypes.func.isRequired
-};
-
-const ListRow = ({ updateDoneStatus, listItems }) => {
-
-    const toggleDone = ({ _id, done }) => updateDoneStatus(_id, !done);
-
-    return (
-        <Row>
-            <Col sm={8} lg={6} smOffset={2} lgOffset={3}>
-                <List listItems={ listItems }
-                          onToggleDone={ toggleDone }/>
-            </Col>
-        </Row>
-    );
-};
-
-ListRow.defaultProps = {
-    listItems: []
-};
-ListRow.propTypes = {
-    listItems: PropTypes.arrayOf(
-        PropTypes.shape({
-            done: PropTypes.bool
-        })
-    ),
-    updateDoneStatus: PropTypes.func.isRequired
-};
+import HeaderRow from './todos/HeaderRow';
+import InputRow from './todos/InputRow';
+import ListRow from './todos/ListRow';
 
 export class Todos extends React.Component {
 
