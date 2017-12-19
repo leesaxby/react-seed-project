@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { mountWithIntl } from '../../test/intl-enzyme-test-uitl';
+import { mountWithIntl } from '../../test/intl-enzyme-test-util';
 import { renderedInWrapper } from '../../test/utils';
 
 import { Todos } from './Todos';
