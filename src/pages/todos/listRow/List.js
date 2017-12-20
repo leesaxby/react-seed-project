@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroup } from 'react-bootstrap';
 
-import Item from './Item';
+import Item from './list/Item';
 
 export default function List(props) {
     const getListItems = () => {

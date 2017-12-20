@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
-import Form from './Form';
-import Filter from './Filter';
+import Form from './inputRow/Form';
+import Filter from './inputRow/Filter';
 
 export default function InputRow({ filter, updateFilter, addTodo }) {
 

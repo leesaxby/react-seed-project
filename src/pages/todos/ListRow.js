@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
-import List from './List';
+import List from './listRow/List';
 
 export default function ListRow({ updateDoneStatus, listItems }) {
 
