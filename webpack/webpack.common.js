@@ -63,5 +63,11 @@ module.exports = {
           name: 'runtime'
       }),
       new DashboardPlugin()
-  ]
+  ],
+  resolve: {
+      alias: {
+        Images: path.resolve(__dirname, '../src/images/'),
+        Modules: path.resolve(__dirname, '../src/modules/')
+      }
+  }
 };

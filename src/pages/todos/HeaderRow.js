@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 
-import listImage from '../../images/list.png';
+import listImage from 'Images/list.png';
 
 export default function HeaderRow() {
 	return (

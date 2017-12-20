@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchTodos } from '../modules/todos';
+import { fetchTodos } from 'Modules/todos';
 import { Grid } from 'react-bootstrap';
 
 import HeaderRow from './todos/HeaderRow';

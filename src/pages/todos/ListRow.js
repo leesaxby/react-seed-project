@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { updateDoneStatus } from '../../modules/todos';
+import { updateDoneStatus } from 'Modules/todos';
 import { Row, Col } from 'react-bootstrap';
 import List from './listRow/List';
 

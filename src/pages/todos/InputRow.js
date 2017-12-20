@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
-import { addTodo, changeFilter } from '../../modules/todos';
+import { addTodo, changeFilter } from 'Modules/todos';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
