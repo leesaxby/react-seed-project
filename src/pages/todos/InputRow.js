@@ -6,26 +6,17 @@ import { addTodo, changeFilter } from '../../modules/todos';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
-export function InputRow({ filter, updateFilter, addTodo }) {
-
-    const addTodoItem = (newItem) => addTodo({ text: newItem, done: false });
-
-    return (
-        <Row>
-            <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
-                <Form onAddTodoItem={ addTodoItem } />
-            </Col>
-            <Col sm={3} lg={2}>
-                <Filter filter={ filter }
-                            onUpdateFilter={ updateFilter } />
-            </Col>
-        </Row>
-    );
-}
-
-InputRow.defaultProps = {
-    filter: 'ACTIVE'
-};
+export const InputRow = ({ filter, updateFilter, addTodo }) => (
+    <Row>
+        <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
+            <Form onAddTodoItem={ addTodo } />
+        </Col>
+        <Col sm={3} lg={2}>
+            <Filter filter={ filter }
+                        onUpdateFilter={ updateFilter } />
+        </Col>
+    </Row>
+);
 
 InputRow.propTypes = {
     filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
@@ -38,7 +29,7 @@ const mapStateToProps = ({ todos: { filter } }) => ({ filter });
 const mapDispatchToProps = (dispatch) => {
     return {
         updateFilter: (filter) => dispatch(changeFilter(filter)),
-        addTodo: (todo) => dispatch(addTodo(todo))
+        addTodo: (todo) => dispatch(addTodo({ text: todo, done: false }))
     };
 };
 

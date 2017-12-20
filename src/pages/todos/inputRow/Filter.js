@@ -23,8 +23,12 @@ const messages = defineMessages({
 
 export class Filter extends React.Component {
 
+    static defaultProps = {
+      filter: 'ACTIVE'
+    }
+
     static propTypes = {
-        filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]).isRequired,
+        filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
         onUpdateFilter: PropTypes.func.isRequired,
         intl: PropTypes.shape({
           formatMessage: PropTypes.func.isRequired
