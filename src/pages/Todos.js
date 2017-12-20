@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchTodos, updateDoneStatus } from '../modules/todos';
+import { fetchTodos } from '../modules/todos';
 import { Grid } from 'react-bootstrap';
 
 import HeaderRow from './todos/HeaderRow';
@@ -10,17 +10,7 @@ import ListRow from './todos/ListRow';
 
 export class Todos extends React.Component {
 
-    static defaultProps = {
-        listItems: []
-    };
-
     static propTypes = {
-        listItems: PropTypes.arrayOf(
-            PropTypes.shape({
-                done: PropTypes.bool
-            })
-        ),
-        updateDoneStatus: PropTypes.func.isRequired,
         fetchData: PropTypes.func.isRequired
     };
 
@@ -34,7 +24,7 @@ export class Todos extends React.Component {
             <Grid>
                 <HeaderRow />
                 <InputRow />
-                <ListRow updateDoneStatus={this.props.updateDoneStatus} listItems={this.props.listItems} />
+                <ListRow />
             </Grid>
             </div>
         );
@@ -42,21 +32,10 @@ export class Todos extends React.Component {
 
 }
 
-const filterTodos = (list, filter) => {
-    return list.filter(({ done }) => filter === 'DONE' ? done : !done);
-};
-
-const mapStateToProps = ({ todos: { listItems, filter } }) => {
-    return {
-        listItems: filterTodos(listItems, filter),
-    };
-};
-
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: () => dispatch(fetchTodos()),
-        updateDoneStatus: (id, doneStatus) => dispatch(updateDoneStatus(id, doneStatus))
+        fetchData: () => dispatch(fetchTodos())
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+export default connect(undefined, mapDispatchToProps)(Todos);
