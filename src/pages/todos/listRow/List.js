@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { updateDoneStatus } from 'Modules/todos';
 import { ListGroup } from 'react-bootstrap';
 
 import Item from './list/Item';
 
-export default function List(props) {
+export function List({ listItems, onItemClick }) {
     const getListItems = () => {
-        return props.listItems
+        return listItems
             .map(item => <Item key={item._id}
                                    item={item}
-                                   onToggleDone={props.onToggleDone} />
+                                   onClick={onItemClick} />
             );
     };
 
@@ -18,11 +20,33 @@ export default function List(props) {
     );
 }
 
+List.defaultProps = {
+    listItems: []
+};
+
 List.propTypes = {
     listItems: PropTypes.arrayOf(
         PropTypes.shape({
             _id: PropTypes.number.isRequired
         })
-    ).isRequired,
-    onToggleDone: PropTypes.func.isRequired
+    ),
+    onItemClick: PropTypes.func.isRequired
 };
+
+const filterTodos = (list, filter) => {
+    return list.filter(({ done }) => filter === 'DONE' ? done : !done);
+};
+
+const mapStateToProps = ({ todos: { listItems, filter } }) => {
+    return {
+        listItems: filterTodos(listItems, filter),
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onItemClick: ({ _id, done }) => dispatch(updateDoneStatus(_id, !done))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);
