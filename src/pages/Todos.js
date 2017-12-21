@@ -21,11 +21,11 @@ export class Todos extends React.Component {
     render() {
         return (
             <div>
-            <Grid>
-                <HeaderRow />
-                <InputRow />
-                <ListRow />
-            </Grid>
+                <Grid>
+                    <HeaderRow />
+                    <InputRow />
+                    <ListRow />
+                </Grid>
             </div>
         );
     }
