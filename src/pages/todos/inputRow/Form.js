@@ -14,7 +14,7 @@ const messages = defineMessages({
 class Form extends React.Component {
 
     static propTypes = {
-        onAddTodoItem: PropTypes.func.isRequired,
+        onAddItem: PropTypes.func.isRequired,
         intl: intlShape.isRequired,
     };
 
@@ -39,7 +39,7 @@ class Form extends React.Component {
     }
 
     addTodoItem = () => {
-        this.props.onAddTodoItem(this.state.newItem);
+        this.props.onAddItem(this.state.newItem);
         this.setState({ newItem: '' });
     }
 

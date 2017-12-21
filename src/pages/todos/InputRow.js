@@ -9,7 +9,7 @@ import Filter from './inputRow/Filter';
 export const InputRow = ({ filter, updateFilter, addTodo }) => (
     <Row>
         <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
-            <Form onAddTodoItem={ addTodo } />
+            <Form onAddItem={ addTodo } />
         </Col>
         <Col sm={3} lg={2}>
             <Filter filter={ filter }
