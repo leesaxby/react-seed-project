@@ -38,6 +38,7 @@ export {
     ADD_TODO,
     FETCH_TODOS_SUCCESS,
     UPDATE_DONE_STATUS,
+    CHANGE_FILTER,
     addTodo,
     updateDoneStatus,
     fetchTodos,
