@@ -11,11 +11,13 @@ const messages = defineMessages({
     }
 });
 
-class Form extends React.Component {
+export class Form extends React.Component {
 
     static propTypes = {
         onAddItem: PropTypes.func.isRequired,
-        intl: intlShape.isRequired,
+        intl: PropTypes.shape({
+            formatMessage: PropTypes.func.isRequired
+        }).isRequired,
     };
 
     state = {
