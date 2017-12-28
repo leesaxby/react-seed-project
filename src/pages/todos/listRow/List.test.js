@@ -24,7 +24,7 @@ describe('A List', () => {
 	    return {
 	        props,
 	        wrapper
-	    }
+	    };
 	}
 
 	it('renders a list of Items', () => {
@@ -79,7 +79,7 @@ describe('A List Container', () => {
 			initialState,
 			store,
 			wrapper
-		}
+		};
 	}
 
 	it('renders without throwing an error', () => {
@@ -100,11 +100,11 @@ describe('A List Container', () => {
 				filter: 'DONE',
 				listItems: initialState.todos.listItems
 			}
-		}
+		};
 		const store = configureStore()(newState);
 		const wrapper = shallow(<ListContainer store={store} />);
 		expect(wrapper.find(List).prop('listItems')).toEqual(initialState.todos.listItems.filter((item) => item.done));
-	})
+	});
 
 	it('dispatches the right actions from List props', () => {
 		const { wrapper, initialState, store } = setup();

@@ -18,7 +18,7 @@ describe('A Form', () => {
 		return {
 			props,
 			wrapper
-		}
+		};
 	}
 
     it('renders a form with an input box', () => {
@@ -33,7 +33,7 @@ describe('A Form', () => {
     });
 
     it('keeps track of what is being entered in the input box', () => {
-    	const { wrapper, props } = setup();
+    	const { wrapper } = setup();
 
     	expect(wrapper.state('newItem')).toBe('');
 
@@ -43,7 +43,7 @@ describe('A Form', () => {
     });
 
     it('triggers a callback when the input box is submitted', () => {
-    	const { wrapper, props } = setup(mount);
+    	const { wrapper } = setup(mount);
 
     	expect(wrapper.instance().props.onAddItem).not.toHaveBeenCalled();
     	
@@ -54,7 +54,7 @@ describe('A Form', () => {
     });
 
     it('empties the input box when it is submitted', () => {
-    	const { wrapper, props } = setup(mount);
+    	const { wrapper } = setup(mount);
 
     	const formControl = wrapper.find(FormControl).first();
     	formControl.simulate('change', { target: { value: 'not empty' } } );

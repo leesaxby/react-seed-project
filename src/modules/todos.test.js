@@ -16,7 +16,7 @@ describe('The Todos module', () => {
             const expectedAction = {
                 type: actions.ADD_TODO,
                 payload: todo
-            }
+            };
             expect(actions.addTodo(todo)).toEqual(expectedAction);
         });
         it('updates the status of a todo', () => {
@@ -28,7 +28,7 @@ describe('The Todos module', () => {
                     _id,
                     doneStatus
                 }
-            }
+            };
             expect(actions.updateDoneStatus(_id, doneStatus)).toEqual(expectedAction);
         });
         it('fetches todos, and gives notice of their arrival', () => {
@@ -122,7 +122,7 @@ describe('The Todos module', () => {
                     text: 'An Item',
                     done: true
                 }]
-            })
+            });
         });
         it('handles CHANGE_FILTER', () => {
             expect(reducer(initialState, {

@@ -25,7 +25,7 @@ describe('A Todos', () => {
 	}
 
     it('renders a Grid with three rows', () => {
-    	const { props, wrapper } = setup();
+    	const { wrapper } = setup();
 
     	const grid = wrapper.childAt(0);
     	expect(grid.is(Grid)).toBe(true);
@@ -35,7 +35,7 @@ describe('A Todos', () => {
     });
 
     it('triggers a callback when it will mount', () => {
-    	const { props, wrapper } = setup();
+    	const { props } = setup();
 
     	expect(props.fetchData.mock.calls).toHaveLength(1);
     });

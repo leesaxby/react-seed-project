@@ -19,7 +19,7 @@ function setup() {
     return {
         props,
         wrapper
-    }
+    };
 }
 
 describe('An Item ', () => {

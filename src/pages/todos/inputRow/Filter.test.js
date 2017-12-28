@@ -18,11 +18,11 @@ describe('A Filter', () => {
 		return {
 			props,
 			wrapper
-		}
+		};
 	}
 
     it('renders a group of two buttons', () => {
-    	const { props, wrapper } = setup();
+    	const { wrapper } = setup();
 
     	expect(wrapper.exists()).toBe(true);
     	const buttonGroup = wrapper.find(ToggleButtonGroup).first();
@@ -31,7 +31,7 @@ describe('A Filter', () => {
     });
 
     it('has the \'ACTIVE\' button selected by default', () => {
-    	const { props, wrapper } = setup();
+    	const { wrapper } = setup();
 
     	expect(wrapper.find(ToggleButtonGroup).first().prop('value')).toBe('ACTIVE');
     });
@@ -45,7 +45,7 @@ describe('A Filter', () => {
     });
 
     it('triggers a callback when the selected button is changed', () => {
-    	const { props, wrapper } = setup();
+    	const { wrapper } = setup();
 
     	expect(wrapper.instance().props.onUpdateFilter).not.toHaveBeenCalled();
     	

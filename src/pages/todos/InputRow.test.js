@@ -28,7 +28,7 @@ describe('An InputRow', () => {
 	}
 
 	it('renders a Row with a Form and a Filter', () => {
-		const { props, wrapper } = setup();
+		const { wrapper } = setup();
 
 		expect(wrapper.exists()).toBe(true);
 		expect(wrapper.is(Row)).toBe(true);
@@ -74,7 +74,7 @@ describe('An InputRow Container', () => {
 			initialState,
 			store,
 			wrapper
-		}
+		};
 	}
 
 	it('renders without throwing an error', () => {
@@ -89,7 +89,7 @@ describe('An InputRow Container', () => {
 	});
 
 	it('dispatches the right actions from InputRow props', () => {
-		const { wrapper, initialState, store } = setup();
+		const { wrapper, store } = setup();
 
 		expect(store.getActions()).toHaveLength(0);
 
