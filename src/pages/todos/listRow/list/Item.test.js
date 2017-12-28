@@ -1,37 +1,76 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import TodoItem from './Item';
+import { shallow, render } from 'enzyme';
+import { ListGroupItem } from 'react-bootstrap';
+import Item from './Item';
 
-const props = {
-    item: {
-        _id: 1,
-        text: 'Item one',
-        done: false
-    },
-    onClick: jest.fn()
-};
+function setup() {
 
-const wrapper = mount(<TodoItem { ...props }/>);
+    const props = {
+        item: {
+            _id: 1,
+            text: 'Item one',
+            done: false
+        },
+        onClick: jest.fn()
+    };
+
+    const wrapper = shallow(<Item { ...props }/>);
+
+    return {
+        props,
+        wrapper
+    }
+}
 
 describe('An Item ', () => {
 
-    it('should render without throwing an error');
-    it('should render a ListGroupItem containing some text');
-    it('should trigger a callback when clicked');
+    it('renders a ListGroupItem containing some text', () => {
+        const { wrapper, props } = setup();
 
+        const listGroupItem = wrapper.find(ListGroupItem).first();
+        expect(listGroupItem.is(ListGroupItem)).toBe(true);
 
-
-
-    it('Should render todo item with correct text', () => {
-        expect( wrapper.find(TodoItem).text() ).toBe('Item one');
+        const staticWrapper = render(<Item { ...props } />);
+        expect(staticWrapper.text()).toBe(props.item.text);
     });
 
-    it('Should call onClick when clicked', () => {
-        expect(props.onClick.mock.calls.length).toBe(0);
+    it('styles item text depending on whether the item is done', () => {
+        const { wrapper, props } = setup();
 
-        wrapper.find(TodoItem).simulate('click');
+        let styledElement = wrapper.childAt(0);
+        expect(styledElement.prop('style')).toEqual({ 'textDecoration': '' });
 
-        expect( props.onClick.mock.calls.length ).toBe(1);
+        wrapper.setProps(Object.assign(
+            {}, props, { item: Object.assign(
+                {}, props.item, { done: true }
+            ) }
+        ));
+        styledElement = wrapper.childAt(0);
+        expect(styledElement.prop('style')).toEqual({ 'textDecoration': 'line-through' });
+    });
+
+    it('triggers a callback when clicked', () => {
+        const { wrapper, props } = setup();
+
+        expect(props.onClick.mock.calls).toHaveLength(0);
+
+        wrapper.simulate('click');
+
+        expect(props.onClick.mock.calls).toHaveLength(1);
+    });
+
+    it('triggers a callback when the return key is pressed', () => {
+        const { wrapper, props } = setup();
+
+        expect(props.onClick.mock.calls).toHaveLength(0);
+
+        const arbitraryKeyCode = 10;
+        wrapper.simulate('keyDown', { keyCode: arbitraryKeyCode });
+        expect(props.onClick.mock.calls).toHaveLength(0);
+
+        const returnKeyCode = 13;
+        wrapper.simulate('keyDown', { keyCode: returnKeyCode });
+        expect(props.onClick.mock.calls).toHaveLength(1);
     });
 
 });

@@ -1,21 +1,57 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
-import { mountWithIntl } from 'Test/intl-enzyme-test-util';
-import { renderedInWrapper } from 'Test/utils';
-
+import { ToggleButtonGroup } from 'react-bootstrap';
 import { Filter } from './Filter';
 
-const props = {
-    onUpdateFilter: jest.fn(),
-    intl: {
-      formatMessage: jest.fn()
-    }
-};
-
 describe('A Filter', () => {
-    it('should render without throwing an error');
-    it('should render a group of two buttons');
-    it('should have the \'ACTIVE\' button selected by default');
-    it('should trigger a callback when the selected button is changed');
+
+	function setup() {
+		const props = {
+		    onUpdateFilter: jest.fn(),
+		    intl: {
+		      formatMessage: jest.fn()
+		    }
+		};
+		const wrapper = shallow(<Filter { ...props } />);
+
+		return {
+			props,
+			wrapper
+		}
+	}
+
+    it('renders a group of two buttons', () => {
+    	const { props, wrapper } = setup();
+
+    	expect(wrapper.exists()).toBe(true);
+    	const buttonGroup = wrapper.find(ToggleButtonGroup).first();
+    	expect(buttonGroup.exists()).toBe(true);
+    	expect(buttonGroup.children()).toHaveLength(2);
+    });
+
+    it('has the \'ACTIVE\' button selected by default', () => {
+    	const { props, wrapper } = setup();
+
+    	expect(wrapper.find(ToggleButtonGroup).first().prop('value')).toBe('ACTIVE');
+    });
+
+    it('selects a button based on the value of its \'filter\' prop', () => {
+    	const { props, wrapper } = setup();
+
+    	wrapper.setProps(Object.assign({}, props, { filter: 'DONE' }));
+
+    	expect(wrapper.find(ToggleButtonGroup).first().prop('value')).toBe('DONE');
+    });
+
+    it('triggers a callback when the selected button is changed', () => {
+    	const { props, wrapper } = setup();
+
+    	expect(wrapper.instance().props.onUpdateFilter).not.toHaveBeenCalled();
+    	
+    	wrapper.simulate('change', 'DONE');
+
+    	expect(wrapper.instance().props.onUpdateFilter).toHaveBeenCalledWith('DONE');
+    });
+
 });

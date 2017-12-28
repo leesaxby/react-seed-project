@@ -1,5 +1,4 @@
 import configureMockStore from 'redux-mock-store';
-import { push } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import reducer, * as actions from './todos';
 
@@ -51,14 +50,11 @@ describe('The Todos module', () => {
         });
         it('changes the filter', () => {
             const filter = 'DONE';
-            const expectedActions = [push(filter),{
+            const expectedAction = {
                 type: actions.CHANGE_FILTER,
                 payload: filter
-            }];
-
-            const store = mockStore({ filter: 'ACTIVE'});
-            store.dispatch(actions.changeFilter(filter))
-            expect(store.getActions()).toEqual(expectedActions);
+            };
+            expect(actions.changeFilter(filter)).toEqual(expectedAction);
         });
     });
 
@@ -66,14 +62,14 @@ describe('The Todos module', () => {
 
         const initialState = { filter: 'ACTIVE', listItems: [] };
 
-        it('should return the initial state', () => {
+        it('returns the initial state', () => {
             expect(
                 reducer(undefined, {})
             ).toEqual(
                 initialState
             );
         });
-        it('should handle ADD_TODO', () => {
+        it('handles ADD_TODO', () => {
             expect(reducer(initialState, {
                     type: actions.ADD_TODO,
                     payload: {
@@ -91,7 +87,7 @@ describe('The Todos module', () => {
                 }
             );
         });
-        it('should handle FETCH_TODOS_SUCCESS', () => {
+        it('handles FETCH_TODOS_SUCCESS', () => {
             const payload = [
                 { _id: 1, text: 'Item One', done: false }
             ];
@@ -104,7 +100,7 @@ describe('The Todos module', () => {
                 listItems: payload
             });
         });
-        it('should handle UPDATE_DONE_STATUS', () => {
+        it('handles UPDATE_DONE_STATUS', () => {
             expect(reducer({
                     filter: initialState.filter,
                     listItems: [{
@@ -128,7 +124,7 @@ describe('The Todos module', () => {
                 }]
             })
         });
-        it('should handle CHANGE_FILTER', () => {
+        it('handles CHANGE_FILTER', () => {
             expect(reducer(initialState, {
                     type: actions.CHANGE_FILTER,
                     payload: 'DONE'
@@ -137,6 +133,14 @@ describe('The Todos module', () => {
                 filter: 'DONE',
                 listItems: initialState.listItems
             });
+        });
+        it('returns an unmodified state when it is fed an irrelevant action', () => {
+            expect(reducer(initialState, {
+                    type: 'IRRELEVANT_TEST_ACTION'
+                })
+            ).toEqual(
+                initialState
+            );
         });
     });
 });
