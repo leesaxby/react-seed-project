@@ -1,5 +1,3 @@
-import { push } from 'react-router-redux';
-
 const ADD_TODO = 'app/todos/ADD_TODO';
 const FETCH_TODOS_SUCCESS = 'app/todos/FETCH_TODOS_SUCCESS';
 const UPDATE_DONE_STATUS = 'app/todos/UPDATE_DONE_STATUS';
@@ -26,13 +24,10 @@ const fetchTodosSuccess = () => ({
 
 const fetchTodos = () => dispatch => Promise.resolve().then(() => dispatch(fetchTodosSuccess()));
 
-const changeFilter = (filter) => dispatch => {
-    dispatch(push(filter));
-    dispatch({
-        type: CHANGE_FILTER,
-        payload: filter
-    });
-};
+const changeFilter = (filter) => ({
+    type: CHANGE_FILTER,
+    payload: filter
+});
 
 export {
     ADD_TODO,
@@ -42,7 +37,8 @@ export {
     addTodo,
     updateDoneStatus,
     fetchTodos,
-    changeFilter
+    changeFilter,
+    fetchTodosSuccess
 };
 
 const initialState = {

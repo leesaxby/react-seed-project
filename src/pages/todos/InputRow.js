@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import { Row, Col } from 'react-bootstrap';
 import { addTodo, changeFilter } from 'Modules/todos';
 import Form from './inputRow/Form';
@@ -28,7 +29,10 @@ const mapStateToProps = ({ todos: { filter } }) => ({ filter });
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateFilter: (filter) => dispatch(changeFilter(filter)),
+        updateFilter: (filter) => {
+            dispatch(push(filter));
+            dispatch(changeFilter(filter));
+        },
         addTodo: (todo) => dispatch(addTodo({ text: todo, done: false }))
     };
 };
