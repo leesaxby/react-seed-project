@@ -68,6 +68,11 @@
     "webpack-merge": "^4.1.0"
   },
   "jest": {
+    "collectCoverageFrom": [
+        "**/src/**/*.{js, jsx}",
+        "!**/src/*.{js, jsx}",
+        "!**/test/**"
+    ],
     "setupFiles": [
       "./test/jest/shim.js",
       "./test/jest/setup.js"
