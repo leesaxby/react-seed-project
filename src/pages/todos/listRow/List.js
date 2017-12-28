@@ -27,7 +27,9 @@ List.defaultProps = {
 List.propTypes = {
     listItems: PropTypes.arrayOf(
         PropTypes.shape({
-            _id: PropTypes.number.isRequired
+            _id: PropTypes.number.isRequired,
+            text: PropTypes.string,
+            done: PropTypes.bool.isRequired
         })
     ),
     onItemClick: PropTypes.func.isRequired
