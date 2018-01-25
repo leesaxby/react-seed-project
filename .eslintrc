@@ -35,6 +35,10 @@
             {
                 "varsIgnorePattern": "APP_THEME"
             }
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
         ]
     },
     "globals": {
