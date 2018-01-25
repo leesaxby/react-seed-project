@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import { Provider } from 'react-redux';
-import store from './store';
+import store, { history } from './store';
 
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
 import { getMessages, DEFAULT_LOCALE } from '../i18n';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 
 import App from './App';
 
@@ -26,9 +28,9 @@ const render = Component => {
         <AppContainer>
             <Provider store={store}>
                 <IntlProvider defaultLocale={DEFAULT_LOCALE} locale={USER_LOCALE} messages={getMessages(USER_LOCALE)}>
-                    <Router>
+                    <ConnectedRouter history={history}>
                         <Route path='/:filter?' component={Component} />
-                    </Router>
+                    </ConnectedRouter>
                 </IntlProvider>
             </Provider>
         </AppContainer>,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormGroup, FormControl } from 'react-bootstrap';
-import { injectIntl, intlShape, defineMessages } from 'react-intl';
+import { injectIntl, defineMessages } from 'react-intl';
 
 const messages = defineMessages({
     'todo.form.addItem': {
@@ -11,11 +11,13 @@ const messages = defineMessages({
     }
 });
 
-class Form extends React.Component {
+export class Form extends React.Component {
 
     static propTypes = {
-        onAddTodoItem: PropTypes.func.isRequired,
-        intl: intlShape.isRequired,
+        onAddItem: PropTypes.func.isRequired,
+        intl: PropTypes.shape({
+            formatMessage: PropTypes.func.isRequired
+        }).isRequired,
     };
 
     state = {
@@ -39,7 +41,7 @@ class Form extends React.Component {
     }
 
     addTodoItem = () => {
-        this.props.onAddTodoItem(this.state.newItem);
+        this.props.onAddItem(this.state.newItem);
         this.setState({ newItem: '' });
     }
 

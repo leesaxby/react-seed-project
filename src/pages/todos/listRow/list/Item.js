@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroupItem, FormControl, Glyphicon } from 'react-bootstrap';
 
-export default function Item({ item, onToggleDone }) {
-    const toggleDone = () => {
-        onToggleDone(item);
+export default function Item({ item, onClick }) {
+    const triggerClick = () => {
+        onClick(item);
     };
 
     const labelId = `todoItem${item._id}Label`;
@@ -13,14 +13,14 @@ export default function Item({ item, onToggleDone }) {
         tabIndex: 0,
         onKeyDown: e => {
             if(e.keyCode === 13) {
-                toggleDone();
+                triggerClick();
             }
         },
         'aria-labelledby': labelId
     };
             
     return (
-        <ListGroupItem { ...aria } onClick={ toggleDone }
+        <ListGroupItem { ...aria } onClick={ triggerClick }
                        data-test-id="todo-item">
 
             <FormControl.Static id={ labelId } style={{ 'textDecoration': item.done ? 'line-through' : '' }}>
@@ -41,5 +41,5 @@ Item.propTypes = {
         text: PropTypes.string,
         done: PropTypes.bool.isRequired
     }),
-    onToggleDone: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired
 };
