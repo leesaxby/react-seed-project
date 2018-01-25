@@ -1,5 +1,5 @@
 sed -i -e '/import todos from/d' src/store.js
-sed -i -e 's/combineReducers({ todos })/combineReducers({ })/g' src/store.js
+sed -i -e 's/combineReducers({ todos, router: routerReducer })/combineReducers({ router: routerReducer })/g' src/store.js
 
 sed -i -e '/import Todos from/d' src/App.js
 sed -i -e 's/<Todos [/]>/<div>Hello World<\/div>/g' src/App.js
