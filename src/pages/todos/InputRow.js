@@ -22,7 +22,7 @@ export const InputRow = ({ filter, updateFilter, addTodo }) => (
 InputRow.propTypes = {
     filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
     addTodo: PropTypes.func.isRequired,
-    updateFilter: PropTypes.func.isRequired
+    updateFilter: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ todos: { filter } }) => ({ filter });
@@ -33,7 +33,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(push(filter));
             dispatch(changeFilter(filter));
         },
-        addTodo: (todo) => dispatch(addTodo({ text: todo, done: false }))
+        addTodo: (todo) => dispatch(addTodo({ text: todo, done: false })),
     };
 };
 

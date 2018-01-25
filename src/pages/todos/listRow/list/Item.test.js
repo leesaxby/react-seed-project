@@ -9,16 +9,16 @@ function setup() {
         item: {
             _id: 1,
             text: 'Item one',
-            done: false
+            done: false,
         },
-        onClick: jest.fn()
+        onClick: jest.fn(),
     };
 
     const wrapper = shallow(<Item { ...props }/>);
 
     return {
         props,
-        wrapper
+        wrapper,
     };
 }
 

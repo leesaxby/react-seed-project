@@ -10,14 +10,14 @@ describe('A Form', () => {
 		const props = {
 		    onAddItem: jest.fn(),
 		    intl: {
-		      formatMessage: jest.fn()
-		    }
+		      formatMessage: jest.fn(),
+		    },
 		};
 		const wrapper = mountFunc(<Form { ...props } />);
 
 		return {
 			props,
-			wrapper
+			wrapper,
 		};
 	}
 

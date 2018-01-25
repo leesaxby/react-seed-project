@@ -14,13 +14,13 @@ describe('A Todos', () => {
 
 	function setup() {
 		const props = {
-        	fetchData: jest.fn()
+        	fetchData: jest.fn(),
 		};
 		const wrapper = shallow(<Todos { ...props } />);
 
 		return {
 			props,
-			wrapper
+			wrapper,
 		};
 	}
 
@@ -49,7 +49,7 @@ describe('A Todos Container', () => {
 		const wrapper = shallow(<TodosContainer store={store} />);
 		return {
 			store,
-			wrapper
+			wrapper,
 		};
 	}
 

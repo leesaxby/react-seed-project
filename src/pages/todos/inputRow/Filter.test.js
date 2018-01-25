@@ -10,14 +10,14 @@ describe('A Filter', () => {
 		const props = {
 		    onUpdateFilter: jest.fn(),
 		    intl: {
-		      formatMessage: jest.fn()
-		    }
+		      formatMessage: jest.fn(),
+		    },
 		};
 		const wrapper = shallow(<Filter { ...props } />);
 
 		return {
 			props,
-			wrapper
+			wrapper,
 		};
 	}
 

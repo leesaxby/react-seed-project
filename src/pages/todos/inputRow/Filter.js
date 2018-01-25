@@ -7,32 +7,32 @@ const messages = defineMessages({
     'todo.filter.ariaLabel': {
         id: 'todo.filter.ariaLabel',
         description: 'Label for the todo filter choice',
-        defaultMessage: 'choose filter'
+        defaultMessage: 'choose filter',
     },
     'todo.filter.todo': {
         id: 'todo.filter.todo',
         description: 'Label for the button that filters active todos',
-        defaultMessage: 'todo'
+        defaultMessage: 'todo',
     },
     'todo.filter.done': {
         id: 'todo.filter.done',
         description: 'Label for the button that filters complete todos',
-        defaultMessage: 'done'
-    }
+        defaultMessage: 'done',
+    },
 });
 
 export class Filter extends React.Component {
 
     static defaultProps = {
-      filter: 'ACTIVE'
+      filter: 'ACTIVE',
     }
 
     static propTypes = {
         filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
         onUpdateFilter: PropTypes.func.isRequired,
         intl: PropTypes.shape({
-          formatMessage: PropTypes.func.isRequired
-        }).isRequired
+          formatMessage: PropTypes.func.isRequired,
+        }).isRequired,
     };
 
     render() {

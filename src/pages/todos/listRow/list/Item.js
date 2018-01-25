@@ -16,7 +16,7 @@ export default function Item({ item, onClick }) {
                 triggerClick();
             }
         },
-        'aria-labelledby': labelId
+        'aria-labelledby': labelId,
     };
             
     return (
@@ -39,7 +39,7 @@ Item.propTypes = {
     item: PropTypes.shape({
         _id: PropTypes.number.isRequired,
         text: PropTypes.string,
-        done: PropTypes.bool.isRequired
+        done: PropTypes.bool.isRequired,
     }),
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
 };

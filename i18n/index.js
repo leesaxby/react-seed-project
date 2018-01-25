@@ -8,7 +8,7 @@ const DEFAULT_LOCALE = 'en-GB';
 const translations = {
     'en-GB': en_GB,
     'en-US': en_US,
-    'de': de
+    'de': de,
 };
 
 const isAvailable = (locale) => Boolean(translations[locale]);
