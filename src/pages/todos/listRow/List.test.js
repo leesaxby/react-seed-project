@@ -13,17 +13,17 @@ describe('A List', () => {
 		const props = {
 		    listItems: [{
 		    	_id: 1,
-		    	done: true
+		    	done: true,
 		    }, {
 		    	_id: 2,
-		    	done: false
+		    	done: false,
 		    }],
-		    onItemClick: jest.fn()
+		    onItemClick: jest.fn(),
 		};
 		const wrapper = shallow(<List { ...props }/>);
 	    return {
 	        props,
-	        wrapper
+	        wrapper,
 	    };
 	}
 
@@ -64,12 +64,12 @@ describe('A List Container', () => {
 				filter: 'ACTIVE', 
 				listItems: [{ 
 					_id: 1, 
-					done: true 
+					done: true, 
 				}, {
 					_id: 2,
-					done: false
-				}] 
-			} 
+					done: false,
+				}], 
+			}, 
 		};
 		const store = configureStore()(initialState);
 
@@ -78,7 +78,7 @@ describe('A List Container', () => {
 		return {
 			initialState,
 			store,
-			wrapper
+			wrapper,
 		};
 	}
 
@@ -98,8 +98,8 @@ describe('A List Container', () => {
 		const newState = {
 			todos: {
 				filter: 'DONE',
-				listItems: initialState.todos.listItems
-			}
+				listItems: initialState.todos.listItems,
+			},
 		};
 		const store = configureStore()(newState);
 		const wrapper = shallow(<ListContainer store={store} />);

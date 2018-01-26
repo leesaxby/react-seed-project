@@ -11,11 +11,11 @@ describe('The Todos module', () => {
             const todo = {
                 _id: 5,
                 text: 'A New Todo',
-                done: false
+                done: false,
             };
             const expectedAction = {
                 type: actions.ADD_TODO,
-                payload: todo
+                payload: todo,
             };
             expect(actions.addTodo(todo)).toEqual(expectedAction);
         });
@@ -26,8 +26,8 @@ describe('The Todos module', () => {
                 type: actions.UPDATE_DONE_STATUS,
                 payload: {
                     _id,
-                    doneStatus
-                }
+                    doneStatus,
+                },
             };
             expect(actions.updateDoneStatus(_id, doneStatus)).toEqual(expectedAction);
         });
@@ -37,8 +37,8 @@ describe('The Todos module', () => {
                 payload: [
                     { _id: 1, text: 'Item One', done: false},
                     { _id: 2, text: 'Item Two', done: false},
-                    { _id: 3, text: 'Item Three', done: false}
-                ]
+                    { _id: 3, text: 'Item Three', done: false},
+                ],
             }];
 
             const store = mockStore({ todos: [] });
@@ -52,7 +52,7 @@ describe('The Todos module', () => {
             const filter = 'DONE';
             const expectedAction = {
                 type: actions.CHANGE_FILTER,
-                payload: filter
+                payload: filter,
             };
             expect(actions.changeFilter(filter)).toEqual(expectedAction);
         });
@@ -74,30 +74,30 @@ describe('The Todos module', () => {
                     type: actions.ADD_TODO,
                     payload: {
                         text: 'New item',
-                        done: false
-                    }
+                        done: false,
+                    },
                 })
             ).toEqual({
                     filter: 'ACTIVE',
                     listItems: [{
                         _id: 0,
                         text: 'New item',
-                        done: false
-                    }]
+                        done: false,
+                    }],
                 }
             );
         });
         it('handles FETCH_TODOS_SUCCESS', () => {
             const payload = [
-                { _id: 1, text: 'Item One', done: false }
+                { _id: 1, text: 'Item One', done: false },
             ];
             expect(reducer(initialState, {
                     type: actions.FETCH_TODOS_SUCCESS,
-                    payload
+                    payload,
                 })
             ).toEqual({
                 filter: initialState.filter,
-                listItems: payload
+                listItems: payload,
             });
         });
         it('handles UPDATE_DONE_STATUS', () => {
@@ -106,37 +106,37 @@ describe('The Todos module', () => {
                     listItems: [{
                         _id: 1,
                         text: 'An Item',
-                        done: false
-                    }]
+                        done: false,
+                    }],
                 }, {
                     type: actions.UPDATE_DONE_STATUS,
                     payload: {
                         _id: 1,
-                        doneStatus: true
-                    }
+                        doneStatus: true,
+                    },
                 })
             ).toEqual({
                 filter: initialState.filter,
                 listItems: [{
                     _id: 1,
                     text: 'An Item',
-                    done: true
-                }]
+                    done: true,
+                }],
             });
         });
         it('handles CHANGE_FILTER', () => {
             expect(reducer(initialState, {
                     type: actions.CHANGE_FILTER,
-                    payload: 'DONE'
+                    payload: 'DONE',
                 })
             ).toEqual({
                 filter: 'DONE',
-                listItems: initialState.listItems
+                listItems: initialState.listItems,
             });
         });
         it('returns an unmodified state when it is fed an irrelevant action', () => {
             expect(reducer(initialState, {
-                    type: 'IRRELEVANT_TEST_ACTION'
+                    type: 'IRRELEVANT_TEST_ACTION',
                 })
             ).toEqual(
                 initialState

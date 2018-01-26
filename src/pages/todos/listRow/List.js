@@ -21,7 +21,7 @@ export function List({ listItems, onItemClick }) {
 }
 
 List.defaultProps = {
-    listItems: []
+    listItems: [],
 };
 
 List.propTypes = {
@@ -29,10 +29,10 @@ List.propTypes = {
         PropTypes.shape({
             _id: PropTypes.number.isRequired,
             text: PropTypes.string,
-            done: PropTypes.bool.isRequired
+            done: PropTypes.bool.isRequired,
         })
     ),
-    onItemClick: PropTypes.func.isRequired
+    onItemClick: PropTypes.func.isRequired,
 };
 
 const filterTodos = (list, filter) => {
@@ -47,7 +47,7 @@ const mapStateToProps = ({ todos: { listItems, filter } }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onItemClick: ({ _id, done }) => dispatch(updateDoneStatus(_id, !done))
+        onItemClick: ({ _id, done }) => dispatch(updateDoneStatus(_id, !done)),
     };
 };
 

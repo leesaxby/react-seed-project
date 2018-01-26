@@ -17,13 +17,13 @@ describe('An InputRow', () => {
 		const props = {
 		    filter: 'ACTIVE',
 		    addTodo: jest.fn(),
-		    updateFilter: jest.fn()
+		    updateFilter: jest.fn(),
 		};
 		const wrapper = shallow(<InputRow { ...props } />);
 
 		return {
 			props,
-			wrapper
+			wrapper,
 		};
 	}
 
@@ -64,8 +64,8 @@ describe('An InputRow Container', () => {
 	function setup() {
 		const initialState = {
 		    todos: {
-		    	filter: 'ACTIVE'
-		    }
+		    	filter: 'ACTIVE',
+		    },
 		};
 		const store = configureStore([thunk])(initialState);
 		const wrapper = shallow(<InputRowContainer store={store} />);
@@ -73,7 +73,7 @@ describe('An InputRow Container', () => {
 		return {
 			initialState,
 			store,
-			wrapper
+			wrapper,
 		};
 	}
 

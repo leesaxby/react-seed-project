@@ -11,7 +11,7 @@ import ListRow from './todos/ListRow';
 export class Todos extends React.Component {
 
     static propTypes = {
-        fetchData: PropTypes.func.isRequired
+        fetchData: PropTypes.func.isRequired,
     };
 
     componentWillMount() {
@@ -34,7 +34,7 @@ export class Todos extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: () => dispatch(fetchTodos())
+        fetchData: () => dispatch(fetchTodos()),
     };
 };
 

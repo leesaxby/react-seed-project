@@ -7,8 +7,8 @@ const messages = defineMessages({
     'todo.form.addItem': {
         id: 'todo.form.addItem',
         description: 'Placeholder for the todo input',
-        defaultMessage: 'Add Item'
-    }
+        defaultMessage: 'Add Item',
+    },
 });
 
 export class Form extends React.Component {
@@ -16,12 +16,12 @@ export class Form extends React.Component {
     static propTypes = {
         onAddItem: PropTypes.func.isRequired,
         intl: PropTypes.shape({
-            formatMessage: PropTypes.func.isRequired
+            formatMessage: PropTypes.func.isRequired,
         }).isRequired,
     };
 
     state = {
-        newItem: ''
+        newItem: '',
     };
 
     render() {
