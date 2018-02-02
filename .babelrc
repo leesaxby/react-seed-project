@@ -3,8 +3,8 @@
   "plugins": [
     "transform-class-properties",
       ["transform-imports", {
-        "react-bootstrap": {
-          "transform": "react-bootstrap/lib/${member}",
+        "material-ui": {
+          "transform": "material-ui/lib/${member}",
           "preventFullImport": true
         },
         "react-router": {

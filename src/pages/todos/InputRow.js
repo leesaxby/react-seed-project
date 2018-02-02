@@ -2,21 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import { Row, Col } from 'react-bootstrap';
+import Grid from 'material-ui/Grid';
+
 import { addTodo, changeFilter } from 'Modules/todos';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
 export const InputRow = ({ filter, updateFilter, addTodo }) => (
-    <Row>
-        <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
+    <Grid container justify="center" >
+        <Grid item xs={3}>
             <Form onAddItem={ addTodo } />
-        </Col>
-        <Col sm={3} lg={2}>
-            <Filter filter={ filter }
-                        onUpdateFilter={ updateFilter } />
-        </Col>
-    </Row>
+        </Grid>
+        <Grid item xs={1}>
+            <Grid container justify="center">
+                <Filter filter={ filter }
+                            onUpdateFilter={ updateFilter } />
+            </Grid>
+        </Grid>
+    </Grid>
+
+
+
 );
 
 InputRow.propTypes = {
@@ -30,8 +36,8 @@ const mapStateToProps = ({ todos: { filter } }) => ({ filter });
 const mapDispatchToProps = (dispatch) => {
     return {
         updateFilter: (filter) => {
-            dispatch(push(filter));
-            dispatch(changeFilter(filter));
+            dispatch(push(filter.target.value));
+            dispatch(changeFilter(filter.target.value));
         },
         addTodo: (todo) => dispatch(addTodo({ text: todo, done: false })),
     };

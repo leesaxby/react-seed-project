@@ -2,21 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateDoneStatus } from 'Modules/todos';
-import { ListGroup } from 'react-bootstrap';
-
+import ListStyle from 'material-ui/List';
 import Item from './list/Item';
 
 export function List({ listItems, onItemClick }) {
     const getListItems = () => {
         return listItems
             .map(item => <Item key={item._id}
-                                   item={item}
-                                   onClick={onItemClick} />
+                               item={item}
+                               onClick={onItemClick} />
             );
     };
 
     return (
-        <ListGroup>{ getListItems() }</ListGroup>
+        <ListStyle>{ getListItems() }</ListStyle>
     );
 }
 

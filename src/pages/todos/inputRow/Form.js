@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, FormControl } from 'react-bootstrap';
+import Input from 'material-ui/Input';
 import { injectIntl, defineMessages } from 'react-intl';
 
 const messages = defineMessages({
@@ -27,15 +27,16 @@ export class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.submitTodo}>
-                <FormGroup bsSize="large">
-                    <FormControl type="text"
-                                 data-test-id="todo-add-item"
-                                 placeholder={this.props.intl.formatMessage(messages['todo.form.addItem'])}
-                                 aria-label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
-                                 value={this.state.newItem}
-                                 onChange={this.updateNewItem}
-                                 onKeyPress={this.handleKeyPress}/>
-                </FormGroup>
+                  <Input fullWidth
+                         type="text"
+                         value={this.state.newItem}
+                         onChange={this.updateNewItem}
+                         inputProps={{
+                            'data-test-id': 'todo-add-item',
+                            'placeholder': this.props.intl.formatMessage(messages['todo.form.addItem']),
+                            'aria-label': this.props.intl.formatMessage(messages['todo.form.addItem']),
+                         }}
+                    />
             </form>
         );
     }
@@ -53,7 +54,7 @@ export class Form extends React.Component {
         this.addTodoItem();
         e.preventDefault();
     }
-    
+
 }
 
 export default injectIntl(Form);

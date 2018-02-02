@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { injectIntl, defineMessages } from 'react-intl';
+import { FormControlLabel } from 'material-ui/Form';
+import Radio, { RadioGroup } from 'material-ui/Radio';
 
 const messages = defineMessages({
     'todo.filter.ariaLabel': {
@@ -38,26 +39,21 @@ export class Filter extends React.Component {
     render() {
         const { filter, onUpdateFilter, intl } = this.props;
         return(
-            <ToggleButtonGroup type="radio"
-                               name="filterToggle"
-                               role="radiogroup"
-                               aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])}
-                               value={filter}
-                               onChange={onUpdateFilter}>
-
-                <ToggleButton value="ACTIVE"
-                              role="radio"
-                              aria-checked={String(filter === 'ACTIVE')}>
-                    <FormattedMessage {...messages['todo.filter.todo']} />
-                </ToggleButton>
-
-                <ToggleButton value="DONE"
-                              role="radio"
-                              aria-checked={String(filter === 'DONE')}>
-                    <FormattedMessage {...messages['todo.filter.done']} />
-                </ToggleButton>
-
-            </ToggleButtonGroup>
+            <RadioGroup name="filters"
+                        aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])}
+                        value={filter}
+                        onChange={onUpdateFilter}>
+                <FormControlLabel value="ACTIVE"
+                                  label={intl.formatMessage(messages['todo.filter.todo'])}
+                                  control={
+                                      <Radio aria-checked={String(filter === 'ACTIVE')}/>
+                                  }/>
+                <FormControlLabel value="DONE"
+                                  label={intl.formatMessage(messages['todo.filter.done'])}
+                                  control={
+                                      <Radio aria-checked={String(filter === 'DONE')}/>
+                                  }/>
+            </RadioGroup>
         );
     }
 }

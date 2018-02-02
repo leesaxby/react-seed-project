@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchTodos } from 'Modules/todos';
-import { Grid } from 'react-bootstrap';
+import Grid from 'material-ui/Grid';
 
+import { fetchTodos } from 'Modules/todos';
 import HeaderRow from './todos/HeaderRow';
 import InputRow from './todos/InputRow';
 import ListRow from './todos/ListRow';
@@ -20,13 +20,23 @@ export class Todos extends React.Component {
 
     render() {
         return (
-            <div>
-                <Grid>
-                    <HeaderRow />
-                    <InputRow />
-                    <ListRow />
+            <Grid container justify="center">
+                <Grid item xs={12}>
+                    <Grid container justify="center">
+                        <HeaderRow />
+                    </Grid>
                 </Grid>
-            </div>
+                <Grid item xs={12}>
+                    <Grid container justify="center">
+                        <InputRow />
+                    </Grid>
+                </Grid>
+                <Grid item xs={6}>
+                    <Grid container justify="center">
+                        <ListRow />
+                    </Grid>
+                </Grid>
+            </Grid>
         );
     }
 

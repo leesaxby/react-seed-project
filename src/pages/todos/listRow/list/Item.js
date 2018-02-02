@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListGroupItem, FormControl, Glyphicon } from 'react-bootstrap';
+import { ListItem, ListItemSecondaryAction, ListItemText } from 'material-ui/List';
+import IconButton from 'material-ui/IconButton';
+import CheckIcon from 'material-ui-icons/Check';
+import RestoreIcon from 'material-ui-icons/Restore';
 
 export default function Item({ item, onClick }) {
     const triggerClick = () => {
@@ -18,20 +21,25 @@ export default function Item({ item, onClick }) {
         },
         'aria-labelledby': labelId,
     };
-            
+
     return (
-        <ListGroupItem { ...aria } onClick={ triggerClick }
-                       data-test-id="todo-item">
-
-            <FormControl.Static id={ labelId } style={{ 'textDecoration': item.done ? 'line-through' : '' }}>
-
-                <Glyphicon glyph="glyphicon glyphicon-ok"
-                           style={{ 'marginRight': '15px' }}/>
-                { item.text }
-
-            </FormControl.Static>
-
-        </ListGroupItem>
+        <ListItem { ...aria }
+                  button
+                  onClick={triggerClick}
+                  data-test-id="todo-item">
+            <ListItemText id={ labelId }
+                          primary={item.text} />
+            <ListItemSecondaryAction>
+                <IconButton>
+                    {
+                        item.done ?
+                            <RestoreIcon />
+                        :
+                            <CheckIcon />
+                    }
+                </IconButton>
+            </ListItemSecondaryAction>
+        </ListItem>
     );
 }
 
