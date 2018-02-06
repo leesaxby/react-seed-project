@@ -38,6 +38,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export const TodosContainer = connect(undefined, mapDispatchToProps)(Todos);
-
-export default TodosContainer;
+export default connect(undefined, mapDispatchToProps)(Todos);
