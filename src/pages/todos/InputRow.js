@@ -7,23 +7,13 @@ import { addTodo } from 'Modules/todos';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
-import { Route, withRouter } from 'react-router';
-
-export const InputRow = ({ updateFilter, addTodo }) => (
+export const InputRow = ({ updateFilter, addTodo, filter }) => (
     <Row>
         <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
             <Form onAddItem={ addTodo } />
         </Col>
         <Col sm={3} lg={2}>
-            <Route 
-                path='/:filter?' 
-                render={({ match: { params: { filter } } }) => (
-                    <Filter 
-                        filter={ filter }
-                        onUpdateFilter={ updateFilter } 
-                    />
-                )} 
-            />
+            <Filter filter={ filter } onUpdateFilter={ updateFilter } />
         </Col>
     </Row>
 );
@@ -34,6 +24,8 @@ InputRow.propTypes = {
     updateFilter: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = ({ todos: { filter } }) => ({ filter });
+
 const mapDispatchToProps = (dispatch) => {
     return {
         updateFilter: (filter) => dispatch(push(filter)),
@@ -41,4 +33,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(InputRow));
+export default connect(mapStateToProps, mapDispatchToProps)(InputRow);
