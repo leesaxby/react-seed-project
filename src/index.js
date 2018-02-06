@@ -11,7 +11,6 @@ import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
 import { getMessages, DEFAULT_LOCALE } from '../i18n';
 
-import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
 import App from './App';
@@ -29,7 +28,7 @@ const render = Component => {
             <Provider store={store}>
                 <IntlProvider defaultLocale={DEFAULT_LOCALE} locale={USER_LOCALE} messages={getMessages(USER_LOCALE)}>
                     <ConnectedRouter history={history}>
-                        <Route path='/:filter?' component={Component} />
+                        <Component />
                     </ConnectedRouter>
                 </IntlProvider>
             </Provider>

@@ -8,6 +8,8 @@ import HeaderRow from './todos/HeaderRow';
 import InputRow from './todos/InputRow';
 import ListRow from './todos/ListRow';
 
+import { withRouter } from 'react-router';
+
 export class Todos extends React.Component {
 
     static propTypes = {
@@ -38,4 +40,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(undefined, mapDispatchToProps)(Todos);
+export default withRouter(connect(undefined, mapDispatchToProps)(Todos));
