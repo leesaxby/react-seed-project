@@ -99,10 +99,9 @@ describe('An InputRow Container', () => {
 		wrapper.prop('updateFilter')(newFilter);
 
 		const actions = store.getActions();
-		expect(actions).toHaveLength(3);
+		expect(actions).toHaveLength(2);
 		expect(actions[0]).toEqual(addTodo({ text: newTodo, done: false }));
 		expect(actions[1]).toEqual(push(newFilter));
-		expect(actions[2]).toEqual(changeFilter(newFilter));
 	});
 
 });

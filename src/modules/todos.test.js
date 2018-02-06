@@ -1,6 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import reducer, * as actions from './todos';
+import { LOCATION_CHANGE } from 'react-router-redux';
 
 describe('The Todos module', () => {
 
@@ -116,10 +117,10 @@ describe('The Todos module', () => {
                 }],
             });
         });
-        it('handles CHANGE_FILTER', () => {
+        it('handles LOCATION_CHANGE', () => {
             expect(reducer(initialState, {
-                    type: actions.CHANGE_FILTER,
-                    payload: 'DONE',
+                    type: LOCATION_CHANGE,
+                    payload: { pathname: '/DONE' },
                 })
             ).toEqual({
                 filter: 'DONE',
