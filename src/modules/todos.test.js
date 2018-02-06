@@ -48,14 +48,6 @@ describe('The Todos module', () => {
                 expect( store.getActions() ).toEqual(expectedActions);
             });
         });
-        it('changes the filter', () => {
-            const filter = 'DONE';
-            const expectedAction = {
-                type: actions.CHANGE_FILTER,
-                payload: filter,
-            };
-            expect(actions.changeFilter(filter)).toEqual(expectedAction);
-        });
     });
 
     describe('has a reducer which', () => {
