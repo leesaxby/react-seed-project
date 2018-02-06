@@ -14,7 +14,7 @@ export class Todos extends React.Component {
         fetchData: PropTypes.func.isRequired,
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchData();
     }
 
