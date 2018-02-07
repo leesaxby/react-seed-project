@@ -9,7 +9,7 @@ import InputRowContainer, { InputRow } from './InputRow';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
-import { addTodo, changeFilter } from 'Modules/todos';
+import { addTodo } from 'Modules/todos';
 
 describe('An InputRow', () => {
 
