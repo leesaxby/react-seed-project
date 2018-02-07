@@ -20,7 +20,7 @@
     "html-webpack-plugin": "^2.28.0",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": "^16.3.0-alpha.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.1.1",
@@ -69,17 +69,16 @@
   },
   "jest": {
     "collectCoverageFrom": [
-        "**/src/**/*.{js, jsx}",
-        "!**/src/*.{js, jsx}",
-        "!**/test/**"
+      "**/src/**/*.{js, jsx}",
+      "!**/src/*.{js, jsx}",
+      "!**/test/**"
     ],
     "setupFiles": [
       "./test/jest/shim.js",
       "./test/jest/setup.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/test/jest/fileMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/jest/fileMock.js"
     }
   }
 }
