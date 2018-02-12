@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { Row, Col } from 'react-bootstrap';
-import { addTodo, changeFilter } from 'Modules/todos';
+import { addTodo } from 'Modules/todos';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
@@ -13,8 +13,8 @@ export const InputRow = ({ filter, updateFilter, addTodo }) => (
             <Form onAddItem={ addTodo } />
         </Col>
         <Col sm={3} lg={2}>
-            <Filter filter={ filter }
-                        onUpdateFilter={ updateFilter } />
+            <Filter filter={ filter } 
+                onUpdateFilter={ updateFilter } />
         </Col>
     </Row>
 );
@@ -29,10 +29,7 @@ const mapStateToProps = ({ todos: { filter } }) => ({ filter });
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateFilter: (filter) => {
-            dispatch(push(filter));
-            dispatch(changeFilter(filter));
-        },
+        updateFilter: (filter) => dispatch(push(filter)),
         addTodo: (todo) => dispatch(addTodo({ text: todo, done: false })),
     };
 };
