@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`An Item  renders correctly 1`] = `
+exports[`An Item  renders component 1`] = `
 <button
   aria-labelledby="todoItem1Label"
   className="list-group-item"

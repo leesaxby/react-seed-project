@@ -24,7 +24,7 @@ function setup() {
 
 describe('An Item ', () => {
 
-    it('renders correctly', () => {
+    it('renders component', () => {
         const { props } = setup();
         const tree = renderer.create(
             <Item { ...props } />
