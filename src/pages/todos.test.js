@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import renderer from 'react-test-renderer';
 
 import { Grid } from 'react-bootstrap';
 import TodosContainer, { Todos } from './Todos';
@@ -9,6 +10,10 @@ import HeaderRow from './todos/HeaderRow';
 import InputRow from './todos/InputRow';
 import ListRow from './todos/ListRow';
 import { fetchTodosSuccess } from 'Modules/todos';
+
+// Mock the nested "connected" components to avoid error with missing store.
+jest.mock('./todos/InputRow', () => 'InputRow');
+jest.mock('./todos/listRow/List', () => 'List');
 
 describe('A Todos', () => {
 
@@ -24,14 +29,13 @@ describe('A Todos', () => {
 		};
 	}
 
-    it('renders a Grid with three rows', () => {
-    	const { wrapper } = setup();
+    it('renders component', () => {
+    	const { props } = setup();
+		const tree = renderer.create(
+			<Todos { ...props } />
+		).toJSON();
 
-    	const grid = wrapper.childAt(0);
-    	expect(grid.is(Grid)).toBe(true);
-    	expect(grid.childAt(0).is(HeaderRow)).toBe(true);
-    	expect(grid.childAt(1).is(InputRow)).toBe(true);
-    	expect(grid.childAt(2).is(ListRow)).toBe(true);
+		expect(tree).toMatchSnapshot();
     });
 
     it('triggers a callback when it will mount', () => {
@@ -53,9 +57,14 @@ describe('A Todos Container', () => {
 		};
 	}
 
-	it('renders without throwing an error', () => {
-		const { wrapper } = setup();
-		expect(wrapper.exists()).toBe(true);
+	it('renders component', () => {
+		const { store } = setup();
+
+		const tree = renderer.create(
+			<TodosContainer store={store} />
+		).toJSON();
+
+		expect(tree).toMatchSnapshot();
 	});
 
     it('dispatches the right actions from Todos props', () => {

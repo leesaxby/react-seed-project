@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A Todos Container renders component 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-1 col-lg-offset-5 col-sm-1 col-sm-offset-4"
+      >
+        <img
+          alt="List Image"
+          className=""
+          src="test-file-stub"
+          style={
+            Object {
+              "height": "200px",
+              "marginBottom": "20px",
+            }
+          }
+        />
+      </div>
+    </div>
+    <InputRow />
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2"
+      >
+        <List />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`A Todos renders component 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-1 col-lg-offset-5 col-sm-1 col-sm-offset-4"
+      >
+        <img
+          alt="List Image"
+          className=""
+          src="test-file-stub"
+          style={
+            Object {
+              "height": "200px",
+              "marginBottom": "20px",
+            }
+          }
+        />
+      </div>
+    </div>
+    <InputRow />
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2"
+      >
+        <List />
+      </div>
+    </div>
+  </div>
+</div>
+`;

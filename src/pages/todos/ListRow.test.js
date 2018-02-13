@@ -1,22 +1,21 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
+import renderer from 'react-test-renderer';
 import ListRow from './ListRow';
 import List from './listRow/List';
 import { Col, Row } from 'react-bootstrap';
 
+// Mock the nested "connected" components to avoid error with missing store.
+jest.mock('./listRow/List', () => 'List');
+
 describe('A ListRow', () => {
 
-	it('renders without throwing an error', () => {
-		expect(shallow(<ListRow />).exists()).toBe(true);
+	it('renders component', () => {
+		const tree = renderer.create(
+			<ListRow />
+		).toJSON();
+
+		expect(tree).toMatchSnapshot();
 	});
 
-	it('renders a List within a Row', () => {
-		const wrapper = shallow(<ListRow />);
-
-		expect(wrapper.is(Row)).toBe(true);
-		expect(wrapper.childAt(0).is(Col)).toBe(true);
-		expect(wrapper.childAt(0).childAt(0).is(List)).toBe(true);
-	});
-	
 });
