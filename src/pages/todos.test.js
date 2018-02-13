@@ -4,11 +4,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import renderer from 'react-test-renderer';
 
-import { Grid } from 'react-bootstrap';
 import TodosContainer, { Todos } from './Todos';
-import HeaderRow from './todos/HeaderRow';
-import InputRow from './todos/InputRow';
-import ListRow from './todos/ListRow';
 import { fetchTodosSuccess } from 'Modules/todos';
 
 // Mock the nested "connected" components to avoid error with missing store.
