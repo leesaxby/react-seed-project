@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
-import { ToggleButtonGroup } from 'react-bootstrap';
+import createComponentWithIntl from 'Test/createComponentWithIntl';
 import { Filter } from './Filter';
 
 describe('A Filter', () => {
@@ -21,34 +20,29 @@ describe('A Filter', () => {
 		};
 	}
 
-    it('renders a group of two buttons', () => {
-    	const { wrapper } = setup();
+	it('renders component', () => {
+		const { props } = setup();
+		const component = createComponentWithIntl(<Filter { ...props } />);
 
-    	expect(wrapper.exists()).toBe(true);
-    	const buttonGroup = wrapper.find(ToggleButtonGroup).first();
-    	expect(buttonGroup.exists()).toBe(true);
-    	expect(buttonGroup.children()).toHaveLength(2);
-    });
+		let tree = component.toJSON();
+		expect(tree).toMatchSnapshot();
+	  });
 
-    it('has the \'ACTIVE\' button selected by default', () => {
-    	const { wrapper } = setup();
-
-    	expect(wrapper.find(ToggleButtonGroup).first().prop('value')).toBe('ACTIVE');
-    });
 
     it('selects a button based on the value of its \'filter\' prop', () => {
-    	const { props, wrapper } = setup();
+		const { props } = setup();
+		const updatedProps = Object.assign({}, props, { filter: 'DONE' });
+		const component = createComponentWithIntl(<Filter { ...updatedProps } />);
+		let tree = component.toJSON();
 
-    	wrapper.setProps(Object.assign({}, props, { filter: 'DONE' }));
-
-    	expect(wrapper.find(ToggleButtonGroup).first().prop('value')).toBe('DONE');
+		expect(tree).toMatchSnapshot();
     });
 
     it('triggers a callback when the selected button is changed', () => {
     	const { wrapper } = setup();
 
     	expect(wrapper.instance().props.onUpdateFilter).not.toHaveBeenCalled();
-    	
+
     	wrapper.simulate('change', 'DONE');
 
     	expect(wrapper.instance().props.onUpdateFilter).toHaveBeenCalledWith('DONE');
