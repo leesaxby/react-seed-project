@@ -5,6 +5,7 @@ sed -i -e '/import Todos from/d' src/App.js
 sed -i -e 's/<Todos [/]>/<div>Hello World<\/div>/g' src/App.js
 
 rm -r src/pages/todos
+rm -r src/pages/__snapshots__
 rm src/pages/Todos.js
 rm src/pages/todos.test.js
 rm src/modules/todos.js
