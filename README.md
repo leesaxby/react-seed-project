@@ -110,6 +110,7 @@ Reducers
 * Live reload / [Hot module reload](https://webpack.js.org/concepts/hot-module-replacement/)
 * e2e tests
 * Unit tests
+* Snapshot tests
 * [Wallaby](https://wallabyjs.com/)
 
 ### Production details
