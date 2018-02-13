@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A Form renders component 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group form-group-lg"
+  >
+    <input
+      aria-label={undefined}
+      className="form-control"
+      data-test-id="todo-add-item"
+      id={undefined}
+      onChange={[Function]}
+      onKeyPress={undefined}
+      placeholder={undefined}
+      type="text"
+      value=""
+    />
+  </div>
+</form>
+`;

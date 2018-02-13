@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-
-import { FormGroup, FormControl } from 'react-bootstrap';
+import renderer from 'react-test-renderer';
+import { FormControl } from 'react-bootstrap';
 import { Form } from './Form';
 
 describe('A Form', () => {
@@ -21,18 +21,16 @@ describe('A Form', () => {
 		};
 	}
 
-    it('renders a form with an input box', () => {
-    	const { wrapper } = setup();
+	it('renders component', () => {
+		const { props } = setup();
+		const tree = renderer.create(
+			<Form { ...props } />
+		).toJSON();
 
-    	expect(wrapper.is('form')).toBe(true);
+		expect(tree).toMatchSnapshot();
+	});
 
-    	const formGroup = wrapper.childAt(0);
-    	expect(formGroup.is(FormGroup)).toBe(true);
-    	expect(formGroup.childAt(0).is(FormControl)).toBe(true);
-    	expect(formGroup.childAt(0).prop('type')).toBe('text');
-    });
-
-    it('keeps track of what is being entered in the input box', () => {
+   it('keeps track of what is being entered in the input box', () => {
     	const { wrapper } = setup();
 
     	expect(wrapper.state('newItem')).toBe('');
@@ -46,7 +44,7 @@ describe('A Form', () => {
     	const { wrapper } = setup(mount);
 
     	expect(wrapper.instance().props.onAddItem).not.toHaveBeenCalled();
-    	
+
     	const formControl = wrapper.find(FormControl).first();
     	formControl.simulate('change', { target: { value: 'a value' } } );
     	wrapper.simulate('submit', 'something');
