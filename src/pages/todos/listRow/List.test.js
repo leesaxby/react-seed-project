@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 
-import { ListGroup } from 'react-bootstrap';
 import ListContainer, { List } from './List';
 import Item from './list/Item';
 import { updateDoneStatus } from 'Modules/todos';
@@ -27,20 +27,13 @@ describe('A List', () => {
 	    };
 	}
 
-	it('renders a list of Items', () => {
-		const { props, wrapper } = setup();
+	it('renders component', () => {
+		const { props } = setup();
+		const tree = renderer.create(
+			<List { ...props } />
+		).toJSON();
 
-		const listGroup = wrapper.find(ListGroup).first();
-		expect(listGroup.exists()).toBe(true);
-		expect(listGroup.children()).toHaveLength(2);
-
-		const firstItem = listGroup.childAt(0);
-		const secondItem = listGroup.childAt(1);
-		expect(firstItem.is(Item)).toBe(true);
-		expect(firstItem.prop('item')).toBe(props.listItems[0]);
-
-		expect(firstItem.is(Item)).toBe(true);
-		expect(secondItem.prop('item')).toBe(props.listItems[1]);
+		expect(tree).toMatchSnapshot();
 	});
 
 	it('triggers a callback when an Item is clicked', () => {
@@ -59,17 +52,17 @@ describe('A List', () => {
 describe('A List Container', () => {
 
 	function setup() {
-		const initialState = { 
-			todos: { 
-				filter: 'ACTIVE', 
-				listItems: [{ 
-					_id: 1, 
-					done: true, 
+		const initialState = {
+			todos: {
+				filter: 'ACTIVE',
+				listItems: [{
+					_id: 1,
+					done: true,
 				}, {
 					_id: 2,
 					done: false,
-				}], 
-			}, 
+				}],
+			},
 		};
 		const store = configureStore()(initialState);
 
@@ -82,15 +75,13 @@ describe('A List Container', () => {
 		};
 	}
 
-	it('renders without throwing an error', () => {
-		const { wrapper } = setup();
-		expect(wrapper.exists()).toBe(true);
-	});
+	it('renders component', () => {
+		const { store } = setup();
+		const tree = renderer.create(
+			<ListContainer store={store} />
+		).toJSON();
 
-	it('maps the right portion of the state to List props', () => {
-		const { wrapper, initialState } = setup();
-
-		expect(wrapper.find(List).prop('listItems')).toEqual(initialState.todos.listItems.filter((item) => !item.done));
+		expect(tree).toMatchSnapshot();
 	});
 
 	it('correctly filters todos depending on the filter state', () => {
@@ -102,8 +93,18 @@ describe('A List Container', () => {
 			},
 		};
 		const store = configureStore()(newState);
-		const wrapper = shallow(<ListContainer store={store} />);
-		expect(wrapper.find(List).prop('listItems')).toEqual(initialState.todos.listItems.filter((item) => item.done));
+
+		const tree = renderer.create(
+			<ListContainer store={store} />
+		).toJSON();
+
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('maps the right portion of the state to List props', () => {
+		const { wrapper, initialState } = setup();
+
+		expect(wrapper.find(List).prop('listItems')).toEqual(initialState.todos.listItems.filter((item) => !item.done));
 	});
 
 	it('dispatches the right actions from List props', () => {

@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A List Container correctly filters todos depending on the filter state 1`] = `
+<div
+  className="list-group"
+>
+  <button
+    aria-labelledby="todoItem1Label"
+    className="list-group-item"
+    data-test-id="todo-item"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+    type="button"
+  >
+    <p
+      className="form-control-static"
+      id="todoItem1Label"
+      style={
+        Object {
+          "textDecoration": "line-through",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-glyphicon glyphicon-ok"
+        style={
+          Object {
+            "marginRight": "15px",
+          }
+        }
+      />
+    </p>
+  </button>
+</div>
+`;
+
+exports[`A List Container renders component 1`] = `
+<div
+  className="list-group"
+>
+  <button
+    aria-labelledby="todoItem2Label"
+    className="list-group-item"
+    data-test-id="todo-item"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+    type="button"
+  >
+    <p
+      className="form-control-static"
+      id="todoItem2Label"
+      style={
+        Object {
+          "textDecoration": "",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-glyphicon glyphicon-ok"
+        style={
+          Object {
+            "marginRight": "15px",
+          }
+        }
+      />
+    </p>
+  </button>
+</div>
+`;
+
+exports[`A List renders component 1`] = `
+<div
+  className="list-group"
+>
+  <button
+    aria-labelledby="todoItem1Label"
+    className="list-group-item"
+    data-test-id="todo-item"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+    type="button"
+  >
+    <p
+      className="form-control-static"
+      id="todoItem1Label"
+      style={
+        Object {
+          "textDecoration": "line-through",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-glyphicon glyphicon-ok"
+        style={
+          Object {
+            "marginRight": "15px",
+          }
+        }
+      />
+    </p>
+  </button>
+  <button
+    aria-labelledby="todoItem2Label"
+    className="list-group-item"
+    data-test-id="todo-item"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+    type="button"
+  >
+    <p
+      className="form-control-static"
+      id="todoItem2Label"
+      style={
+        Object {
+          "textDecoration": "",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-glyphicon glyphicon-ok"
+        style={
+          Object {
+            "marginRight": "15px",
+          }
+        }
+      />
+    </p>
+  </button>
+</div>
+`;
