@@ -1,5 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`A Filter displays correct translations 1`] = `
+<div
+  aria-label={undefined}
+  className="btn-group"
+  data-toggle="buttons"
+  role="radiogroup"
+>
+  <label
+    aria-checked="true"
+    className="btn btn-default active"
+    disabled={false}
+    role="radio"
+    type="button"
+  >
+    <input
+      autoComplete="off"
+      checked={true}
+      disabled={false}
+      name="filterToggle"
+      onChange={[Function]}
+      type="radio"
+      value="ACTIVE"
+    />
+    <span>
+      alles
+    </span>
+  </label>
+  <label
+    aria-checked="false"
+    className="btn btn-default"
+    disabled={false}
+    role="radio"
+    type="button"
+  >
+    <input
+      autoComplete="off"
+      checked={false}
+      disabled={false}
+      name="filterToggle"
+      onChange={[Function]}
+      type="radio"
+      value="DONE"
+    />
+    <span>
+      erledigt
+    </span>
+  </label>
+</div>
+`;
+
 exports[`A Filter renders component 1`] = `
 <div
   aria-label={undefined}

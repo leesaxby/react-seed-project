@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
+import { getMessages } from '../../../../i18n/';
 import { Filter } from './Filter';
 
 describe('A Filter', () => {
@@ -47,5 +48,21 @@ describe('A Filter', () => {
 
     	expect(wrapper.instance().props.onUpdateFilter).toHaveBeenCalledWith('DONE');
     });
+
+    it('displays correct translations', () => {
+		const userLocal = 'de';
+		const { props } = setup();
+		const component = createComponentWithIntl(
+			<Filter { ...props } />,
+			{
+				locale: userLocal,
+				messages: getMessages(userLocal),
+			}
+		);
+
+		let tree = component.toJSON();
+		expect(tree).toMatchSnapshot();
+    });
+
 
 });
