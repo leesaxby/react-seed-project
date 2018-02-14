@@ -23,9 +23,8 @@ describe('A Filter', () => {
 
 	it('renders component', () => {
 		const { props } = setup();
-		const component = createComponentWithIntl(<Filter { ...props } />);
+		const tree = createComponentWithIntl(<Filter { ...props } />).toJSON();
 
-		let tree = component.toJSON();
 		expect(tree).toMatchSnapshot();
 	  });
 
@@ -33,8 +32,7 @@ describe('A Filter', () => {
     it('selects a button based on the value of its \'filter\' prop', () => {
 		const { props } = setup();
 		const updatedProps = Object.assign({}, props, { filter: 'DONE' });
-		const component = createComponentWithIntl(<Filter { ...updatedProps } />);
-		let tree = component.toJSON();
+		const tree = createComponentWithIntl(<Filter { ...updatedProps } />).toJSON();
 
 		expect(tree).toMatchSnapshot();
     });
@@ -52,15 +50,14 @@ describe('A Filter', () => {
     it('displays correct translations', () => {
 		const userLocal = 'de';
 		const { props } = setup();
-		const component = createComponentWithIntl(
+		const tree = createComponentWithIntl(
 			<Filter { ...props } />,
 			{
 				locale: userLocal,
 				messages: getMessages(userLocal),
 			}
-		);
+		).toJSON();
 
-		let tree = component.toJSON();
 		expect(tree).toMatchSnapshot();
     });
 

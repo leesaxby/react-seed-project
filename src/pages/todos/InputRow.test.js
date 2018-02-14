@@ -29,7 +29,7 @@ describe('An InputRow', () => {
 
 	it('renders component', () => {
 		const { props } = setup();
-		const tree = createComponentWithIntl(<InputRow { ...props } />);
+		const tree = createComponentWithIntl(<InputRow { ...props } />).toJSON();
 
 		expect(tree).toMatchSnapshot();
 	});
@@ -73,7 +73,7 @@ describe('An InputRow Container', () => {
 
 	it('renders component', () => {
 		const { store } = setup();
-		const tree = createComponentWithIntl(<InputRowContainer store={store} />);
+		const tree = createComponentWithIntl(<InputRowContainer store={store} />).toJSON();
 
 		expect(tree).toMatchSnapshot();
 	});
