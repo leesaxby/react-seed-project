@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
-import { getMessages } from '../../../../i18n/';
+// TODO: Add webpack alias for translations.
+import de from '../../../../i18n/translations/de';
 import { Filter } from './Filter';
 
 describe('A Filter', () => {
@@ -48,13 +49,12 @@ describe('A Filter', () => {
     });
 
     it('displays correct translations', () => {
-		const userLocal = 'de';
 		const { props } = setup();
 		const tree = createComponentWithIntl(
 			<Filter { ...props } />,
 			{
-				locale: userLocal,
-				messages: getMessages(userLocal),
+				locale: 'de',
+				messages: de,
 			}
 		).toJSON();
 
