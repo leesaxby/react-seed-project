@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A HeaderRow renders component 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-lg-1 col-lg-offset-5 col-sm-1 col-sm-offset-4"
+  >
+    <img
+      alt="List Image"
+      className=""
+      src="test-file-stub"
+      style={
+        Object {
+          "height": "200px",
+          "marginBottom": "20px",
+        }
+      }
+    />
+  </div>
+</div>
+`;

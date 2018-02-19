@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, render } from 'enzyme';
-import { ListGroupItem } from 'react-bootstrap';
+import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import Item from './Item';
 
 function setup() {
@@ -24,29 +24,12 @@ function setup() {
 
 describe('An Item ', () => {
 
-    it('renders a ListGroupItem containing some text', () => {
-        const { wrapper, props } = setup();
-
-        const listGroupItem = wrapper.find(ListGroupItem).first();
-        expect(listGroupItem.is(ListGroupItem)).toBe(true);
-
-        const staticWrapper = render(<Item { ...props } />);
-        expect(staticWrapper.text()).toBe(props.item.text);
-    });
-
-    it('styles item text depending on whether the item is done', () => {
-        const { wrapper, props } = setup();
-
-        let styledElement = wrapper.childAt(0);
-        expect(styledElement.prop('style')).toEqual({ 'textDecoration': '' });
-
-        wrapper.setProps(Object.assign(
-            {}, props, { item: Object.assign(
-                {}, props.item, { done: true }
-            ) }
-        ));
-        styledElement = wrapper.childAt(0);
-        expect(styledElement.prop('style')).toEqual({ 'textDecoration': 'line-through' });
+    it('renders component', () => {
+        const { props } = setup();
+        const tree = renderer.create(
+            <Item { ...props } />
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
     });
 
     it('triggers a callback when clicked', () => {

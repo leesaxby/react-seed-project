@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { push } from 'react-router-redux';
+import createComponentWithIntl from 'Test/createComponentWithIntl';
 
-import { Row, Col } from 'react-bootstrap';
 import InputRowContainer, { InputRow } from './InputRow';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
@@ -27,17 +27,11 @@ describe('An InputRow', () => {
 		};
 	}
 
-	it('renders a Row with a Form and a Filter', () => {
-		const { wrapper } = setup();
+	it('renders component', () => {
+		const { props } = setup();
+		const tree = createComponentWithIntl(<InputRow { ...props } />).toJSON();
 
-		expect(wrapper.exists()).toBe(true);
-		expect(wrapper.is(Row)).toBe(true);
-
-		expect(wrapper.childAt(0).is(Col)).toBe(true);
-		expect(wrapper.childAt(0).childAt(0).is(Form)).toBe(true);
-
-		expect(wrapper.childAt(1).is(Col)).toBe(true);
-		expect(wrapper.childAt(1).childAt(0).is(Filter)).toBe(true);
+		expect(tree).toMatchSnapshot();
 	});
 
 	it('triggers a callback when the Form requests it', () => {
@@ -77,9 +71,11 @@ describe('An InputRow Container', () => {
 		};
 	}
 
-	it('renders without throwing an error', () => {
-		const { wrapper } = setup();
-		expect(wrapper.exists()).toBe(true);
+	it('renders component', () => {
+		const { store } = setup();
+		const tree = createComponentWithIntl(<InputRowContainer store={store} />).toJSON();
+
+		expect(tree).toMatchSnapshot();
 	});
 
 	it('maps the right portion of the state to InputRow props', () => {

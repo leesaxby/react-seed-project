@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`An Item  renders component 1`] = `
+<button
+  aria-labelledby="todoItem1Label"
+  className="list-group-item"
+  data-test-id="todo-item"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex={0}
+  type="button"
+>
+  <p
+    className="form-control-static"
+    id="todoItem1Label"
+    style={
+      Object {
+        "textDecoration": "",
+      }
+    }
+  >
+    <span
+      className="glyphicon glyphicon-glyphicon glyphicon-ok"
+      style={
+        Object {
+          "marginRight": "15px",
+        }
+      }
+    />
+    Item one
+  </p>
+</button>
+`;

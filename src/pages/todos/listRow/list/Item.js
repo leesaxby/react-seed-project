@@ -18,7 +18,7 @@ export default function Item({ item, onClick }) {
         },
         'aria-labelledby': labelId,
     };
-            
+
     return (
         <ListGroupItem { ...aria } onClick={ triggerClick }
                        data-test-id="todo-item">
