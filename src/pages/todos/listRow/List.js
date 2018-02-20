@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateDoneStatus } from 'Modules/todos';
-import { filterTodos } from 'Modules/todos.selector';
+import { getFilteredTodos } from 'Modules/todos.selector';
 import { ListGroup } from 'react-bootstrap';
 
 import Item from './list/Item';
@@ -38,7 +38,7 @@ List.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        listItems: filterTodos(state),
+        listItems: getFilteredTodos(state),
     };
 };
 

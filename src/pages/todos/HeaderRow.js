@@ -11,6 +11,7 @@ export default function HeaderRow() {
 	                   alt="List Image"
 	                   style={{ 'height': '200px',
 	                            'marginBottom': '20px' }}/>
+								asdasdsdasd
 	        </Col>
 	    </Row>
 	);
