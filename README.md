@@ -6,6 +6,7 @@ The seed contains a demo todo project which will give an idea of how to structur
 
 It also contains working examples of the following
 * Redux
+* [Selectors](https://github.com/reactjs/reselect)
 * PropTypes
 * Internationalisation
 * Accessibility
@@ -13,6 +14,7 @@ It also contains working examples of the following
 * Theming
 * e2e tests
 * Unit tests
+* Snapshot tests
 * Routing
 
 To remove the todo demo just delete the `src/components/todos` directory and the corresponding imports in `src/components/app/App.js`
