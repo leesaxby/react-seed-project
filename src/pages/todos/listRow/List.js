@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateDoneStatus } from 'Modules/todos';
+import { filterTodos } from 'Modules/todos.selector';
 import { ListGroup } from 'react-bootstrap';
 
 import Item from './list/Item';
@@ -35,13 +36,9 @@ List.propTypes = {
     onItemClick: PropTypes.func.isRequired,
 };
 
-const filterTodos = (list, filter) => {
-    return list.filter(({ done }) => filter === 'DONE' ? done : !done);
-};
-
-const mapStateToProps = ({ todos: { listItems, filter } }) => {
+const mapStateToProps = (state) => {
     return {
-        listItems: filterTodos(listItems, filter),
+        listItems: filterTodos(state),
     };
 };
 
