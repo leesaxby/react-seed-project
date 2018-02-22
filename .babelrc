@@ -1,5 +1,13 @@
 {
-  "presets": [["es2015", { "modules": false }], "react"],
+  "presets": [
+    [
+      "env", {
+        "targets": ["chrome", "firefox", "safari", "edge", "ie 11"],
+        "modules": false
+      }
+    ],
+    "react"
+  ],
   "plugins": [
     "transform-class-properties",
       ["transform-imports", {
