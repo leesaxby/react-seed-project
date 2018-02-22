@@ -36,12 +36,19 @@
         "func-style": [2, "expression"],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/jsx-indent": [2, 4],
-        "react/jsx-indent-props": [2, 4]
-
+        "react/jsx-indent-props": [2, 4],
+        "react/jsx-closing-bracket-location": [2, "after-props"]
     },
     "globals": {
         "_": true,
         "module": true,
         "__dirname": true
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+            "config": "./webpack/webpack.common.js"
+            }
+        }
     }
 }
