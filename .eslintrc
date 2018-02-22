@@ -5,7 +5,7 @@
         "jest": true,
         "amd": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "extends": ["airbnb"],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -22,24 +22,22 @@
             0,
             "smart-tabs"
         ],
-        "quotes": [
-            2,
-            "single"
-        ],
-        "semi": [
-            2,
-            "always"
-        ],
         "no-unused-vars": [
             "error",
             {
                 "varsIgnorePattern": "APP_THEME"
             }
         ],
-        "comma-dangle": [
-            "error",
-            "always-multiline"
-        ]
+        "indent": [2, 4],
+        "prefer-destructuring": [2, {
+            "array": true,
+            "object": true
+        }],
+        "func-style": [2, "expression"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4]
+
     },
     "globals": {
         "_": true,
