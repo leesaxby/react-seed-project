@@ -7,12 +7,12 @@ export default function Item({ item, onClick }) {
         onClick(item);
     };
 
-    const labelId = `todoItem${item._id}Label`;
+    const labelId = `todoItem${item.id}Label`;
     const aria = {
         role: 'button',
         tabIndex: 0,
-        onKeyDown: e => {
-            if(e.keyCode === 13) {
+        onKeyDown: (e) => {
+            if (e.keyCode === 13) {
                 triggerClick();
             }
         },
@@ -20,15 +20,20 @@ export default function Item({ item, onClick }) {
     };
 
     return (
-        <ListGroupItem { ...aria } onClick={ triggerClick }
-                       data-test-id="todo-item">
+        <ListGroupItem
+            {...aria}
+            onClick={triggerClick}
+            data-test-id="todo-item">
 
-            <FormControl.Static id={ labelId } style={{ 'textDecoration': item.done ? 'line-through' : '' }}>
+            <FormControl.Static
+                id={labelId}
+                style={{ textDecoration: item.done ? 'line-through' : '' }}>
 
-                <Glyphicon glyph="glyphicon glyphicon-ok"
-                           style={{ 'marginRight': '15px' }}/>
+                <Glyphicon
+                    glyph="glyphicon glyphicon-ok"
+                    style={{ marginRight: '15px' }} />
+
                 { item.text }
-
             </FormControl.Static>
 
         </ListGroupItem>
@@ -37,9 +42,9 @@ export default function Item({ item, onClick }) {
 
 Item.propTypes = {
     item: PropTypes.shape({
-        _id: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired,
         text: PropTypes.string,
         done: PropTypes.bool.isRequired,
-    }),
+    }).isRequired,
     onClick: PropTypes.func.isRequired,
 };

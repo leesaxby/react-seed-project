@@ -28,12 +28,18 @@
                 "varsIgnorePattern": "APP_THEME"
             }
         ],
-        "indent": [2, 4],
+        "indent": [2, 4, {"SwitchCase": 1}],
         "prefer-destructuring": [2, {
             "array": true,
             "object": true
         }],
         "func-style": [2, "expression"],
+        "function-paren-newline": [2, "consistent"],
+        "no-confusing-arrow": [0],
+        "camelcase": [0],
+        "global-require": [0],
+        "import/no-named-as-default": [0],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/jsx-indent": [2, 4],
         "react/jsx-indent-props": [2, 4],
