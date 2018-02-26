@@ -10,7 +10,7 @@ describe('The Todos module', () => {
 
         it('adds a todo', () => {
             const todo = {
-                _id: 5,
+                id: 5,
                 text: 'A New Todo',
                 done: false,
             };
@@ -18,27 +18,28 @@ describe('The Todos module', () => {
                 type: actions.ADD_TODO,
                 payload: todo,
             };
-            expect(actions.addTodo(todo)).toEqual(expectedAction);
+
+            expect(actions.addNewTodo(todo)).toEqual(expectedAction);
         });
         it('updates the status of a todo', () => {
-            const _id = 1;
+            const id = 1;
             const doneStatus = true;
             const expectedAction = {
                 type: actions.UPDATE_DONE_STATUS,
                 payload: {
-                    _id,
+                    id,
                     doneStatus,
                 },
             };
-            expect(actions.updateDoneStatus(_id, doneStatus)).toEqual(expectedAction);
+            expect(actions.updateDoneStatus(id, doneStatus)).toEqual(expectedAction);
         });
         it('fetches todos, and gives notice of their arrival', () => {
             const expectedActions = [{
                 type: actions.FETCH_TODOS_SUCCESS,
                 payload: [
-                    { _id: 1, text: 'Item One', done: false},
-                    { _id: 2, text: 'Item Two', done: false},
-                    { _id: 3, text: 'Item Three', done: false},
+                    { id: 1, text: 'Item One', done: false},
+                    { id: 2, text: 'Item Two', done: false},
+                    { id: 3, text: 'Item Three', done: false},
                 ],
             }];
 
@@ -73,7 +74,7 @@ describe('The Todos module', () => {
             ).toEqual({
                     filter: 'ACTIVE',
                     listItems: [{
-                        _id: 0,
+                        id: 0,
                         text: 'New item',
                         done: false,
                     }],
@@ -82,7 +83,7 @@ describe('The Todos module', () => {
         });
         it('handles FETCH_TODOS_SUCCESS', () => {
             const payload = [
-                { _id: 1, text: 'Item One', done: false },
+                { id: 1, text: 'Item One', done: false },
             ];
             expect(reducer(initialState, {
                     type: actions.FETCH_TODOS_SUCCESS,
@@ -97,21 +98,21 @@ describe('The Todos module', () => {
             expect(reducer({
                     filter: initialState.filter,
                     listItems: [{
-                        _id: 1,
+                        id: 1,
                         text: 'An Item',
                         done: false,
                     }],
                 }, {
                     type: actions.UPDATE_DONE_STATUS,
                     payload: {
-                        _id: 1,
+                        id: 1,
                         doneStatus: true,
                     },
                 })
             ).toEqual({
                 filter: initialState.filter,
                 listItems: [{
-                    _id: 1,
+                    id: 1,
                     text: 'An Item',
                     done: true,
                 }],

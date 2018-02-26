@@ -9,7 +9,7 @@ import InputRowContainer, { InputRow } from './InputRow';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
-import { addTodo } from 'Modules/todos';
+import { addNewTodo } from 'Modules/todos';
 
 describe('An InputRow', () => {
 
@@ -96,7 +96,7 @@ describe('An InputRow Container', () => {
 
 		const actions = store.getActions();
 		expect(actions).toHaveLength(2);
-		expect(actions[0]).toEqual(addTodo({ text: newTodo, done: false }));
+		expect(actions[0]).toEqual(addNewTodo({ text: newTodo, done: false }));
 		expect(actions[1]).toEqual(push(newFilter));
 	});
 

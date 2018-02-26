@@ -7,7 +7,7 @@ function setup() {
 
     const props = {
         item: {
-            _id: 1,
+            id: 1,
             text: 'Item one',
             done: false,
         },

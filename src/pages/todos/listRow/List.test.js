@@ -12,10 +12,10 @@ describe('A List', () => {
 	function setup() {
 		const props = {
 		    listItems: [{
-		    	_id: 1,
+		    	id: 1,
 		    	done: true,
 		    }, {
-		    	_id: 2,
+		    	id: 2,
 		    	done: false,
 		    }],
 		    onItemClick: jest.fn(),
@@ -56,10 +56,10 @@ describe('A List Container', () => {
 			todos: {
 				filter: 'ACTIVE',
 				listItems: [{
-					_id: 1,
+					id: 1,
 					done: true,
 				}, {
-					_id: 2,
+					id: 2,
 					done: false,
 				}],
 			},
@@ -117,7 +117,7 @@ describe('A List Container', () => {
 		wrapper.prop('onItemClick')(clickedItem);
 
 		expect(store.getActions()).toHaveLength(1);
-		expect(store.getActions()[0]).toEqual(updateDoneStatus(clickedItem._id, !clickedItem.done));
+		expect(store.getActions()[0]).toEqual(updateDoneStatus(clickedItem.id, !clickedItem.done));
 	});
 
 });
