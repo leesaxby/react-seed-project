@@ -3,8 +3,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Item from './Item';
 
-function setup() {
-
+const setup = () => {
     const props = {
         item: {
             id: 1,
@@ -14,7 +13,7 @@ function setup() {
         onClick: jest.fn(),
     };
 
-    const wrapper = shallow(<Item { ...props }/>);
+    const wrapper = shallow(<Item {...props} />);
 
     return {
         props,
@@ -23,11 +22,10 @@ function setup() {
 }
 
 describe('An Item ', () => {
-
     it('renders component', () => {
         const { props } = setup();
         const tree = renderer.create(
-            <Item { ...props } />
+            <Item {...props} />,
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });
@@ -55,5 +53,4 @@ describe('An Item ', () => {
         wrapper.simulate('keyDown', { keyCode: returnKeyCode });
         expect(props.onClick.mock.calls).toHaveLength(1);
     });
-
 });

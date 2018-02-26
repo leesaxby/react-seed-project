@@ -6,13 +6,11 @@ import ListRow from './ListRow';
 jest.mock('./listRow/List', () => 'List');
 
 describe('A ListRow', () => {
+    it('renders component', () => {
+        const tree = renderer.create(
+            <ListRow />,
+        ).toJSON();
 
-	it('renders component', () => {
-		const tree = renderer.create(
-			<ListRow />
-		).toJSON();
-
-		expect(tree).toMatchSnapshot();
-	});
-
+        expect(tree).toMatchSnapshot();
+    });
 });
