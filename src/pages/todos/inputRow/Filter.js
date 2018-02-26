@@ -22,38 +22,40 @@ const messages = defineMessages({
 });
 
 export class Filter extends React.Component {
-
     static defaultProps = {
-      filter: 'ACTIVE',
+        filter: 'ACTIVE',
     }
 
     static propTypes = {
-        filter: PropTypes.oneOf([ 'ACTIVE', 'DONE' ]),
+        filter: PropTypes.oneOf(['ACTIVE', 'DONE']),
         onUpdateFilter: PropTypes.func.isRequired,
         intl: PropTypes.shape({
-          formatMessage: PropTypes.func.isRequired,
+            formatMessage: PropTypes.func.isRequired,
         }).isRequired,
     };
 
     render() {
         const { filter, onUpdateFilter, intl } = this.props;
-        return(
-            <ToggleButtonGroup type="radio"
-                               name="filterToggle"
-                               role="radiogroup"
-                               aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])}
-                               value={filter}
-                               onChange={onUpdateFilter}>
+        return (
+            <ToggleButtonGroup
+                type="radio"
+                name="filterToggle"
+                role="radiogroup"
+                aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])}
+                value={filter}
+                onChange={onUpdateFilter}>
 
-                <ToggleButton value="ACTIVE"
-                              role="radio"
-                              aria-checked={String(filter === 'ACTIVE')}>
+                <ToggleButton
+                    value="ACTIVE"
+                    role="radio"
+                    aria-checked={String(filter === 'ACTIVE')}>
                     <FormattedMessage {...messages['todo.filter.todo']} />
                 </ToggleButton>
 
-                <ToggleButton value="DONE"
-                              role="radio"
-                              aria-checked={String(filter === 'DONE')}>
+                <ToggleButton
+                    value="DONE"
+                    role="radio"
+                    aria-checked={String(filter === 'DONE')}>
                     <FormattedMessage {...messages['todo.filter.done']} />
                 </ToggleButton>
 

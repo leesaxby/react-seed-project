@@ -12,7 +12,6 @@ const messages = defineMessages({
 });
 
 export class Form extends React.Component {
-
     static propTypes = {
         onAddItem: PropTypes.func.isRequired,
         intl: PropTypes.shape({
@@ -23,22 +22,6 @@ export class Form extends React.Component {
     state = {
         newItem: '',
     };
-
-    render() {
-        return (
-            <form onSubmit={this.submitTodo}>
-                <FormGroup bsSize="large">
-                    <FormControl type="text"
-                                 data-test-id="todo-add-item"
-                                 placeholder={this.props.intl.formatMessage(messages['todo.form.addItem'])}
-                                 aria-label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
-                                 value={this.state.newItem}
-                                 onChange={this.updateNewItem}
-                                 onKeyPress={this.handleKeyPress}/>
-                </FormGroup>
-            </form>
-        );
-    }
 
     addTodoItem = () => {
         this.props.onAddItem(this.state.newItem);
@@ -53,7 +36,23 @@ export class Form extends React.Component {
         this.addTodoItem();
         e.preventDefault();
     }
-    
+
+    render() {
+        return (
+            <form onSubmit={this.submitTodo}>
+                <FormGroup bsSize="large">
+                    <FormControl
+                        type="text"
+                        data-test-id="todo-add-item"
+                        placeholder={this.props.intl.formatMessage(messages['todo.form.addItem'])}
+                        aria-label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
+                        value={this.state.newItem}
+                        onChange={this.updateNewItem}
+                        onKeyPress={this.handleKeyPress} />
+                </FormGroup>
+            </form>
+        );
+    }
 }
 
 export default injectIntl(Form);

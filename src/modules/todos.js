@@ -1,24 +1,25 @@
 import { LOCATION_CHANGE } from 'react-router-redux';
+
 const ADD_TODO = 'app/todos/ADD_TODO';
 const FETCH_TODOS_SUCCESS = 'app/todos/FETCH_TODOS_SUCCESS';
 const UPDATE_DONE_STATUS = 'app/todos/UPDATE_DONE_STATUS';
 
-const addTodo = (todo) => ({
+const addNewTodo = todo => ({
     type: ADD_TODO,
     payload: todo,
 });
 
-const updateDoneStatus = (_id, doneStatus) => ({
+const updateDoneStatus = (id, doneStatus) => ({
     type: UPDATE_DONE_STATUS,
-    payload: { _id, doneStatus },
+    payload: { id, doneStatus },
 });
 
 const fetchTodosSuccess = () => ({
     type: FETCH_TODOS_SUCCESS,
     payload: [
-        { _id: 1, text: 'Item One', done: false},
-        { _id: 2, text: 'Item Two', done: false},
-        { _id: 3, text: 'Item Three', done: false},
+        { id: 1, text: 'Item One', done: false },
+        { id: 2, text: 'Item Two', done: false },
+        { id: 3, text: 'Item Three', done: false },
     ],
 });
 
@@ -28,7 +29,7 @@ export {
     ADD_TODO,
     FETCH_TODOS_SUCCESS,
     UPDATE_DONE_STATUS,
-    addTodo,
+    addNewTodo,
     updateDoneStatus,
     fetchTodos,
     fetchTodosSuccess,
@@ -42,13 +43,13 @@ const initialState = {
 const todo = (state, action) => {
     switch (action.type) {
         case ADD_TODO: {
-            const ids = state.listItems.map(todo => todo._id);
+            const ids = state.listItems.map(item => item.id);
             const newId = ids.length ? Math.max(...ids) + 1 : 0;
-            return Object.assign({}, action.payload, { _id: newId });
+            return Object.assign({}, action.payload, { id: newId });
         }
         case UPDATE_DONE_STATUS: {
             const listItems = Object.assign(state.listItems);
-            const itemIndex = listItems.findIndex(({ _id }) => _id === action.payload._id);
+            const itemIndex = listItems.findIndex(({ id }) => id === action.payload.id);
             const newListItem = Object.assign({}, listItems[itemIndex], {
                 done: action.payload.doneStatus,
             });
@@ -83,7 +84,7 @@ export default function todos(state = initialState, action) {
         case LOCATION_CHANGE: {
             const filterPath = action.payload.pathname.slice(1);
             return Object.assign({}, state, {
-                filter: filterPath == 'DONE' ? 'DONE' : 'ACTIVE',
+                filter: filterPath === 'DONE' ? 'DONE' : 'ACTIVE',
             });
         }
         default:

@@ -9,7 +9,6 @@ import InputRow from './todos/InputRow';
 import ListRow from './todos/ListRow';
 
 export class Todos extends React.Component {
-
     static propTypes = {
         fetchData: PropTypes.func.isRequired,
     };
@@ -29,13 +28,10 @@ export class Todos extends React.Component {
             </div>
         );
     }
-
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: () => dispatch(fetchTodos()),
-    };
-};
+const mapDispatchToProps = dispatch => ({
+    fetchData: () => dispatch(fetchTodos()),
+});
 
 export default connect(undefined, mapDispatchToProps)(Todos);
