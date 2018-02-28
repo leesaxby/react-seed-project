@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateDoneStatus } from 'Modules/todos';
 import getFilteredTodos from 'Modules/todos.selector';
-import { ListGroup } from 'react-bootstrap';
+import { List } from 'material-ui';
 
 import Item from './list/Item';
 
-export const List = ({ listItems, onItemClick }) => {
+export const TodoList = ({ listItems, onItemClick }) => {
     const getListItems = () => (
         listItems.map(item => (
             <Item
@@ -16,15 +16,15 @@ export const List = ({ listItems, onItemClick }) => {
                 onClick={onItemClick} />)));
 
     return (
-        <ListGroup>{ getListItems() }</ListGroup>
+        <List>{getListItems()}</List>
     );
 };
 
-List.defaultProps = {
+TodoList.defaultProps = {
     listItems: [],
 };
 
-List.propTypes = {
+TodoList.propTypes = {
     listItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -43,4 +43,4 @@ const mapDispatchToProps = dispatch => ({
     onItemClick: ({ id, done }) => dispatch(updateDoneStatus(id, !done)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

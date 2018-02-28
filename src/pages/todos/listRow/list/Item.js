@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListGroupItem, FormControl, Glyphicon } from 'react-bootstrap';
+import { ListItem, Checkbox } from 'material-ui';
 
 export default function Item({ item, onClick }) {
     const triggerClick = () => {
         onClick(item);
     };
 
-    const labelId = `todoItem${item.id}Label`;
+    const buttonLabelId = `todoItemButton${item.id}Label`;
+    const checkboxLabelId = `todoItemCheckbox${item.id}Label`;
+
     const aria = {
         role: 'button',
         tabIndex: 0,
@@ -16,27 +18,33 @@ export default function Item({ item, onClick }) {
                 triggerClick();
             }
         },
-        'aria-labelledby': labelId,
+        'aria-labelledby': buttonLabelId,
     };
 
     return (
-        <ListGroupItem
+        <ListItem
             {...aria}
+            button
+            dense
             onClick={triggerClick}
-            data-test-id="todo-item">
+            data-test-id="todo-item"
+            component="li"
+            label={buttonLabelId}
+            id={buttonLabelId}
+            style={{ textDecoration: item.done ? 'line-through' : '' }}>
 
-            <FormControl.Static
-                id={labelId}
-                style={{ textDecoration: item.done ? 'line-through' : '' }}>
+            <label htmlFor="checkboxLabelId">
+                <Checkbox
+                    id={checkboxLabelId}
+                    checked={item.done}
+                    tabIndex={-1}
+                    disableRipple
+                    aria-label={checkboxLabelId} />
+            </label>
 
-                <Glyphicon
-                    glyph="glyphicon glyphicon-ok"
-                    style={{ marginRight: '15px' }} />
+            {item.text}
 
-                { item.text }
-            </FormControl.Static>
-
-        </ListGroupItem>
+        </ListItem >
     );
 }
 
