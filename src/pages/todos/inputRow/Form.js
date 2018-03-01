@@ -48,8 +48,7 @@ export class Form extends React.Component {
                     label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
                     aria-label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
                     value={this.state.newItem}
-                    onChange={this.updateNewItem}
-                    onKeyPress={this.handleKeyPress} />
+                    onChange={this.updateNewItem} />
             </form>
         );
     }

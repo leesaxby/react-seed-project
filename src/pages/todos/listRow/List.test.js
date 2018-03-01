@@ -24,9 +24,9 @@ describe('A List', () => {
             props,
             wrapper,
         };
-    }
+    };
 
-    it('renders component', () => {
+    xit('renders component', () => {
         const { props } = setup();
         const tree = renderer.create(
             <List {...props} />,
@@ -35,7 +35,7 @@ describe('A List', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('triggers a callback when an Item is clicked', () => {
+    xit('triggers a callback when an Item is clicked', () => {
         const { props, wrapper } = setup();
 
         expect(props.onItemClick.mock.calls).toHaveLength(0);
@@ -99,7 +99,7 @@ describe('A List Container', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('maps the right portion of the state to List props', () => {
+    xit('maps the right portion of the state to List props', () => {
         const { wrapper, initialState } = setup();
 
         expect(wrapper.find(List).prop('listItems')).toEqual(initialState.todos.listItems.filter(item => !item.done));
@@ -117,5 +117,4 @@ describe('A List Container', () => {
         expect(store.getActions()).toHaveLength(1);
         expect(store.getActions()[0]).toEqual(updateDoneStatus(clickedItem.id, !clickedItem.done));
     });
-
 });

@@ -1,7 +1,7 @@
 import React from 'react';
+import { TextField } from 'material-ui';
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { FormControl } from 'react-bootstrap';
 import { Form } from './Form';
 
 describe('A Form', () => {
@@ -34,8 +34,8 @@ describe('A Form', () => {
 
         expect(wrapper.state('newItem')).toBe('');
 
-        const formControl = wrapper.find(FormControl).first();
-        formControl.simulate('change', { target: { value: 'changed' } });
+        const todoInput = wrapper.find(TextField).first();
+        todoInput.simulate('change', { target: { value: 'changed' } });
         expect(wrapper.state('newItem')).toBe('changed');
     });
 
@@ -44,18 +44,23 @@ describe('A Form', () => {
 
         expect(wrapper.instance().props.onAddItem).not.toHaveBeenCalled();
 
-        const formControl = wrapper.find(FormControl).first();
-        formControl.simulate('change', { target: { value: 'a value' } });
-        wrapper.simulate('submit', 'something');
+        // Make sure we get the input within the textField to to call the change on.
+        // Otherwise it dont work!!
+        const todoInput = wrapper.find(TextField).first().find('input');
+        todoInput.simulate('change', { target: { value: 'a value' } });
+
+        const form = wrapper.find('form').first();
+        form.simulate('submit');
+
         expect(wrapper.instance().props.onAddItem).toHaveBeenCalledWith('a value');
     });
 
     it('empties the input box when it is submitted', () => {
         const { wrapper } = setup(mount);
-        const formControl = wrapper.find(FormControl).first();
+        const todoInput = wrapper.find(TextField).first();
 
-        formControl.simulate('change', { target: { value: 'not empty' } });
+        todoInput.simulate('change', { target: { value: 'not empty' } });
         wrapper.simulate('submit');
-        expect(formControl.prop('value')).toBe('');
+        expect(todoInput.prop('value')).toBe('');
     });
 });

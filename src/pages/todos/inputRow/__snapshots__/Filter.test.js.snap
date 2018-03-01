@@ -1,150 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`A Filter displays correct translations 1`] = `
-<div
-  aria-label={undefined}
-  className="btn-group"
-  data-toggle="buttons"
-  role="radiogroup"
->
+<div>
+  <span>
+    Show fertig
+  </span>
   <label
-    aria-checked="true"
-    className="btn btn-default active"
-    disabled={false}
-    role="radio"
-    type="button"
+    htmlFor="todoStateSwitch"
   >
-    <input
-      autoComplete="off"
-      checked={true}
-      disabled={false}
-      name="filterToggle"
-      onChange={[Function]}
-      type="radio"
-      value="ACTIVE"
-    />
-    <span>
-      alles
-    </span>
-  </label>
-  <label
-    aria-checked="false"
-    className="btn btn-default"
-    disabled={false}
-    role="radio"
-    type="button"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      disabled={false}
-      name="filterToggle"
-      onChange={[Function]}
-      type="radio"
-      value="DONE"
-    />
-    <span>
-      erledigt
+    <span
+      className="MuiSwitch-root-1"
+    >
+      <span
+        aria-label={undefined}
+        className="MuiButtonBase-root-21 MuiIconButton-root-15 MuiSwitchBase-root-10 MuiSwitchBase-default-12 MuiSwitch-default-5"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role={undefined}
+        tabIndex={null}
+      >
+        <span
+          className="MuiIconButton-label-20"
+        >
+          <span
+            className="MuiSwitch-icon-3"
+          />
+          <input
+            checked={false}
+            className="MuiSwitchBase-input-11"
+            disabled={undefined}
+            id="todoStateSwitch"
+            name={undefined}
+            onChange={[Function]}
+            tabIndex={undefined}
+            type="checkbox"
+            value={undefined}
+          />
+        </span>
+        <span
+          className="MuiTouchRipple-root-23"
+        />
+      </span>
+      <span
+        className="MuiSwitch-bar-2"
+      />
     </span>
   </label>
 </div>
 `;
 
 exports[`A Filter renders component 1`] = `
-<div
-  aria-label={undefined}
-  className="btn-group"
-  data-toggle="buttons"
-  role="radiogroup"
->
+<div>
+  <span>
+    Show Done
+  </span>
   <label
-    aria-checked="true"
-    className="btn btn-default active"
-    disabled={false}
-    role="radio"
-    type="button"
+    htmlFor="todoStateSwitch"
   >
-    <input
-      autoComplete="off"
-      checked={true}
-      disabled={false}
-      name="filterToggle"
-      onChange={[Function]}
-      type="radio"
-      value="ACTIVE"
-    />
-    <span>
-      todo
-    </span>
-  </label>
-  <label
-    aria-checked="false"
-    className="btn btn-default"
-    disabled={false}
-    role="radio"
-    type="button"
-  >
-    <input
-      autoComplete="off"
-      checked={false}
-      disabled={false}
-      name="filterToggle"
-      onChange={[Function]}
-      type="radio"
-      value="DONE"
-    />
-    <span>
-      done
+    <span
+      className="MuiSwitch-root-1"
+    >
+      <span
+        aria-label={undefined}
+        className="MuiButtonBase-root-21 MuiIconButton-root-15 MuiSwitchBase-root-10 MuiSwitchBase-default-12 MuiSwitch-default-5"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role={undefined}
+        tabIndex={null}
+      >
+        <span
+          className="MuiIconButton-label-20"
+        >
+          <span
+            className="MuiSwitch-icon-3"
+          />
+          <input
+            checked={false}
+            className="MuiSwitchBase-input-11"
+            disabled={undefined}
+            id="todoStateSwitch"
+            name={undefined}
+            onChange={[Function]}
+            tabIndex={undefined}
+            type="checkbox"
+            value={undefined}
+          />
+        </span>
+        <span
+          className="MuiTouchRipple-root-23"
+        />
+      </span>
+      <span
+        className="MuiSwitch-bar-2"
+      />
     </span>
   </label>
 </div>
 `;
 
 exports[`A Filter selects a button based on the value of its 'filter' prop 1`] = `
-<div
-  aria-label={undefined}
-  className="btn-group"
-  data-toggle="buttons"
-  role="radiogroup"
->
+<div>
+  <span>
+    Show Done
+  </span>
   <label
-    aria-checked="false"
-    className="btn btn-default"
-    disabled={false}
-    role="radio"
-    type="button"
+    htmlFor="todoStateSwitch"
   >
-    <input
-      autoComplete="off"
-      checked={false}
-      disabled={false}
-      name="filterToggle"
-      onChange={[Function]}
-      type="radio"
-      value="ACTIVE"
-    />
-    <span>
-      todo
-    </span>
-  </label>
-  <label
-    aria-checked="true"
-    className="btn btn-default active"
-    disabled={false}
-    role="radio"
-    type="button"
-  >
-    <input
-      autoComplete="off"
-      checked={true}
-      disabled={false}
-      name="filterToggle"
-      onChange={[Function]}
-      type="radio"
-      value="DONE"
-    />
-    <span>
-      done
+    <span
+      className="MuiSwitch-root-1"
+    >
+      <span
+        aria-label={undefined}
+        className="MuiButtonBase-root-21 MuiIconButton-root-15 MuiSwitchBase-root-10 MuiSwitchBase-default-12 MuiSwitch-default-5 MuiSwitchBase-checked-13 MuiSwitch-checked-6 MuiSwitch-checkedPrimary-7"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role={undefined}
+        tabIndex={null}
+      >
+        <span
+          className="MuiIconButton-label-20"
+        >
+          <span
+            className="MuiSwitch-icon-3 MuiSwitch-iconChecked-4"
+          />
+          <input
+            checked={true}
+            className="MuiSwitchBase-input-11"
+            disabled={undefined}
+            id="todoStateSwitch"
+            name={undefined}
+            onChange={[Function]}
+            tabIndex={undefined}
+            type="checkbox"
+            value={undefined}
+          />
+        </span>
+        <span
+          className="MuiTouchRipple-root-23"
+        />
+      </span>
+      <span
+        className="MuiSwitch-bar-2"
+      />
     </span>
   </label>
 </div>

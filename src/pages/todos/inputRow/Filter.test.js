@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Switch } from 'material-ui';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
 // TODO: Add webpack alias for translations.
 import de from '../../../../i18n/translations/de';
@@ -40,8 +41,8 @@ describe('A Filter', () => {
         const { wrapper } = setup();
 
         expect(wrapper.instance().props.onUpdateFilter).not.toHaveBeenCalled();
-        wrapper.simulate('change', 'DONE');
-        expect(wrapper.instance().props.onUpdateFilter).toHaveBeenCalledWith('DONE');
+        wrapper.find(Switch).simulate('change');
+        expect(wrapper.instance().props.onUpdateFilter).toHaveBeenCalledWith('ACTIVE');
     });
 
     it('displays correct translations', () => {
