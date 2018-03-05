@@ -1,19 +1,21 @@
 import React from 'react';
-import { Row, Col, Image } from 'react-bootstrap';
 
 import listImage from 'Images/list.png';
+import { Grid } from 'material-ui';
+
 
 export default function HeaderRow() {
     return (
-        <Row>
-            <Col sm={1} lg={1} smOffset={4} lgOffset={5}>
-                <Image
+        <Grid container justify="center">
+            <Grid item >
+                <img
                     src={listImage}
-                    alt="List Image"
+                    alt="header"
                     style={{
                         height: '200px',
                         marginBottom: '20px',
                     }} />
-            </Col>
-        </Row>);
+            </Grid>
+        </Grid>
+    );
 }

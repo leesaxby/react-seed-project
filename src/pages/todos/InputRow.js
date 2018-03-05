@@ -2,22 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import { Row, Col } from 'react-bootstrap';
 import { addNewTodo } from 'Modules/todos';
+import { Grid } from 'material-ui';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
 export const InputRow = ({ filter, updateFilter, addTodo }) => (
-    <Row>
-        <Col sm={8} lg={8} smOffset={1} lgOffset={2}>
+    <div>
+        <Grid item xs={12} >
             <Form onAddItem={addTodo} />
-        </Col>
-        <Col sm={3} lg={2}>
+        </Grid>
+
+        <Grid item xs={12} >
             <Filter
                 filter={filter}
                 onUpdateFilter={updateFilter} />
-        </Col>
-    </Row>
+        </Grid>
+    </div>
+
 );
 
 InputRow.defaultProps = {

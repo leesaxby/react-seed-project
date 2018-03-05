@@ -2,14 +2,13 @@
 
 exports[`A HeaderRow renders component 1`] = `
 <div
-  className="row"
+  className="MuiGrid-typeContainer-1 MuiGrid-spacing-xs-16-23 MuiGrid-justify-xs-center-18"
 >
   <div
-    className="col-lg-1 col-lg-offset-5 col-sm-1 col-sm-offset-4"
+    className="MuiGrid-typeItem-2"
   >
     <img
-      alt="List Image"
-      className=""
+      alt="header"
       src="test-file-stub"
       style={
         Object {

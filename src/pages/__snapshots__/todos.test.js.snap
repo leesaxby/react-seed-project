@@ -3,36 +3,47 @@
 exports[`A Todos Container renders component 1`] = `
 <div>
   <div
-    className="container"
+    className="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-18"
   >
     <div
-      className="row"
+      className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-md-4-56"
     >
       <div
-        className="col-lg-1 col-lg-offset-5 col-sm-1 col-sm-offset-4"
+        className="MuiGrid-typeContainer-1 MuiGrid-spacing-xs-16-23 MuiGrid-justify-xs-center-18"
       >
-        <img
-          alt="List Image"
-          className=""
-          src="test-file-stub"
-          style={
-            Object {
-              "height": "200px",
-              "marginBottom": "20px",
+        <div
+          className="MuiGrid-typeItem-2"
+        >
+          <img
+            alt="header"
+            src="test-file-stub"
+            style={
+              Object {
+                "height": "200px",
+                "marginBottom": "20px",
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
     </div>
-    <InputRow />
+  </div>
+  <div
+    className="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-18"
+  >
     <div
-      className="row"
+      className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-md-4-56 MuiGrid-grid-lg-2-67"
     >
-      <div
-        className="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2"
-      >
-        <List />
-      </div>
+      <InputRow />
+    </div>
+  </div>
+  <div
+    className="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-18"
+  >
+    <div
+      className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-md-4-56 MuiGrid-grid-lg-2-67"
+    >
+      <List />
     </div>
   </div>
 </div>
@@ -41,36 +52,47 @@ exports[`A Todos Container renders component 1`] = `
 exports[`A Todos renders component 1`] = `
 <div>
   <div
-    className="container"
+    className="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-18"
   >
     <div
-      className="row"
+      className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-md-4-56"
     >
       <div
-        className="col-lg-1 col-lg-offset-5 col-sm-1 col-sm-offset-4"
+        className="MuiGrid-typeContainer-1 MuiGrid-spacing-xs-16-23 MuiGrid-justify-xs-center-18"
       >
-        <img
-          alt="List Image"
-          className=""
-          src="test-file-stub"
-          style={
-            Object {
-              "height": "200px",
-              "marginBottom": "20px",
+        <div
+          className="MuiGrid-typeItem-2"
+        >
+          <img
+            alt="header"
+            src="test-file-stub"
+            style={
+              Object {
+                "height": "200px",
+                "marginBottom": "20px",
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
     </div>
-    <InputRow />
+  </div>
+  <div
+    className="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-18"
+  >
     <div
-      className="row"
+      className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-md-4-56 MuiGrid-grid-lg-2-67"
     >
-      <div
-        className="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2"
-      >
-        <List />
-      </div>
+      <InputRow />
+    </div>
+  </div>
+  <div
+    className="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-18"
+  >
+    <div
+      className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-md-4-56 MuiGrid-grid-lg-2-67"
+    >
+      <List />
     </div>
   </div>
 </div>

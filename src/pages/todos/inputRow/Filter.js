@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { Switch } from 'material-ui';
+
 
 const messages = defineMessages({
     'todo.filter.ariaLabel': {
@@ -14,10 +15,10 @@ const messages = defineMessages({
         description: 'Label for the button that filters active todos',
         defaultMessage: 'todo',
     },
-    'todo.filter.done': {
-        id: 'todo.filter.done',
-        description: 'Label for the button that filters complete todos',
-        defaultMessage: 'done',
+    'todo.filter.showDone': {
+        id: 'todo.filter.showDone',
+        description: 'Label for the toggle',
+        defaultMessage: 'Show Done',
     },
 });
 
@@ -34,32 +35,30 @@ export class Filter extends React.Component {
         }).isRequired,
     };
 
+    // Work out if the todo state filter should show the toggle as checked
+    active = filter => filter !== 'ACTIVE';
+
+    // Update the todo state filter based on the check bool
+    updateToggle = (e, checkedState) => {
+        const todoState = checkedState ? 'DONE' : 'ACTIVE';
+        this.props.onUpdateFilter(todoState);
+    }
+
     render() {
-        const { filter, onUpdateFilter, intl } = this.props;
+        const { filter, intl } = this.props;
+
         return (
-            <ToggleButtonGroup
-                type="radio"
-                name="filterToggle"
-                role="radiogroup"
-                aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])}
-                value={filter}
-                onChange={onUpdateFilter}>
-
-                <ToggleButton
-                    value="ACTIVE"
-                    role="radio"
-                    aria-checked={String(filter === 'ACTIVE')}>
-                    <FormattedMessage {...messages['todo.filter.todo']} />
-                </ToggleButton>
-
-                <ToggleButton
-                    value="DONE"
-                    role="radio"
-                    aria-checked={String(filter === 'DONE')}>
-                    <FormattedMessage {...messages['todo.filter.done']} />
-                </ToggleButton>
-
-            </ToggleButtonGroup>
+            <div>
+                <FormattedMessage {...messages['todo.filter.showDone']} />
+                <label htmlFor="todoStateSwitch">
+                    <Switch
+                        checked={this.active(filter)}
+                        onChange={this.updateToggle}
+                        color="primary"
+                        id="todoStateSwitch"
+                        aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])} />
+                </label>
+            </div>
         );
     }
 }

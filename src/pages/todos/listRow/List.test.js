@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
 
-import ListContainer, { List } from './List';
+import ListContainer, { TodoList } from './List';
 import Item from './list/Item';
 
 describe('A List', () => {
@@ -19,17 +19,17 @@ describe('A List', () => {
             }],
             onItemClick: jest.fn(),
         };
-        const wrapper = shallow(<List {...props} />);
+        const wrapper = shallow(<TodoList {...props} />);
         return {
             props,
             wrapper,
         };
-    }
+    };
 
     it('renders component', () => {
         const { props } = setup();
         const tree = renderer.create(
-            <List {...props} />,
+            <TodoList {...props} />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -102,7 +102,7 @@ describe('A List Container', () => {
     it('maps the right portion of the state to List props', () => {
         const { wrapper, initialState } = setup();
 
-        expect(wrapper.find(List).prop('listItems')).toEqual(initialState.todos.listItems.filter(item => !item.done));
+        expect(wrapper.find(TodoList).prop('listItems')).toEqual(initialState.todos.listItems.filter(item => !item.done));
     });
 
     it('dispatches the right actions from List props', () => {
@@ -110,12 +110,11 @@ describe('A List Container', () => {
 
         expect(store.getActions()).toHaveLength(0);
 
-        const clickedItem = initialState.todos.listItems[0];
+        const [clickedItem] = initialState.todos.listItems;
 
         wrapper.prop('onItemClick')(clickedItem);
 
         expect(store.getActions()).toHaveLength(1);
         expect(store.getActions()[0]).toEqual(updateDoneStatus(clickedItem.id, !clickedItem.done));
     });
-
 });
