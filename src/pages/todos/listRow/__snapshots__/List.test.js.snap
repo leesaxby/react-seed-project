@@ -169,18 +169,158 @@ exports[`A List Container renders component 1`] = `
 exports[`A List renders component 1`] = `
 <ul
   className="MuiList-root-1 MuiList-padding-2"
-  listItems={
-    Array [
+>
+  <li
+    aria-labelledby="todoItemButton1Label"
+    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
+    data-test-id="todo-item"
+    id="todoItemButton1Label"
+    label="todoItemButton1Label"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    style={
       Object {
-        "done": true,
-        "id": 1,
-      },
+        "textDecoration": "line-through",
+      }
+    }
+    tabIndex={0}
+  >
+    <label
+      htmlFor="checkboxLabelId"
+    >
+      <span
+        aria-label="todoItemCheckbox1Label"
+        className="MuiButtonBase-root-15 MuiIconButton-root-27 MuiSwitchBase-root-22 MuiSwitchBase-default-24 MuiCheckbox-default-17 MuiSwitchBase-checked-25 MuiCheckbox-checked-18 MuiCheckbox-checkedSecondary-20"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role={undefined}
+        tabIndex={null}
+      >
+        <span
+          className="MuiIconButton-label-32"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-33 MuiSvgIcon-fontSize-39"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+            />
+          </svg>
+          <input
+            checked={true}
+            className="MuiSwitchBase-input-23"
+            disabled={undefined}
+            id="todoItemCheckbox1Label"
+            name={undefined}
+            onChange={[Function]}
+            tabIndex={-1}
+            type="checkbox"
+            value={undefined}
+          />
+        </span>
+      </span>
+    </label>
+    <span
+      className="MuiTouchRipple-root-40"
+    />
+  </li>
+  <li
+    aria-labelledby="todoItemButton2Label"
+    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
+    data-test-id="todo-item"
+    id="todoItemButton2Label"
+    label="todoItemButton2Label"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    style={
       Object {
-        "done": false,
-        "id": 2,
-      },
-    ]
-  }
-  onItemClick={[Function]}
-/>
+        "textDecoration": "",
+      }
+    }
+    tabIndex={0}
+  >
+    <label
+      htmlFor="checkboxLabelId"
+    >
+      <span
+        aria-label="todoItemCheckbox2Label"
+        className="MuiButtonBase-root-15 MuiIconButton-root-27 MuiSwitchBase-root-22 MuiSwitchBase-default-24 MuiCheckbox-default-17"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role={undefined}
+        tabIndex={null}
+      >
+        <span
+          className="MuiIconButton-label-32"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-33 MuiSvgIcon-fontSize-39"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+          </svg>
+          <input
+            checked={false}
+            className="MuiSwitchBase-input-23"
+            disabled={undefined}
+            id="todoItemCheckbox2Label"
+            name={undefined}
+            onChange={[Function]}
+            tabIndex={-1}
+            type="checkbox"
+            value={undefined}
+          />
+        </span>
+      </span>
+    </label>
+    <span
+      className="MuiTouchRipple-root-40"
+    />
+  </li>
+</ul>
 `;
