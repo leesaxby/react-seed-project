@@ -7,8 +7,8 @@ const DEFAULT_LOCALE = 'en-GB';
 // @todo Use the babel-plugin-react-intl plugin to generate the default
 // translations from those in components/modules
 const translations = {
-    en_GB,
-    en_US,
+    'en-GB': en_GB,
+    'en-US': en_US,
     de,
 };
 
