@@ -19,7 +19,7 @@ const setup = () => {
         props,
         wrapper,
     };
-}
+};
 
 describe('An Item ', () => {
     it('renders component', () => {
