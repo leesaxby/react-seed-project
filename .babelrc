@@ -9,30 +9,26 @@
     "react"
   ],
   "plugins": [
-    "transform-class-properties",
-      ["transform-imports", {
-        "react-bootstrap": {
-          "transform": "react-bootstrap/lib/${member}",
-          "preventFullImport": true
-        },
-        "react-router": {
-          "transform": "react-router/${member}",
-          "preventFullImport": true
-        },
-        "react-router-dom": {
-          "transform": "react-router-dom/${member}",
-          "preventFullImport": true
-        }
-      }]
-    ],
-    "env": {
-      "test": {
-        "presets": ["es2015", "react"],
-        "plugins": [
-          "transform-class-properties",
-          ["babel-plugin-webpack-alias", { "config": "./webpack/webpack.prod.js" }]
-        ]
+    "transform-class-properties", ["transform-imports", {
+      "react-bootstrap": {
+        "transform": "react-bootstrap/lib/${member}",
+        "preventFullImport": true
       },
+      "react-router": {
+        "transform": "react-router/${member}",
+        "preventFullImport": true
+      },
+      "react-router-dom": {
+        "transform": "react-router-dom/${member}",
+        "preventFullImport": true
+      }
+    }]
+  ],
+  "env": {
+    "test": {
+      "presets": ["es2015", "react"],
+      "plugins": ["transform-class-properties"]
+    },
     "development": {
       "plugins": [
         "extract-hoc/babel",
