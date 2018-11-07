@@ -1,7 +1,7 @@
 import React from 'react';
 
 import listImage from 'Images/list.png';
-import { Grid } from 'material-ui';
+import { Grid } from '@material-ui/core';
 
 
 export default function HeaderRow() {

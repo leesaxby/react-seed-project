@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { Switch } from 'material-ui';
+import { Switch } from '@material-ui/core';
 
 
 const messages = defineMessages({

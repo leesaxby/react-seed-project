@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from 'material-ui';
+import { TextField } from '@material-ui/core';
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import { Form } from './Form';

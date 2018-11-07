@@ -3,7 +3,7 @@
 exports[`An Item  renders component 1`] = `
 <li
   aria-labelledby="todoItemButton1Label"
-  className="MuiButtonBase-root-11 MuiListItem-root-1 MuiListItem-dense-5 MuiListItem-gutters-8 MuiListItem-button-9"
+  className="MuiButtonBase-root-12 MuiListItem-root-1 MuiListItem-default-4 MuiListItem-dense-5 MuiListItem-gutters-8 MuiListItem-button-9"
   data-test-id="todo-item"
   id="todoItemButton1Label"
   label="todoItemButton1Label"
@@ -31,7 +31,7 @@ exports[`An Item  renders component 1`] = `
   >
     <span
       aria-label="todoItemCheckbox1Label"
-      className="MuiButtonBase-root-11 MuiIconButton-root-23 MuiSwitchBase-root-18 MuiSwitchBase-default-20 MuiCheckbox-default-13"
+      className="MuiButtonBase-root-12 MuiIconButton-root-25 MuiPrivateSwitchBase-root-21 MuiCheckbox-root-15 MuiCheckbox-colorSecondary-20"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -42,17 +42,16 @@ exports[`An Item  renders component 1`] = `
       onTouchEnd={[Function]}
       onTouchMove={[Function]}
       onTouchStart={[Function]}
-      role={undefined}
       tabIndex={null}
     >
       <span
-        className="MuiIconButton-label-28"
+        className="MuiIconButton-label-30"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-29 MuiSvgIcon-fontSize-35"
-          color={undefined}
+          className="MuiSvgIcon-root-31"
           focusable="false"
+          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -61,21 +60,19 @@ exports[`An Item  renders component 1`] = `
         </svg>
         <input
           checked={false}
-          className="MuiSwitchBase-input-19"
-          disabled={undefined}
+          className="MuiPrivateSwitchBase-input-24"
+          data-indeterminate={false}
           id="todoItemCheckbox1Label"
-          name={undefined}
           onChange={[Function]}
           tabIndex={-1}
           type="checkbox"
-          value={undefined}
         />
       </span>
     </span>
   </label>
   Item one
   <span
-    className="MuiTouchRipple-root-36"
+    className="MuiTouchRipple-root-40"
   />
 </li>
 `;

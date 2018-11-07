@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListItem, Checkbox } from 'material-ui';
+import { ListItem, Checkbox } from '@material-ui/core';
 
 export default function Item({ item, onClick }) {
     const triggerClick = () => {
