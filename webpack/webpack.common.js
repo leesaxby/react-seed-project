@@ -8,7 +8,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 module.exports = {
     context: path.resolve(__dirname, '../'),
     entry: [
-        'babel-polyfill',
+        '@babel/polyfill',
         'react-hot-loader/patch',
         './src/index.js',
     ],
