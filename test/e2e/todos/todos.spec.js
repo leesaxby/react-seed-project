@@ -6,7 +6,7 @@ let browser;
 let page;
 
 beforeAll(async () => {
-    browser = await puppeteer.launch({ headless: false });
+    browser = await puppeteer.launch({ headless: true });
     page = await browser.newPage();
     await page.goto(URL);
     await page.setViewport({ width: 1280, height: 1280 });
