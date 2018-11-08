@@ -35,7 +35,8 @@ describe('Add new todo item', () => {
         await page.type(el('todo-add-item'), String.fromCharCode(13));
 
         const input = await page.$eval(el('todo-add-item'), elem => elem.value);
-        expect(input).toBe('');
+        // used to be '' but react/chrome appears to have update how that work
+        expect(input).toBe(undefined);
     });
 });
 
