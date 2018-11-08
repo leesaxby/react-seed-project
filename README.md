@@ -10,7 +10,7 @@ It also contains working examples of the following
 * PropTypes
 * Internationalisation
 * Accessibility
-* Bootstrap
+* Material-UI
 * Theming
 * e2e tests
 * Unit tests
