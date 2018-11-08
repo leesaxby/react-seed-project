@@ -8,6 +8,6 @@ module.exports = merge(prod, {
         host: '0.0.0.0',
         disableHostCheck: true,
         port: 8888,
-        historyApiFallback: true
+        historyApiFallback: true,
     },
 });

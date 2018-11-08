@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev-server": "node_modules/.bin/webpack-dashboard -- node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.js",
-    "prod-server": "yarn prod-build & node_modules/.bin/webpack-dev-server --config webpack/webpack.prod-server.js",
-    "prod-build": "node_modules/.bin/webpack --config webpack/webpack.prod.js",
+    "dev-server": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.dev.js",
+    "prod-server": "webpack-dev-server --config webpack/webpack.prod-server.js",
+    "prod-build": "webpack --config webpack/webpack.prod.js",
     "e2e": "./run-e2e.sh",
-    "unit": "node_modules/.bin/jest src",
-    "lint": "node_modules/.bin/eslint src",
-    "analyze": "node_modules/.bin/webpack --config webpack/webpack.analyze.js"
+    "unit": "jest src",
+    "lint": "eslint src",
+    "analyze": "webpack --config webpack/webpack.analyze.js"
   },
   "license": "MIT",
   "dependencies": {
