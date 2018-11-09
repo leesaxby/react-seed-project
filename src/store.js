@@ -1,17 +1,17 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
-import createHistory from 'history/createBrowserHistory';
-import { routerMiddleware, routerReducer } from 'react-router-redux';
+import { createBrowserHistory } from 'history';
+import { routerMiddleware, connectRouter } from 'connected-react-router';
 
 import todos from './modules/todos';
 
-const rootReducer = combineReducers({ todos, router: routerReducer });
+const rootReducer = history => combineReducers({ todos, router: connectRouter(history) });
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 const store = createStore(
-    rootReducer,
+    rootReducer(history),
     applyMiddleware(thunk, routerMiddleware(history)),
 );
 

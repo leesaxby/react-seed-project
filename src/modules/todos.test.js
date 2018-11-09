@@ -1,4 +1,4 @@
-import { LOCATION_CHANGE } from 'react-router-redux';
+import { LOCATION_CHANGE } from 'connected-react-router';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import reducer, * as actions from './todos';
@@ -116,7 +116,9 @@ describe('The Todos module', () => {
         it('handles LOCATION_CHANGE', () => {
             expect(reducer(initialState, {
                 type: LOCATION_CHANGE,
-                payload: { pathname: '/DONE' },
+                payload: {
+                    location: { pathname: '/DONE' },
+                },
             })).toEqual({
                 filter: 'DONE',
                 listItems: initialState.listItems,

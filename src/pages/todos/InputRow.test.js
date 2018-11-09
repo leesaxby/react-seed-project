@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { push } from 'react-router-redux';
+import { push } from 'connected-react-router';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
 
 import InputRowContainer, { InputRow } from './InputRow';
