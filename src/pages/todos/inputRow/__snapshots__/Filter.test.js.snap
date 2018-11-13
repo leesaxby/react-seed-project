@@ -12,8 +12,7 @@ exports[`A Filter displays correct translations 1`] = `
       className="MuiSwitch-root-1"
     >
       <span
-        aria-label={undefined}
-        className="MuiButtonBase-root-21 MuiIconButton-root-15 MuiSwitchBase-root-10 MuiSwitchBase-default-12 MuiSwitch-default-5"
+        className="MuiButtonBase-root-20 MuiIconButton-root-14 MuiPrivateSwitchBase-root-10 MuiSwitch-switchBase-4 MuiSwitch-colorPrimary-6"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -24,25 +23,20 @@ exports[`A Filter displays correct translations 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-20"
+          className="MuiIconButton-label-19"
         >
           <span
-            className="MuiSwitch-icon-3"
+            className="MuiSwitch-icon-2"
           />
           <input
             checked={false}
-            className="MuiSwitchBase-input-11"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-13"
             id="todoStateSwitch"
-            name={undefined}
             onChange={[Function]}
-            tabIndex={undefined}
             type="checkbox"
-            value={undefined}
           />
         </span>
         <span
@@ -50,7 +44,7 @@ exports[`A Filter displays correct translations 1`] = `
         />
       </span>
       <span
-        className="MuiSwitch-bar-2"
+        className="MuiSwitch-bar-9"
       />
     </span>
   </label>
@@ -69,8 +63,7 @@ exports[`A Filter renders component 1`] = `
       className="MuiSwitch-root-1"
     >
       <span
-        aria-label={undefined}
-        className="MuiButtonBase-root-21 MuiIconButton-root-15 MuiSwitchBase-root-10 MuiSwitchBase-default-12 MuiSwitch-default-5"
+        className="MuiButtonBase-root-20 MuiIconButton-root-14 MuiPrivateSwitchBase-root-10 MuiSwitch-switchBase-4 MuiSwitch-colorPrimary-6"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -81,25 +74,20 @@ exports[`A Filter renders component 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-20"
+          className="MuiIconButton-label-19"
         >
           <span
-            className="MuiSwitch-icon-3"
+            className="MuiSwitch-icon-2"
           />
           <input
             checked={false}
-            className="MuiSwitchBase-input-11"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-13"
             id="todoStateSwitch"
-            name={undefined}
             onChange={[Function]}
-            tabIndex={undefined}
             type="checkbox"
-            value={undefined}
           />
         </span>
         <span
@@ -107,7 +95,7 @@ exports[`A Filter renders component 1`] = `
         />
       </span>
       <span
-        className="MuiSwitch-bar-2"
+        className="MuiSwitch-bar-9"
       />
     </span>
   </label>
@@ -126,8 +114,7 @@ exports[`A Filter selects a button based on the value of its 'filter' prop 1`] =
       className="MuiSwitch-root-1"
     >
       <span
-        aria-label={undefined}
-        className="MuiButtonBase-root-21 MuiIconButton-root-15 MuiSwitchBase-root-10 MuiSwitchBase-default-12 MuiSwitch-default-5 MuiSwitchBase-checked-13 MuiSwitch-checked-6 MuiSwitch-checkedPrimary-7"
+        className="MuiButtonBase-root-20 MuiIconButton-root-14 MuiPrivateSwitchBase-root-10 MuiSwitch-switchBase-4 MuiSwitch-colorPrimary-6 MuiPrivateSwitchBase-checked-11 MuiSwitch-checked-5"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -138,25 +125,20 @@ exports[`A Filter selects a button based on the value of its 'filter' prop 1`] =
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-20"
+          className="MuiIconButton-label-19"
         >
           <span
-            className="MuiSwitch-icon-3 MuiSwitch-iconChecked-4"
+            className="MuiSwitch-icon-2 MuiSwitch-iconChecked-3"
           />
           <input
             checked={true}
-            className="MuiSwitchBase-input-11"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-13"
             id="todoStateSwitch"
-            name={undefined}
             onChange={[Function]}
-            tabIndex={undefined}
             type="checkbox"
-            value={undefined}
           />
         </span>
         <span
@@ -164,7 +146,7 @@ exports[`A Filter selects a button based on the value of its 'filter' prop 1`] =
         />
       </span>
       <span
-        className="MuiSwitch-bar-2"
+        className="MuiSwitch-bar-9"
       />
     </span>
   </label>

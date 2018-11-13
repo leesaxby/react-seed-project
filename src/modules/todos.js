@@ -1,4 +1,4 @@
-import { LOCATION_CHANGE } from 'react-router-redux';
+import { LOCATION_CHANGE } from 'connected-react-router';
 
 const ADD_TODO = 'app/todos/ADD_TODO';
 const FETCH_TODOS_SUCCESS = 'app/todos/FETCH_TODOS_SUCCESS';
@@ -82,7 +82,7 @@ export default function todos(state = initialState, action) {
             });
         }
         case LOCATION_CHANGE: {
-            const filterPath = action.payload.pathname.slice(1);
+            const filterPath = action.payload.location.pathname.slice(1);
             return Object.assign({}, state, {
                 filter: filterPath === 'DONE' ? 'DONE' : 'ACTIVE',
             });

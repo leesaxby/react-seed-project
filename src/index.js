@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
-import Reboot from 'material-ui/Reboot';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { addLocaleData, IntlProvider } from 'react-intl';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
@@ -26,9 +26,9 @@ const render = (Component) => {
                     locale={USER_LOCALE}
                     messages={getMessages(USER_LOCALE)}>
                     <ConnectedRouter history={history}>
-                        <Reboot>
+                        <CssBaseline>
                             <Component />
-                        </Reboot>
+                        </CssBaseline>
                     </ConnectedRouter>
                 </IntlProvider>
             </Provider>

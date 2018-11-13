@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchTodos } from 'Modules/todos';
-import { Grid } from 'material-ui';
+import { Grid } from '@material-ui/core';
 import HeaderRow from './todos/HeaderRow';
 import InputRow from './todos/InputRow';
 import ListRow from './todos/ListRow';

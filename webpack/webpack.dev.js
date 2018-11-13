@@ -1,12 +1,12 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const path = require('path');
 
 module.exports = merge(common, {
+    mode: 'development',
     devtool: 'eval',
     output: {
-        filename: '[name].[hash].js'
+        filename: '[name].[hash].js',
     },
     devServer: {
         host: '0.0.0.0',
@@ -14,7 +14,7 @@ module.exports = merge(common, {
         port: 9999,
         hot: true,
         historyApiFallback: true,
-        clientLogLevel: 'error'
+        clientLogLevel: 'error',
     },
     module: {
         rules: [{
@@ -25,12 +25,11 @@ module.exports = merge(common, {
             options: {
                 failOnWarning: false,
                 failOnError: false,
-                emitWarning: true
-            }
-        }]
+                emitWarning: true,
+            },
+        }],
     },
     plugins: [
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
-    ]
+        new webpack.HotModuleReplacementPlugin(),
+    ],
 });

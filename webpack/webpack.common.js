@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
@@ -9,25 +8,31 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 module.exports = {
     context: path.resolve(__dirname, '../'),
     entry: [
-        'babel-polyfill',
+        '@babel/polyfill',
         'react-hot-loader/patch',
-        './src/index.js'
+        './src/index.js',
     ],
     output: {
         publicPath: '/',
-        path: path.resolve(__dirname, '../dist')
+        path: path.resolve(__dirname, '../dist'),
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+        runtimeChunk: true,
     },
     module: {
         rules: [{
             test: /\.jsx?$/,
             loader: 'babel-loader',
-            exclude: /node_modules/
-        },{
+            exclude: /node_modules/,
+        }, {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
-                use: 'css-loader'
-            })
-        },{
+                use: 'css-loader',
+            }),
+        }, {
             test: /\.(png|svg|jpg|gif)$/,
             use: [
                 'file-loader',
@@ -35,41 +40,32 @@ module.exports = {
                     loader: 'image-webpack-loader',
                     options: {
                         bypassOnDebug: true,
-                          // More optimisations can be found here: https://github.com/tcoopman/image-webpack-loader#usage.
-                          webp: {
-                            quality: 75
-                          }
+                        // More optimisations can be found here: https://github.com/tcoopman/image-webpack-loader#usage.
+                        webp: {
+                            quality: 75,
+                        },
                     },
                 },
-            ]
-        }]
+            ],
+        }],
     },
-  plugins: [
-      new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
-      new ExtractTextPlugin('theme.css'),
-      new HtmlWebpackPlugin({
-          template: './src/index.html',
-          inject: 'body',
-      }),
-      new ScriptExtHtmlWebpackPlugin({
-          defaultAttribute: 'defer'
-      }),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor.js',
-        // Only include modules in vendor which are being imported i.e import { keys } from 'lodash/keys'.
-        // Here we will only include the keys method and not the entire lodash lib.
-        minChunks: module => /node_modules/.test(module.resource)
-      }),
-      new webpack.optimize.CommonsChunkPlugin({
-          name: 'runtime'
-      }),
-      new DashboardPlugin()
-  ],
-  resolve: {
-      alias: {
-        Images: path.resolve(__dirname, '../src/images/'),
-        Modules: path.resolve(__dirname, '../src/modules/'),
-        Test: path.resolve(__dirname, '../test/')
-      }
-  }
+    plugins: [
+        new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
+        new ExtractTextPlugin('theme.css'),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body',
+        }),
+        new ScriptExtHtmlWebpackPlugin({
+            defaultAttribute: 'defer',
+        }),
+        new DashboardPlugin(),
+    ],
+    resolve: {
+        alias: {
+            Images: path.resolve(__dirname, '../src/images/'),
+            Modules: path.resolve(__dirname, '../src/modules/'),
+            Test: path.resolve(__dirname, '../test/'),
+        },
+    },
 };

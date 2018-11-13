@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import { push } from 'connected-react-router';
 import { addNewTodo } from 'Modules/todos';
-import { Grid } from 'material-ui';
+import { Grid } from '@material-ui/core';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 

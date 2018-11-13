@@ -6,7 +6,7 @@ exports[`A List Container correctly filters todos depending on the filter state 
 >
   <li
     aria-labelledby="todoItemButton1Label"
-    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
+    className="MuiButtonBase-root-16 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
     data-test-id="todo-item"
     id="todoItemButton1Label"
     label="todoItemButton1Label"
@@ -34,7 +34,7 @@ exports[`A List Container correctly filters todos depending on the filter state 
     >
       <span
         aria-label="todoItemCheckbox1Label"
-        className="MuiButtonBase-root-15 MuiIconButton-root-27 MuiSwitchBase-root-22 MuiSwitchBase-default-24 MuiCheckbox-default-17 MuiSwitchBase-checked-25 MuiCheckbox-checked-18 MuiCheckbox-checkedSecondary-20"
+        className="MuiButtonBase-root-16 MuiIconButton-root-29 MuiPrivateSwitchBase-root-25 MuiCheckbox-root-19 MuiCheckbox-colorSecondary-24 MuiPrivateSwitchBase-checked-26 MuiCheckbox-checked-20"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -45,17 +45,16 @@ exports[`A List Container correctly filters todos depending on the filter state 
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-32"
+          className="MuiIconButton-label-34"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-33 MuiSvgIcon-fontSize-39"
-            color={undefined}
+            className="MuiSvgIcon-root-35"
             focusable="false"
+            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -64,20 +63,18 @@ exports[`A List Container correctly filters todos depending on the filter state 
           </svg>
           <input
             checked={true}
-            className="MuiSwitchBase-input-23"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-28"
+            data-indeterminate={false}
             id="todoItemCheckbox1Label"
-            name={undefined}
             onChange={[Function]}
             tabIndex={-1}
             type="checkbox"
-            value={undefined}
           />
         </span>
       </span>
     </label>
     <span
-      className="MuiTouchRipple-root-40"
+      className="MuiTouchRipple-root-44"
     />
   </li>
 </ul>
@@ -89,7 +86,7 @@ exports[`A List Container renders component 1`] = `
 >
   <li
     aria-labelledby="todoItemButton2Label"
-    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
+    className="MuiButtonBase-root-16 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
     data-test-id="todo-item"
     id="todoItemButton2Label"
     label="todoItemButton2Label"
@@ -117,7 +114,7 @@ exports[`A List Container renders component 1`] = `
     >
       <span
         aria-label="todoItemCheckbox2Label"
-        className="MuiButtonBase-root-15 MuiIconButton-root-27 MuiSwitchBase-root-22 MuiSwitchBase-default-24 MuiCheckbox-default-17"
+        className="MuiButtonBase-root-16 MuiIconButton-root-29 MuiPrivateSwitchBase-root-25 MuiCheckbox-root-19 MuiCheckbox-colorSecondary-24"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -128,17 +125,16 @@ exports[`A List Container renders component 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-32"
+          className="MuiIconButton-label-34"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-33 MuiSvgIcon-fontSize-39"
-            color={undefined}
+            className="MuiSvgIcon-root-35"
             focusable="false"
+            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -147,20 +143,18 @@ exports[`A List Container renders component 1`] = `
           </svg>
           <input
             checked={false}
-            className="MuiSwitchBase-input-23"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-28"
+            data-indeterminate={false}
             id="todoItemCheckbox2Label"
-            name={undefined}
             onChange={[Function]}
             tabIndex={-1}
             type="checkbox"
-            value={undefined}
           />
         </span>
       </span>
     </label>
     <span
-      className="MuiTouchRipple-root-40"
+      className="MuiTouchRipple-root-44"
     />
   </li>
 </ul>
@@ -172,7 +166,7 @@ exports[`A List renders component 1`] = `
 >
   <li
     aria-labelledby="todoItemButton1Label"
-    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
+    className="MuiButtonBase-root-16 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
     data-test-id="todo-item"
     id="todoItemButton1Label"
     label="todoItemButton1Label"
@@ -200,7 +194,7 @@ exports[`A List renders component 1`] = `
     >
       <span
         aria-label="todoItemCheckbox1Label"
-        className="MuiButtonBase-root-15 MuiIconButton-root-27 MuiSwitchBase-root-22 MuiSwitchBase-default-24 MuiCheckbox-default-17 MuiSwitchBase-checked-25 MuiCheckbox-checked-18 MuiCheckbox-checkedSecondary-20"
+        className="MuiButtonBase-root-16 MuiIconButton-root-29 MuiPrivateSwitchBase-root-25 MuiCheckbox-root-19 MuiCheckbox-colorSecondary-24 MuiPrivateSwitchBase-checked-26 MuiCheckbox-checked-20"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -211,17 +205,16 @@ exports[`A List renders component 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-32"
+          className="MuiIconButton-label-34"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-33 MuiSvgIcon-fontSize-39"
-            color={undefined}
+            className="MuiSvgIcon-root-35"
             focusable="false"
+            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -230,25 +223,23 @@ exports[`A List renders component 1`] = `
           </svg>
           <input
             checked={true}
-            className="MuiSwitchBase-input-23"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-28"
+            data-indeterminate={false}
             id="todoItemCheckbox1Label"
-            name={undefined}
             onChange={[Function]}
             tabIndex={-1}
             type="checkbox"
-            value={undefined}
           />
         </span>
       </span>
     </label>
     <span
-      className="MuiTouchRipple-root-40"
+      className="MuiTouchRipple-root-44"
     />
   </li>
   <li
     aria-labelledby="todoItemButton2Label"
-    className="MuiButtonBase-root-15 MuiListItem-root-5 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
+    className="MuiButtonBase-root-16 MuiListItem-root-5 MuiListItem-default-8 MuiListItem-dense-9 MuiListItem-gutters-12 MuiListItem-button-13"
     data-test-id="todo-item"
     id="todoItemButton2Label"
     label="todoItemButton2Label"
@@ -276,7 +267,7 @@ exports[`A List renders component 1`] = `
     >
       <span
         aria-label="todoItemCheckbox2Label"
-        className="MuiButtonBase-root-15 MuiIconButton-root-27 MuiSwitchBase-root-22 MuiSwitchBase-default-24 MuiCheckbox-default-17"
+        className="MuiButtonBase-root-16 MuiIconButton-root-29 MuiPrivateSwitchBase-root-25 MuiCheckbox-root-19 MuiCheckbox-colorSecondary-24"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -287,17 +278,16 @@ exports[`A List renders component 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
-        role={undefined}
         tabIndex={null}
       >
         <span
-          className="MuiIconButton-label-32"
+          className="MuiIconButton-label-34"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-33 MuiSvgIcon-fontSize-39"
-            color={undefined}
+            className="MuiSvgIcon-root-35"
             focusable="false"
+            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -306,20 +296,18 @@ exports[`A List renders component 1`] = `
           </svg>
           <input
             checked={false}
-            className="MuiSwitchBase-input-23"
-            disabled={undefined}
+            className="MuiPrivateSwitchBase-input-28"
+            data-indeterminate={false}
             id="todoItemCheckbox2Label"
-            name={undefined}
             onChange={[Function]}
             tabIndex={-1}
             type="checkbox"
-            value={undefined}
           />
         </span>
       </span>
     </label>
     <span
-      className="MuiTouchRipple-root-40"
+      className="MuiTouchRipple-root-44"
     />
   </li>
 </ul>

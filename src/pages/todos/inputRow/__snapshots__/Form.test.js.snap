@@ -5,35 +5,22 @@ exports[`A Form renders component 1`] = `
   onSubmit={[Function]}
 >
   <div
-    aria-describedby={undefined}
-    aria-label={undefined}
     className="MuiFormControl-root-1 MuiFormControl-fullWidth-4"
     data-test-id="todo-add-item"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <div
-      className="MuiInput-root-5 MuiInput-fullWidth-13 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-11"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      className="MuiInputBase-root-18 MuiInput-root-5 MuiInput-underline-9 MuiInputBase-fullWidth-27 MuiInput-fullWidth-12 MuiInputBase-formControl-19 MuiInput-formControl-6"
+      onClick={[Function]}
     >
       <input
         aria-invalid={false}
-        aria-required={false}
-        autoComplete={undefined}
-        autoFocus={undefined}
-        className="MuiInput-input-14"
-        defaultValue={undefined}
+        className="MuiInputBase-input-28 MuiInput-input-13"
         disabled={false}
         id="todoInput"
-        name={undefined}
+        onBlur={[Function]}
         onChange={[Function]}
-        onKeyDown={undefined}
-        onKeyUp={undefined}
-        placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
-        rows={undefined}
+        onFocus={[Function]}
+        required={false}
         type="text"
         value=""
       />

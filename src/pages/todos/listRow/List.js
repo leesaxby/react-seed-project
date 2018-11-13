@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateDoneStatus } from 'Modules/todos';
 import getFilteredTodos from 'Modules/todos.selector';
-import { List } from 'material-ui';
+import { List } from '@material-ui/core';
 
 import Item from './list/Item';
 

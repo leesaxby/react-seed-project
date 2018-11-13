@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Switch } from 'material-ui';
+import { Switch } from '@material-ui/core';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
 // TODO: Add webpack alias for translations.
 import de from '../../../../i18n/translations/de';
