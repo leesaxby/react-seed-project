@@ -9,7 +9,8 @@
     "e2e": "./run-e2e.sh",
     "unit": "jest src",
     "lint": "eslint src",
-    "analyze": "webpack --config webpack/webpack.analyze.js"
+    "analyze": "webpack --config webpack/webpack.analyze.js",
+    "gen-translation": "webpack --config webpack/webpack.genTranslationMessages.js &&  node i18n/CreateTranslationFiles.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -43,6 +44,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-react-intl": "^3.0.1",
     "babel-plugin-transform-imports": "^1.5.1",
     "babel-plugin-webpack-alias": "^2.1.2",
     "clean-webpack-plugin": "^0.1.19",
@@ -65,6 +67,7 @@
     "jest-cli": "^23.6.0",
     "puppeteer": "^1.10.0",
     "react-axe": "^2.1.9",
+    "react-intl-translations-manager": "^5.0.3",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
     "script-ext-html-webpack-plugin": "^2.1.2",
