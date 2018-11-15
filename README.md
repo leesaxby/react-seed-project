@@ -72,6 +72,29 @@ To run all unit tests enter:
 yarn unit
 ```
 
+### Translation files
+
+The keys for the translations are generated using Webpack and babel.
+They will be extracted from: `defineMessages()`, `<FormattedMessage>`, and `<FormattedHTMLMessage>`
+
+> **NOTE**
+> They will not be extracted from `intl.formattedMessage()`.
+> Any translations that are used this way will need to be set in a `defineMessages()`
+
+Translations should use a namespace of `ComponentName.someTranslation`
+
+Running the `yarn gen-translation` command does two things. It will do a build using Webpack setting the `NODE_ENV` so babel knows to extract the translations into the messages files. Once that is finished it will run a node script to add all the messages to the GB translation file with the default messages. The script will then make all the other translation files using the same key.
+
+When the script is re-run the new keys are added and the default translations will be replaced if updated. The translated files keys will be updated but not the translations themselves once they have been overwritten.
+
+When the script is run it will show in the console any translations that have  duplicate keys and items that are missing a translation. There may be things that don't need translating like acronyms. These can be added to the whitelist file using the translation key
+
+```
+[
+    'Component.translation'
+]
+```
+
 ### Testing
 #### Examples of what/where to test
 

@@ -26,6 +26,13 @@
       }]
     ],
     "env": {
+      "gen-translations": {
+        "plugins": [
+            ["react-intl", {
+              "messagesDir": "./i18n/messages/"
+            }]
+        ]
+      },
       "test": {
         "presets": [
           [
