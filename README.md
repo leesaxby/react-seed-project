@@ -87,7 +87,7 @@ Running the `yarn gen-translation` command does two things. It will do a build u
 
 When the script is re-run the new keys are added and the default translations will be replaced if updated. The translated files keys will be updated but not the translations themselves once they have been overwritten.
 
-When the script is run it will show in the console any translations that have  duplicate keys and items that are missing a translation. There maybe things that don't need translating like acronyms. These can be added to the whitelist file using the translation key
+When the script is run it will show in the console any translations that have  duplicate keys and items that are missing a translation. There may be things that don't need translating like acronyms. These can be added to the whitelist file using the translation key
 
 ```
 [
