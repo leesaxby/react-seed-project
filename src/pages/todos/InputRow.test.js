@@ -1,9 +1,7 @@
-import { addNewTodo } from 'Modules/todos';
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { push } from 'connected-react-router';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
 
 import InputRowContainer, { InputRow } from './InputRow';
@@ -80,21 +78,5 @@ describe('An InputRow Container', () => {
         const { wrapper, initialState } = setup();
 
         expect(wrapper.find(InputRow).prop('filter')).toEqual(initialState.todos.filter);
-    });
-
-    it('dispatches the right actions from InputRow props', () => {
-        const { wrapper, store } = setup();
-
-        expect(store.getActions()).toHaveLength(0);
-
-        const newTodo = 'A New Todo';
-        const newFilter = 'DONE';
-        wrapper.prop('addTodo')(newTodo);
-        wrapper.prop('updateFilter')(newFilter);
-
-        const actions = store.getActions();
-        expect(actions).toHaveLength(2);
-        expect(actions[0]).toEqual(addNewTodo({ text: newTodo, done: false }));
-        expect(actions[1]).toEqual(push(newFilter));
     });
 });

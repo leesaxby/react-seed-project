@@ -1,4 +1,3 @@
-import { updateDoneStatus } from 'Modules/todos';
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
@@ -103,18 +102,5 @@ describe('A List Container', () => {
         const { wrapper, initialState } = setup();
 
         expect(wrapper.find(TodoList).prop('listItems')).toEqual(initialState.todos.listItems.filter(item => !item.done));
-    });
-
-    it('dispatches the right actions from List props', () => {
-        const { wrapper, initialState, store } = setup();
-
-        expect(store.getActions()).toHaveLength(0);
-
-        const [clickedItem] = initialState.todos.listItems;
-
-        wrapper.prop('onItemClick')(clickedItem);
-
-        expect(store.getActions()).toHaveLength(1);
-        expect(store.getActions()[0]).toEqual(updateDoneStatus(clickedItem.id, !clickedItem.done));
     });
 });
