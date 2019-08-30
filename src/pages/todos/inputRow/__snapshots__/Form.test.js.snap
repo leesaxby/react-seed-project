@@ -5,16 +5,16 @@ exports[`A Form renders component 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="MuiFormControl-root-1 MuiFormControl-fullWidth-4"
+    className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
     data-test-id="todo-add-item"
   >
     <div
-      className="MuiInputBase-root-18 MuiInput-root-5 MuiInput-underline-9 MuiInputBase-fullWidth-27 MuiInput-fullWidth-12 MuiInputBase-formControl-19 MuiInput-formControl-6"
+      className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
       onClick={[Function]}
     >
       <input
         aria-invalid={false}
-        className="MuiInputBase-input-28 MuiInput-input-13"
+        className="MuiInputBase-input MuiInput-input"
         disabled={false}
         id="todoInput"
         onBlur={[Function]}

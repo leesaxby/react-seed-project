@@ -2,14 +2,15 @@
 
 exports[`An Item  renders component 1`] = `
 <li
+  aria-disabled={false}
   aria-labelledby="todoItemButton1Label"
-  className="MuiButtonBase-root-13 MuiListItem-root-1 MuiListItem-default-4 MuiListItem-dense-5 MuiListItem-gutters-9 MuiListItem-button-10"
+  className="MuiButtonBase-root MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-button"
   data-test-id="todo-item"
   id="todoItemButton1Label"
   label="todoItemButton1Label"
   onBlur={[Function]}
   onClick={[Function]}
-  onContextMenu={[Function]}
+  onDragLeave={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}
@@ -31,10 +32,11 @@ exports[`An Item  renders component 1`] = `
     htmlFor="checkboxLabelId"
   >
     <span
+      aria-disabled={false}
       aria-label="todoItemCheckbox1Label"
-      className="MuiButtonBase-root-13 MuiIconButton-root-26 MuiPrivateSwitchBase-root-22 MuiCheckbox-root-16 MuiCheckbox-colorSecondary-21"
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-21 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
       onBlur={[Function]}
-      onContextMenu={[Function]}
+      onDragLeave={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -47,11 +49,11 @@ exports[`An Item  renders component 1`] = `
       tabIndex={null}
     >
       <span
-        className="MuiIconButton-label-31"
+        className="MuiIconButton-label"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-32"
+          className="MuiSvgIcon-root"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"
@@ -62,7 +64,7 @@ exports[`An Item  renders component 1`] = `
         </svg>
         <input
           checked={false}
-          className="MuiPrivateSwitchBase-input-25"
+          className="PrivateSwitchBase-input-24"
           data-indeterminate={false}
           id="todoItemCheckbox1Label"
           onChange={[Function]}
@@ -73,8 +75,5 @@ exports[`An Item  renders component 1`] = `
     </span>
   </label>
   Item one
-  <span
-    className="MuiTouchRipple-root-41"
-  />
 </li>
 `;

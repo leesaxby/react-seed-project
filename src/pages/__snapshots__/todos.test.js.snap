@@ -3,16 +3,16 @@
 exports[`A Todos Container renders component 1`] = `
 <div>
   <div
-    className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
   >
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-4-61"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"
     >
       <div
-        className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+        className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
       >
         <div
-          className="MuiGrid-item-2"
+          className="MuiGrid-root MuiGrid-item"
         >
           <img
             alt="header"
@@ -29,19 +29,19 @@ exports[`A Todos Container renders component 1`] = `
     </div>
   </div>
   <div
-    className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
   >
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-4-61 MuiGrid-grid-lg-2-73"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-2"
     >
       <InputRow />
     </div>
   </div>
   <div
-    className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
   >
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-4-61 MuiGrid-grid-lg-2-73"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-2"
     >
       <List />
     </div>
@@ -52,16 +52,16 @@ exports[`A Todos Container renders component 1`] = `
 exports[`A Todos renders component 1`] = `
 <div>
   <div
-    className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
   >
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-4-61"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4"
     >
       <div
-        className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+        className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
       >
         <div
-          className="MuiGrid-item-2"
+          className="MuiGrid-root MuiGrid-item"
         >
           <img
             alt="header"
@@ -78,19 +78,19 @@ exports[`A Todos renders component 1`] = `
     </div>
   </div>
   <div
-    className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
   >
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-4-61 MuiGrid-grid-lg-2-73"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-2"
     >
       <InputRow />
     </div>
   </div>
   <div
-    className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
   >
     <div
-      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-4-61 MuiGrid-grid-lg-2-73"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-2"
     >
       <List />
     </div>
