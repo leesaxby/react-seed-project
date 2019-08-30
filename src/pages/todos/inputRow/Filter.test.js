@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Switch } from '@material-ui/core';
 import createComponentWithIntl from 'Test/createComponentWithIntl';
 // TODO: Add webpack alias for translations.
-import de from '../../../../i18n/translations/de';
+import de from '../../../../i18n/translations/de.json';
 import { Filter } from './Filter';
 
 describe('A Filter', () => {

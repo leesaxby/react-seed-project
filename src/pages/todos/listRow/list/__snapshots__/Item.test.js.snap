@@ -3,12 +3,13 @@
 exports[`An Item  renders component 1`] = `
 <li
   aria-labelledby="todoItemButton1Label"
-  className="MuiButtonBase-root-12 MuiListItem-root-1 MuiListItem-default-4 MuiListItem-dense-5 MuiListItem-gutters-8 MuiListItem-button-9"
+  className="MuiButtonBase-root-13 MuiListItem-root-1 MuiListItem-default-4 MuiListItem-dense-5 MuiListItem-gutters-9 MuiListItem-button-10"
   data-test-id="todo-item"
   id="todoItemButton1Label"
   label="todoItemButton1Label"
   onBlur={[Function]}
   onClick={[Function]}
+  onContextMenu={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}
@@ -31,8 +32,9 @@ exports[`An Item  renders component 1`] = `
   >
     <span
       aria-label="todoItemCheckbox1Label"
-      className="MuiButtonBase-root-12 MuiIconButton-root-25 MuiPrivateSwitchBase-root-21 MuiCheckbox-root-15 MuiCheckbox-colorSecondary-20"
+      className="MuiButtonBase-root-13 MuiIconButton-root-26 MuiPrivateSwitchBase-root-22 MuiCheckbox-root-16 MuiCheckbox-colorSecondary-21"
       onBlur={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -45,11 +47,11 @@ exports[`An Item  renders component 1`] = `
       tabIndex={null}
     >
       <span
-        className="MuiIconButton-label-30"
+        className="MuiIconButton-label-31"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-31"
+          className="MuiSvgIcon-root-32"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"
@@ -60,7 +62,7 @@ exports[`An Item  renders component 1`] = `
         </svg>
         <input
           checked={false}
-          className="MuiPrivateSwitchBase-input-24"
+          className="MuiPrivateSwitchBase-input-25"
           data-indeterminate={false}
           id="todoItemCheckbox1Label"
           onChange={[Function]}
@@ -72,7 +74,7 @@ exports[`An Item  renders component 1`] = `
   </label>
   Item one
   <span
-    className="MuiTouchRipple-root-40"
+    className="MuiTouchRipple-root-41"
   />
 </li>
 `;

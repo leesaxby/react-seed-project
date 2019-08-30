@@ -14,6 +14,7 @@ exports[`A Filter displays correct translations 1`] = `
       <span
         className="MuiButtonBase-root-20 MuiIconButton-root-14 MuiPrivateSwitchBase-root-10 MuiSwitch-switchBase-4 MuiSwitch-colorPrimary-6"
         onBlur={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -65,6 +66,7 @@ exports[`A Filter renders component 1`] = `
       <span
         className="MuiButtonBase-root-20 MuiIconButton-root-14 MuiPrivateSwitchBase-root-10 MuiSwitch-switchBase-4 MuiSwitch-colorPrimary-6"
         onBlur={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -116,6 +118,7 @@ exports[`A Filter selects a button based on the value of its 'filter' prop 1`] =
       <span
         className="MuiButtonBase-root-20 MuiIconButton-root-14 MuiPrivateSwitchBase-root-10 MuiSwitch-switchBase-4 MuiSwitch-colorPrimary-6 MuiPrivateSwitchBase-checked-11 MuiSwitch-checked-5"
         onBlur={[Function]}
+        onContextMenu={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
