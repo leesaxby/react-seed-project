@@ -5,48 +5,44 @@ exports[`A Filter displays correct translations 1`] = `
   <span>
     Show fertig
   </span>
-  <label
-    htmlFor="todoStateSwitch"
+  <span
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-root"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
       <span
-        aria-disabled={false}
-        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={null}
+        className="MuiIconButton-label"
       >
         <span
-          className="MuiIconButton-label"
-        >
-          <span
-            className="MuiSwitch-thumb"
-          />
-          <input
-            checked={false}
-            className="PrivateSwitchBase-input-16 MuiSwitch-input"
-            id="todoStateSwitch"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </span>
+          className="MuiSwitch-thumb"
+        />
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-16 MuiSwitch-input"
+          id="todoStateSwitch"
+          onChange={[Function]}
+          type="checkbox"
+        />
       </span>
-      <span
-        className="MuiSwitch-track"
-      />
     </span>
-  </label>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
 </div>
 `;
 
@@ -55,48 +51,44 @@ exports[`A Filter renders component 1`] = `
   <span>
     Show Done
   </span>
-  <label
-    htmlFor="todoStateSwitch"
+  <span
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-root"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
       <span
-        aria-disabled={false}
-        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={null}
+        className="MuiIconButton-label"
       >
         <span
-          className="MuiIconButton-label"
-        >
-          <span
-            className="MuiSwitch-thumb"
-          />
-          <input
-            checked={false}
-            className="PrivateSwitchBase-input-16 MuiSwitch-input"
-            id="todoStateSwitch"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </span>
+          className="MuiSwitch-thumb"
+        />
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-16 MuiSwitch-input"
+          id="todoStateSwitch"
+          onChange={[Function]}
+          type="checkbox"
+        />
       </span>
-      <span
-        className="MuiSwitch-track"
-      />
     </span>
-  </label>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
 </div>
 `;
 
@@ -105,50 +97,46 @@ exports[`A Filter selects a button based on the value of its 'filter' prop 1`] =
   <span>
     Show Done
   </span>
-  <label
-    htmlFor="todoStateSwitch"
+  <span
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-root"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-14 Mui-checked"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
       <span
-        aria-disabled={false}
-        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-14 Mui-checked"
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={null}
+        className="MuiIconButton-label"
       >
         <span
-          className="MuiIconButton-label"
-        >
-          <span
-            className="MuiSwitch-thumb"
-          />
-          <input
-            checked={true}
-            className="PrivateSwitchBase-input-16 MuiSwitch-input"
-            id="todoStateSwitch"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </span>
-        <span
-          className="MuiTouchRipple-root"
+          className="MuiSwitch-thumb"
+        />
+        <input
+          checked={true}
+          className="PrivateSwitchBase-input-16 MuiSwitch-input"
+          id="todoStateSwitch"
+          onChange={[Function]}
+          type="checkbox"
         />
       </span>
       <span
-        className="MuiSwitch-track"
+        className="MuiTouchRipple-root"
       />
     </span>
-  </label>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
 </div>
 `;
