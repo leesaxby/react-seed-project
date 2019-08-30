@@ -31,7 +31,7 @@ describe('A Filter', () => {
 
     it('selects a button based on the value of its \'filter\' prop', () => {
         const { props } = setup();
-        const updatedProps = Object.assign({}, props, { filter: 'DONE' });
+        const updatedProps = { ...props, filter: 'DONE' };
         const tree = createComponentWithIntl(<Filter {...updatedProps} />).toJSON();
 
         expect(tree).toMatchSnapshot();

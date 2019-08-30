@@ -23,25 +23,14 @@ const messages = defineMessages({
 });
 
 export class Filter extends React.Component {
-    static defaultProps = {
-        filter: 'ACTIVE',
-    }
-
-    static propTypes = {
-        filter: PropTypes.oneOf(['ACTIVE', 'DONE']),
-        onUpdateFilter: PropTypes.func.isRequired,
-        intl: PropTypes.shape({
-            formatMessage: PropTypes.func.isRequired,
-        }).isRequired,
-    };
-
     // Work out if the todo state filter should show the toggle as checked
-    active = filter => filter !== 'ACTIVE';
+    active = (filter) => filter !== 'ACTIVE';
 
     // Update the todo state filter based on the check bool
     updateToggle = (e, checkedState) => {
+        const { onUpdateFilter } = this.props;
         const todoState = checkedState ? 'DONE' : 'ACTIVE';
-        this.props.onUpdateFilter(todoState);
+        onUpdateFilter(todoState);
     }
 
     render() {
@@ -50,17 +39,27 @@ export class Filter extends React.Component {
         return (
             <div>
                 <FormattedMessage {...messages['todo.filter.showDone']} />
-                <label htmlFor="todoStateSwitch">
-                    <Switch
-                        checked={this.active(filter)}
-                        onChange={this.updateToggle}
-                        color="primary"
-                        id="todoStateSwitch"
-                        aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])} />
-                </label>
+                <Switch
+                    checked={this.active(filter)}
+                    onChange={this.updateToggle}
+                    color="primary"
+                    id="todoStateSwitch"
+                    aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])} />
             </div>
         );
     }
 }
+
+Filter.defaultProps = {
+    filter: 'ACTIVE',
+};
+
+Filter.propTypes = {
+    filter: PropTypes.oneOf(['ACTIVE', 'DONE']),
+    onUpdateFilter: PropTypes.func.isRequired,
+    intl: PropTypes.shape({
+        formatMessage: PropTypes.func.isRequired,
+    }).isRequired,
+};
 
 export default injectIntl(Filter);

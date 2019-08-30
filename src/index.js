@@ -40,11 +40,11 @@ const render = (Component) => {
 render(App);
 
 
-/* global process */
+// global process
 if (process.env.NODE_ENV !== 'production') {
     const axe = require('react-axe');
     axe(React, ReactDOM, 1000);
-    /* global module */
+    // global module
     if (module.hot) {
         module.hot.accept('./App', () => { render(App); });
     }

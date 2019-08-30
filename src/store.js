@@ -6,7 +6,7 @@ import { routerMiddleware, connectRouter } from 'connected-react-router';
 
 import todos from './modules/todos';
 
-const rootReducer = history => combineReducers({ todos, router: connectRouter(history) });
+const rootReducer = (history) => combineReducers({ todos, router: connectRouter(history) });
 
 export const history = createBrowserHistory();
 

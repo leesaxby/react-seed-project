@@ -101,6 +101,6 @@ describe('A List Container', () => {
     it('maps the right portion of the state to List props', () => {
         const { wrapper, initialState } = setup();
 
-        expect(wrapper.find(TodoList).prop('listItems')).toEqual(initialState.todos.listItems.filter(item => !item.done));
+        expect(wrapper.find(TodoList).prop('listItems')).toEqual(initialState.todos.listItems.filter((item) => !item.done));
     });
 });

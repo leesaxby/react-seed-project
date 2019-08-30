@@ -33,18 +33,16 @@ export default function Item({ item, onClick }) {
             id={buttonLabelId}
             style={{ textDecoration: item.done ? 'line-through' : '' }}>
 
-            <label htmlFor="checkboxLabelId">
-                <Checkbox
-                    id={checkboxLabelId}
-                    checked={item.done}
-                    tabIndex={-1}
-                    disableRipple
-                    aria-label={checkboxLabelId} />
-            </label>
+            <Checkbox
+                id={checkboxLabelId}
+                checked={item.done}
+                tabIndex={-1}
+                disableRipple
+                aria-label={checkboxLabelId} />
 
             {item.text}
 
-        </ListItem >
+        </ListItem>
     );
 }
 
