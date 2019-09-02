@@ -9,11 +9,12 @@ import Item from './list/Item';
 
 export const TodoList = ({ listItems, onItemClick }) => {
     const getListItems = () => (
-        listItems.map(item => (
+        listItems.map((item) => (
             <Item
                 key={item.id}
                 item={item}
-                onClick={onItemClick} />)));
+                onClick={onItemClick} />
+        )));
 
     return (
         <List>{getListItems()}</List>
@@ -35,11 +36,11 @@ TodoList.propTypes = {
     onItemClick: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     listItems: getFilteredTodos(state),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     onItemClick: ({ id, done }) => dispatch(updateDoneStatus(id, !done)),
 });
 

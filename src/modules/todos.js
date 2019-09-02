@@ -4,7 +4,7 @@ const ADD_TODO = 'app/todos/ADD_TODO';
 const FETCH_TODOS_SUCCESS = 'app/todos/FETCH_TODOS_SUCCESS';
 const UPDATE_DONE_STATUS = 'app/todos/UPDATE_DONE_STATUS';
 
-const addNewTodo = todo => ({
+const addNewTodo = (todo) => ({
     type: ADD_TODO,
     payload: todo,
 });
@@ -23,7 +23,7 @@ const fetchTodosSuccess = () => ({
     ],
 });
 
-const fetchTodos = () => dispatch => Promise.resolve().then(() => dispatch(fetchTodosSuccess()));
+const fetchTodos = () => (dispatch) => Promise.resolve().then(() => dispatch(fetchTodosSuccess()));
 
 export {
     ADD_TODO,
@@ -43,16 +43,14 @@ const initialState = {
 const todo = (state, action) => {
     switch (action.type) {
         case ADD_TODO: {
-            const ids = state.listItems.map(item => item.id);
+            const ids = state.listItems.map((item) => item.id);
             const newId = ids.length ? Math.max(...ids) + 1 : 0;
-            return Object.assign({}, action.payload, { id: newId });
+            return { ...action.payload, id: newId };
         }
         case UPDATE_DONE_STATUS: {
             const listItems = Object.assign(state.listItems);
             const itemIndex = listItems.findIndex(({ id }) => id === action.payload.id);
-            const newListItem = Object.assign({}, listItems[itemIndex], {
-                done: action.payload.doneStatus,
-            });
+            const newListItem = { ...listItems[itemIndex], done: action.payload.doneStatus };
 
             return { [itemIndex]: newListItem };
         }
@@ -64,28 +62,23 @@ const todo = (state, action) => {
 export default function todos(state = initialState, action) {
     switch (action.type) {
         case ADD_TODO: {
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 listItems: [
                     ...state.listItems,
                     todo(state, action),
                 ],
-            });
+            };
         }
         case FETCH_TODOS_SUCCESS: {
-            return Object.assign({}, state, {
-                listItems: action.payload,
-            });
+            return { ...state, listItems: action.payload };
         }
         case UPDATE_DONE_STATUS: {
-            return Object.assign({}, state, {
-                listItems: Object.assign([], state.listItems, todo(state, action)),
-            });
+            return { ...state, listItems: Object.assign([], state.listItems, todo(state, action)) };
         }
         case LOCATION_CHANGE: {
             const filterPath = action.payload.location.pathname.slice(1);
-            return Object.assign({}, state, {
-                filter: filterPath === 'DONE' ? 'DONE' : 'ACTIVE',
-            });
+            return { ...state, filter: filterPath === 'DONE' ? 'DONE' : 'ACTIVE' };
         }
         default:
             return state;

@@ -9,21 +9,8 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-      ["transform-imports", {
-        "react-bootstrap": {
-          "transform": "react-bootstrap/lib/${member}",
-          "preventFullImport": true
-        },
-        "react-router": {
-          "transform": "react-router/${member}",
-          "preventFullImport": true
-        },
-        "react-router-dom": {
-          "transform": "react-router-dom/${member}",
-          "preventFullImport": true
-        }
-      }]
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties"
     ],
     "env": {
       "gen-translations": {
@@ -37,7 +24,9 @@
         "presets": [
           [
             "@babel/preset-env", {
-              "targets": "last 2 version, > 1%"
+              "targets": {
+                "node": "11",
+              }
             }
           ],
           "@babel/preset-react"

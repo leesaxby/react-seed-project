@@ -1,14 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
     entry: [
-        '@babel/polyfill',
         'react-hot-loader/patch',
         './src/index.js',
     ],
@@ -50,7 +48,7 @@ module.exports = {
         }],
     },
     plugins: [
-        new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
+        new CleanWebpackPlugin(),
         new ExtractTextPlugin('theme.css'),
         new HtmlWebpackPlugin({
             template: './src/index.html',
@@ -59,7 +57,6 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer',
         }),
-        new DashboardPlugin(),
     ],
     resolve: {
         alias: {

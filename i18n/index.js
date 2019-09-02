@@ -10,8 +10,8 @@ const translations = {
     de,
 };
 
-const isAvailable = locale => Boolean(translations[locale]);
-const getMessages = locale => isAvailable(locale)
+const isAvailable = (locale) => Boolean(translations[locale]);
+const getMessages = (locale) => isAvailable(locale)
     ? translations[locale]
     : translations[DEFAULT_LOCALE];
 

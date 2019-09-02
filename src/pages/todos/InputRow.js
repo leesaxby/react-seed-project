@@ -9,11 +9,11 @@ import Filter from './inputRow/Filter';
 
 export const InputRow = ({ filter, updateFilter, addTodo }) => (
     <div>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
             <Form onAddItem={addTodo} />
         </Grid>
 
-        <Grid item xs={12} >
+        <Grid item xs={12}>
             <Filter
                 filter={filter}
                 onUpdateFilter={updateFilter} />
@@ -34,9 +34,9 @@ InputRow.propTypes = {
 
 const mapStateToProps = ({ todos: { filter } }) => ({ filter });
 
-const mapDispatchToProps = dispatch => ({
-    updateFilter: filter => dispatch(push(filter)),
-    addTodo: todo => dispatch(addNewTodo({ text: todo, done: false })),
+const mapDispatchToProps = (dispatch) => ({
+    updateFilter: (filter) => dispatch(push(filter)),
+    addTodo: (todo) => dispatch(addNewTodo({ text: todo, done: false })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(InputRow);

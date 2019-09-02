@@ -2,13 +2,15 @@
 
 exports[`An Item  renders component 1`] = `
 <li
+  aria-disabled={false}
   aria-labelledby="todoItemButton1Label"
-  className="MuiButtonBase-root-12 MuiListItem-root-1 MuiListItem-default-4 MuiListItem-dense-5 MuiListItem-gutters-8 MuiListItem-button-9"
+  className="MuiButtonBase-root MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-button"
   data-test-id="todo-item"
   id="todoItemButton1Label"
   label="todoItemButton1Label"
   onBlur={[Function]}
   onClick={[Function]}
+  onDragLeave={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}
@@ -26,53 +28,48 @@ exports[`An Item  renders component 1`] = `
   }
   tabIndex={0}
 >
-  <label
-    htmlFor="checkboxLabelId"
+  <span
+    aria-disabled={false}
+    aria-label="todoItemCheckbox1Label"
+    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-21 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+    onBlur={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={null}
   >
     <span
-      aria-label="todoItemCheckbox1Label"
-      className="MuiButtonBase-root-12 MuiIconButton-root-25 MuiPrivateSwitchBase-root-21 MuiCheckbox-root-15 MuiCheckbox-colorSecondary-20"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={null}
+      className="MuiIconButton-label"
     >
-      <span
-        className="MuiIconButton-label-30"
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
       >
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root-31"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-        <input
-          checked={false}
-          className="MuiPrivateSwitchBase-input-24"
-          data-indeterminate={false}
-          id="todoItemCheckbox1Label"
-          onChange={[Function]}
-          tabIndex={-1}
-          type="checkbox"
+        <path
+          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
         />
-      </span>
+      </svg>
+      <input
+        checked={false}
+        className="PrivateSwitchBase-input-24"
+        data-indeterminate={false}
+        id="todoItemCheckbox1Label"
+        onChange={[Function]}
+        tabIndex={-1}
+        type="checkbox"
+      />
     </span>
-  </label>
+  </span>
   Item one
-  <span
-    className="MuiTouchRipple-root-40"
-  />
 </li>
 `;

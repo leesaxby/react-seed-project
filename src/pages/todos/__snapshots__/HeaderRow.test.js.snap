@@ -2,10 +2,10 @@
 
 exports[`A HeaderRow renders component 1`] = `
 <div
-  className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+  className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
 >
   <div
-    className="MuiGrid-item-2"
+    className="MuiGrid-root MuiGrid-item"
   >
     <img
       alt="header"

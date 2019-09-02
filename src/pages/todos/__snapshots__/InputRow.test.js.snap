@@ -3,30 +3,30 @@
 exports[`An InputRow Container renders component 1`] = `
 <div>
   <div
-    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <form
       onSubmit={[Function]}
     >
       <div
         aria-label="Add Item"
-        className="MuiFormControl-root-98 MuiFormControl-fullWidth-101"
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         data-test-id="todo-add-item"
       >
         <label
-          className="MuiFormLabel-root-113 MuiInputLabel-root-102 MuiInputLabel-formControl-107 MuiInputLabel-animated-110"
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
           data-shrink={false}
           htmlFor="todoInput"
         >
           Add Item
         </label>
         <div
-          className="MuiInputBase-root-133 MuiInput-root-120 MuiInput-underline-124 MuiInputBase-fullWidth-142 MuiInput-fullWidth-127 MuiInputBase-formControl-134 MuiInput-formControl-121"
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
-            className="MuiInputBase-input-143 MuiInput-input-128"
+            className="MuiInputBase-input MuiInput-input"
             disabled={false}
             id="todoInput"
             onBlur={[Function]}
@@ -41,56 +41,54 @@ exports[`An InputRow Container renders component 1`] = `
     </form>
   </div>
   <div
-    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <div>
       <span>
         Show Done
       </span>
-      <label
-        htmlFor="todoStateSwitch"
+      <span
+        className="MuiSwitch-root"
       >
         <span
-          className="MuiSwitch-root-150"
+          aria-disabled={false}
+          aria-label="choose filter"
+          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-170 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={null}
         >
           <span
-            aria-label="choose filter"
-            className="MuiButtonBase-root-169 MuiIconButton-root-163 MuiPrivateSwitchBase-root-159 MuiSwitch-switchBase-153 MuiSwitch-colorPrimary-155"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            tabIndex={null}
+            className="MuiIconButton-label"
           >
             <span
-              className="MuiIconButton-label-168"
-            >
-              <span
-                className="MuiSwitch-icon-151"
-              />
-              <input
-                checked={false}
-                className="MuiPrivateSwitchBase-input-162"
-                id="todoStateSwitch"
-                onChange={[Function]}
-                type="checkbox"
-              />
-            </span>
-            <span
-              className="MuiTouchRipple-root-172"
+              className="MuiSwitch-thumb"
+            />
+            <input
+              checked={false}
+              className="PrivateSwitchBase-input-173 MuiSwitch-input"
+              id="todoStateSwitch"
+              onChange={[Function]}
+              type="checkbox"
             />
           </span>
           <span
-            className="MuiSwitch-bar-158"
+            className="MuiTouchRipple-root"
           />
         </span>
-      </label>
+        <span
+          className="MuiSwitch-track"
+        />
+      </span>
     </div>
   </div>
 </div>
@@ -99,30 +97,30 @@ exports[`An InputRow Container renders component 1`] = `
 exports[`An InputRow renders component 1`] = `
 <div>
   <div
-    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <form
       onSubmit={[Function]}
     >
       <div
         aria-label="Add Item"
-        className="MuiFormControl-root-98 MuiFormControl-fullWidth-101"
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         data-test-id="todo-add-item"
       >
         <label
-          className="MuiFormLabel-root-113 MuiInputLabel-root-102 MuiInputLabel-formControl-107 MuiInputLabel-animated-110"
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
           data-shrink={false}
           htmlFor="todoInput"
         >
           Add Item
         </label>
         <div
-          className="MuiInputBase-root-133 MuiInput-root-120 MuiInput-underline-124 MuiInputBase-fullWidth-142 MuiInput-fullWidth-127 MuiInputBase-formControl-134 MuiInput-formControl-121"
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
-            className="MuiInputBase-input-143 MuiInput-input-128"
+            className="MuiInputBase-input MuiInput-input"
             disabled={false}
             id="todoInput"
             onBlur={[Function]}
@@ -137,56 +135,51 @@ exports[`An InputRow renders component 1`] = `
     </form>
   </div>
   <div
-    className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
   >
     <div>
       <span>
         Show Done
       </span>
-      <label
-        htmlFor="todoStateSwitch"
+      <span
+        className="MuiSwitch-root"
       >
         <span
-          className="MuiSwitch-root-150"
+          aria-disabled={false}
+          aria-label="choose filter"
+          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-170 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={null}
         >
           <span
-            aria-label="choose filter"
-            className="MuiButtonBase-root-169 MuiIconButton-root-163 MuiPrivateSwitchBase-root-159 MuiSwitch-switchBase-153 MuiSwitch-colorPrimary-155"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            tabIndex={null}
+            className="MuiIconButton-label"
           >
             <span
-              className="MuiIconButton-label-168"
-            >
-              <span
-                className="MuiSwitch-icon-151"
-              />
-              <input
-                checked={false}
-                className="MuiPrivateSwitchBase-input-162"
-                id="todoStateSwitch"
-                onChange={[Function]}
-                type="checkbox"
-              />
-            </span>
-            <span
-              className="MuiTouchRipple-root-172"
+              className="MuiSwitch-thumb"
+            />
+            <input
+              checked={false}
+              className="PrivateSwitchBase-input-173 MuiSwitch-input"
+              id="todoStateSwitch"
+              onChange={[Function]}
+              type="checkbox"
             />
           </span>
-          <span
-            className="MuiSwitch-bar-158"
-          />
         </span>
-      </label>
+        <span
+          className="MuiSwitch-track"
+        />
+      </span>
     </div>
   </div>
 </div>

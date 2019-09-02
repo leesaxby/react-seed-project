@@ -12,19 +12,17 @@ const messages = defineMessages({
 });
 
 export class Form extends React.Component {
-    static propTypes = {
-        onAddItem: PropTypes.func.isRequired,
-        intl: PropTypes.shape({
-            formatMessage: PropTypes.func.isRequired,
-        }).isRequired,
-    };
-
-    state = {
-        newItem: '',
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            newItem: '',
+        };
+    }
 
     addTodoItem = () => {
-        this.props.onAddItem(this.state.newItem);
+        const { onAddItem } = this.props;
+        const { newItem } = this.state;
+        onAddItem(newItem);
         this.setState({ newItem: '' });
     }
 
@@ -38,6 +36,8 @@ export class Form extends React.Component {
     }
 
     render() {
+        const { intl } = this.props;
+        const { newItem } = this.state;
         return (
             <form onSubmit={this.submitTodo}>
                 <TextField
@@ -45,13 +45,20 @@ export class Form extends React.Component {
                     data-test-id="todo-add-item"
                     fullWidth
                     id="todoInput"
-                    label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
-                    aria-label={this.props.intl.formatMessage(messages['todo.form.addItem'])}
-                    value={this.state.newItem}
+                    label={intl.formatMessage(messages['todo.form.addItem'])}
+                    aria-label={intl.formatMessage(messages['todo.form.addItem'])}
+                    value={newItem}
                     onChange={this.updateNewItem} />
             </form>
         );
     }
 }
+
+Form.propTypes = {
+    onAddItem: PropTypes.func.isRequired,
+    intl: PropTypes.shape({
+        formatMessage: PropTypes.func.isRequired,
+    }).isRequired,
+};
 
 export default injectIntl(Form);
