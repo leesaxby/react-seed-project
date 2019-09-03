@@ -27,7 +27,7 @@ describe('Home Page', () => {
         // eslint-disable-next-line no-undef
         cy.get('[data-test-id="todo-item"]').should('have.length', 4);
     });
-    it('checks of an item', () => {
+    it('checks off an item', () => {
         // eslint-disable-next-line no-undef
         cy.get('[data-test-id="todo-item"]').first().click();
         // eslint-disable-next-line no-undef
