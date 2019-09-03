@@ -1,45 +1,36 @@
-import puppeteer from 'puppeteer';
-import { el, elCount } from '../../utils';
-
-const URL = 'http://localhost:8888';
-let browser;
-let page;
-
-beforeAll(async () => {
-    browser = await puppeteer.launch({ headless: true });
-    page = await browser.newPage();
-    await page.goto(URL);
-    await page.setViewport({ width: 1280, height: 1280 });
-});
-
-describe('Add new todo item', () => {
-    test('Can add new item', async () => {
-        let itemCount;
-
-        itemCount = await elCount(page, el('todo-item'));
-        expect(itemCount).toEqual(3);
-
-        await page.waitForSelector(el('todo-add-item'));
-        await page.click(el('todo-add-item'));
-        await page.type(el('todo-add-item'), 'Another new item');
-        await page.type(el('todo-add-item'), String.fromCharCode(13));
-
-        itemCount = await elCount(page, el('todo-item'));
-        expect(itemCount).toEqual(4);
+describe('Home Page', () => {
+    beforeEach(() => {
+        // eslint-disable-next-line no-undef
+        cy.visit('http://localhost:9999');
+    });
+    it('successfully clicks on Add Item ', () => {
+        // eslint-disable-next-line no-undef
+        cy.get('[data-test-id="todo-add-item"]').click();
     });
 
-    test('After enter is clicked input value is cleared', async () => {
-        await page.waitForSelector(el('todo-add-item'));
-        await page.click(el('todo-add-item'));
-        await page.type(el('todo-add-item'), 'Another new item');
-        await page.type(el('todo-add-item'), String.fromCharCode(13));
+    it('accepts text input', () => {
+        const text = 'some text';
 
-        const input = await page.$eval(el('todo-add-item'), elem => elem.value);
-        // used to be '' but react/chrome appears to have update how that work
-        expect(input).toBe(undefined);
+        // eslint-disable-next-line no-undef
+        cy.get('[type="text"]')
+            .type(text)
+            .should('have.value', text);
     });
-});
+    it('creates new todo', () => {
+        const text = 'some new text';
+        // eslint-disable-next-line no-undef
+        cy.get('[type="text"]')
+            .type(text)
+            .type('{enter}')
+            .should('have.value', '');
 
-afterAll(() => {
-    browser.close();
+        // eslint-disable-next-line no-undef
+        cy.get('[data-test-id="todo-item"]').should('have.length', 4);
+    });
+    it('checks of an item', () => {
+        // eslint-disable-next-line no-undef
+        cy.get('[data-test-id="todo-item"]').first().click();
+        // eslint-disable-next-line no-undef
+        cy.get('[data-test-id="todo-item"]').should('have.length', 2);
+    });
 });
