@@ -2,3 +2,4 @@ node_modules
 dist
 yarn-error.log
 i18n/messages
+/test/e2e/cypress/videos/

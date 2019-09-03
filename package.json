@@ -11,7 +11,7 @@
     "lint": "eslint src",
     "analyze": "webpack --config webpack/webpack.analyze.js",
     "gen-translation": "webpack --config webpack/webpack.genTranslationMessages.js &&  node i18n/CreateTranslationFiles.js",
-    "cypress:open": "cypress open",
+    "cypress:open": "cypress open --project ./test/e2e/",
     "cypress": "cypress run --project ./test/e2e/"
   },
   "license": "MIT",
