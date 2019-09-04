@@ -45,14 +45,15 @@
         "react/jsx-indent-props": [2, 4],
         "react/jsx-closing-bracket-location": [2, "after-props"],
         "react/jsx-props-no-spreading": [2, {
-            "custom": "ignore",
+            "custom": "ignore"
         }],
         "jsx-a11y/label-has-for": [0]
     },
     "globals": {
         "_": true,
         "module": true,
-        "__dirname": true
+        "__dirname": true,
+        "cy": true
     },
     "settings": {
         "import/resolver": {
