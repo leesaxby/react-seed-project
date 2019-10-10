@@ -1,42 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { push } from 'connected-react-router';
-import { addNewTodo } from 'Modules/todos';
 import { Grid } from '@material-ui/core';
 import Form from './inputRow/Form';
 import Filter from './inputRow/Filter';
 
-export const InputRow = ({ filter, updateFilter, addTodo }) => (
-    <div>
+export const InputRow = ({ showDone, toggleShowDone, addTodo }) => (
+    <>
         <Grid item xs={12}>
             <Form onAddItem={addTodo} />
         </Grid>
 
         <Grid item xs={12}>
             <Filter
-                filter={filter}
-                onUpdateFilter={updateFilter} />
+                showDone={showDone}
+                onUpdateShowDone={toggleShowDone} />
         </Grid>
-    </div>
-
+    </>
 );
 
-InputRow.defaultProps = {
-    filter: 'ACTIVE',
-};
-
 InputRow.propTypes = {
-    filter: PropTypes.oneOf(['ACTIVE', 'DONE']),
+    showDone: PropTypes.bool.isRequired,
     addTodo: PropTypes.func.isRequired,
-    updateFilter: PropTypes.func.isRequired,
+    toggleShowDone: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ todos: { filter } }) => ({ filter });
 
-const mapDispatchToProps = (dispatch) => ({
-    updateFilter: (filter) => dispatch(push(filter)),
-    addTodo: (todo) => dispatch(addNewTodo({ text: todo, done: false })),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(InputRow);
+export default InputRow;

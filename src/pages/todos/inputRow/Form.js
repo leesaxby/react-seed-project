@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from '@material-ui/core';
 import { injectIntl, defineMessages } from 'react-intl';
@@ -11,48 +11,35 @@ const messages = defineMessages({
     },
 });
 
-export class Form extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            newItem: '',
-        };
-    }
+const Form = ({ intl, onAddItem }) => {
+    const [newItem, setNewItem] = useState('');
 
-    addTodoItem = () => {
-        const { onAddItem } = this.props;
-        const { newItem } = this.state;
+    const addTodoItem = () => {
         onAddItem(newItem);
-        this.setState({ newItem: '' });
-    }
+        setNewItem('');
+    };
 
-    updateNewItem = (e) => {
-        this.setState({ newItem: e.target.value });
-    }
+    const updateNewItem = (e) => setNewItem(e.target.value);
 
-    submitTodo = (e) => {
-        this.addTodoItem();
+    const submitTodo = (e) => {
+        addTodoItem();
         e.preventDefault();
-    }
+    };
 
-    render() {
-        const { intl } = this.props;
-        const { newItem } = this.state;
-        return (
-            <form onSubmit={this.submitTodo}>
-                <TextField
-                    type="text"
-                    data-test-id="todo-add-item"
-                    fullWidth
-                    id="todoInput"
-                    label={intl.formatMessage(messages['todo.form.addItem'])}
-                    aria-label={intl.formatMessage(messages['todo.form.addItem'])}
-                    value={newItem}
-                    onChange={this.updateNewItem} />
-            </form>
-        );
-    }
-}
+    return (
+        <form onSubmit={submitTodo}>
+            <TextField
+                type="text"
+                data-test-id="todo-add-item"
+                fullWidth
+                id="todoInput"
+                label={intl.formatMessage(messages['todo.form.addItem'])}
+                aria-label={intl.formatMessage(messages['todo.form.addItem'])}
+                value={newItem}
+                onChange={updateNewItem} />
+        </form>
+    );
+};
 
 Form.propTypes = {
     onAddItem: PropTypes.func.isRequired,
