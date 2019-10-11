@@ -2,11 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListItem, Checkbox } from '@material-ui/core';
 
-export default function Item({ item, onClick }) {
-    const triggerClick = () => {
-        onClick(item);
-    };
-
+export default function Item({ item, onItemSelect }) {
+    const triggerClick = () => onItemSelect(item);
     const buttonLabelId = `todoItemButton${item.id}Label`;
     const checkboxLabelId = `todoItemCheckbox${item.id}Label`;
 
@@ -52,5 +49,5 @@ Item.propTypes = {
         text: PropTypes.string,
         done: PropTypes.bool.isRequired,
     }).isRequired,
-    onClick: PropTypes.func.isRequired,
+    onItemSelect: PropTypes.func.isRequired,
 };
