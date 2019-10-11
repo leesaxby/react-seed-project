@@ -28,7 +28,7 @@ describe('Todos', () => {
     });
 
     describe('Integration', () => {
-        it('Can show done items', async () => {
+        it('Can show done items', () => {
             const { getByText, queryAllByTestId, getByTestId } = render(
                 <IntlProvider>
                     <Todos todoList={todoList} />
@@ -43,7 +43,7 @@ describe('Todos', () => {
             expect(queryAllByTestId('todo-item').length).toBe(1);
         });
 
-        it('Can add new item', async () => {
+        it('Can add new item', () => {
             const { getByText, queryAllByTestId, getByTestId } = render(
                 <IntlProvider>
                     <Todos todoList={todoList} />
