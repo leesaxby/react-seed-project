@@ -27,10 +27,12 @@ const Form = ({ intl, onAddItem }) => {
     };
 
     return (
-        <form onSubmit={submitTodo}>
+        <form onSubmit={submitTodo} data-testid="form">
             <TextField
                 type="text"
-                data-testid="todo-add-item"
+                inputProps={{
+                    'data-testid': 'todo-add-item',
+                }}
                 fullWidth
                 id="todoInput"
                 label={intl.formatMessage(messages['todo.form.addItem'])}

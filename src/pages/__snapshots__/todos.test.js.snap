@@ -38,12 +38,12 @@ Array [
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <form
+          data-testid="form"
           onSubmit={[Function]}
         >
           <div
             aria-label="Add Item"
             className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
-            data-testid="todo-add-item"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -59,6 +59,7 @@ Array [
               <input
                 aria-invalid={false}
                 className="MuiInputBase-input MuiInput-input"
+                data-testid="todo-add-item"
                 disabled={false}
                 id="todoInput"
                 onBlur={[Function]}
@@ -107,6 +108,7 @@ Array [
               <input
                 checked={false}
                 className="PrivateSwitchBase-input-173 MuiSwitch-input"
+                data-testid="show-done"
                 id="todoStateSwitch"
                 onChange={[Function]}
                 type="checkbox"
@@ -386,12 +388,12 @@ Array [
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <form
+          data-testid="form"
           onSubmit={[Function]}
         >
           <div
             aria-label="Artikel hinzufügen"
             className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
-            data-testid="todo-add-item"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -407,6 +409,7 @@ Array [
               <input
                 aria-invalid={false}
                 className="MuiInputBase-input MuiInput-input"
+                data-testid="todo-add-item"
                 disabled={false}
                 id="todoInput"
                 onBlur={[Function]}
@@ -455,6 +458,7 @@ Array [
               <input
                 checked={false}
                 className="PrivateSwitchBase-input-173 MuiSwitch-input"
+                data-testid="show-done"
                 id="todoStateSwitch"
                 onChange={[Function]}
                 type="checkbox"
