@@ -30,7 +30,7 @@ const Form = ({ intl, onAddItem }) => {
         <form onSubmit={submitTodo}>
             <TextField
                 type="text"
-                data-test-id="todo-add-item"
+                data-testid="todo-add-item"
                 fullWidth
                 id="todoInput"
                 label={intl.formatMessage(messages['todo.form.addItem'])}

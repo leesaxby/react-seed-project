@@ -24,7 +24,7 @@ export default function Item({ item, onItemSelect }) {
             button
             dense
             onClick={triggerClick}
-            data-test-id="todo-item"
+            data-testid="todo-item"
             component="li"
             label={buttonLabelId}
             id={buttonLabelId}
