@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
 import HeaderRow from './todos/HeaderRow';
 import InputRow from './todos/InputRow';
 import List from './todos/List';
 
-const Todos = () => {
+const Todos = ({ todoList }) => {
     const [showDone, setShowDone] = useState(false);
-    const [todos, setTodos] = useState([
-        { id: 1, text: 'Item One', done: false },
-        { id: 2, text: 'Item Two', done: false },
-        { id: 3, text: 'Item Three', done: false },
-    ]);
+    const [todos, setTodos] = useState(todoList);
 
     const getFilteredList = (list) => list.filter(({ done }) => done === showDone);
 
@@ -51,6 +48,16 @@ const Todos = () => {
             </Grid>
         </>
     );
+};
+
+Todos.propTypes = {
+    todoList: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            text: PropTypes.string.isRequired,
+            done: PropTypes.bool.isRequired,
+        }),
+    ).isRequired,
 };
 
 export default Todos;

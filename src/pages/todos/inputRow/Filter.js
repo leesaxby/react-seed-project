@@ -24,6 +24,9 @@ const Filter = ({ intl, showDone, onUpdateShowDone }) => (
             onChange={onUpdateShowDone}
             color="primary"
             id="todoStateSwitch"
+            inputProps={{
+                'data-testid': 'show-done',
+            }}
             aria-label={intl.formatMessage(messages['todo.filter.ariaLabel'])} />
     </>
 );

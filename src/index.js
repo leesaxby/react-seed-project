@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import { AppContainer } from 'react-hot-loader';
 import { getMessages, DEFAULT_LOCALE } from '../i18n';
-import Todos from './pages/Todos';
+import App from './App';
 import APP_THEME from './theme.css';
 
 const USER_LOCALE = navigator.language;
@@ -30,7 +30,7 @@ const render = (Component) => {
     );
 };
 
-render(Todos);
+render(App);
 
 // global process
 if (process.env.NODE_ENV !== 'production') {
@@ -38,6 +38,6 @@ if (process.env.NODE_ENV !== 'production') {
     axe(React, ReactDOM, 1000);
     // global module
     if (module.hot) {
-        module.hot.accept('./pages/Todos', () => { render(Todos); });
+        module.hot.accept('./App', () => { render(App); });
     }
 }

@@ -3,7 +3,7 @@ describe('Home Page', () => {
         cy.visit('/');
     });
     it('successfully clicks on Add Item ', () => {
-        cy.get('[data-test-id="todo-add-item"]').click();
+        cy.get('[data-testid="todo-add-item"]').click();
     });
 
     it('accepts text input', () => {
@@ -20,10 +20,10 @@ describe('Home Page', () => {
             .type('{enter}')
             .should('have.value', '');
 
-        cy.get('[data-test-id="todo-item"]').should('have.length', 4);
+        cy.get('[data-testid="todo-item"]').should('have.length', 4);
     });
     it('checks off an item', () => {
-        cy.get('[data-test-id="todo-item"]').first().click();
-        cy.get('[data-test-id="todo-item"]').should('have.length', 2);
+        cy.get('[data-testid="todo-item"]').first().click();
+        cy.get('[data-testid="todo-item"]').should('have.length', 2);
     });
 });
