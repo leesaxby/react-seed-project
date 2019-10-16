@@ -1,12 +1,8 @@
 # React / Redux seed project
 
-A seed project using [React](https://reactjs.org/) and [Redux](http://redux.js.org/) intended to provided a quick and consistent setup for new projects.
+A seed project using [React](https://reactjs.org/) intended to provided a quick and consistent setup for new projects.
 
-The seed contains a demo todo project which will give an idea of how to structure react apps and follows the container / presentational component structure described here: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0.
-
-It also contains working examples of the following
-* Redux
-* [Selectors](https://github.com/reactjs/reselect)
+It contains working examples of the following
 * PropTypes
 * Internationalisation
 * Accessibility
@@ -98,30 +94,12 @@ When the script is run it will show in the console any translations that have  d
 ### Testing
 #### Examples of what/where to test
 
-Presentational components:
-* Receives props and renders correctly
-* Calls props (parent callbacks) when expected
-* UI functions as expected
-* Methods function as expected
-
-Container components
-* Receives props and renders correctly
-* Calls props (mapDispatchToProps) when expected
-* UI functions as expected (possibly covered by child component tests)
-* Methods function as expected
-* mapDispatchToProps call correct action creator
-
-Action creators
-* Correct action is created
-
-Reducers
-* Returns correct state
+Comming soon!!!
 
 ### Project features
 * React
-* Redux
 * Prop types
-* Bootstrap
+* Material-ui
 * App theming
 * Internationalisation
 * Accessibility
@@ -152,3 +130,7 @@ To configure Jenkins to track this project:
 
 1. Create a new "Multibranch Pipeline" Jenkins job to track this repository
 2. If you are hosting on GitHub, you will need to enable a webhook from GitHub to Jenkins to notify when there are new commits. Consult the GitHub documentation for instructions.
+
+## Related Reading
+https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0.
+https://kentcdodds.com/blog/introducing-the-react-testing-library
